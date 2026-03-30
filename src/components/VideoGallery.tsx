@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Play, X } from "lucide-react";
 
 const videos = [
-  { src: "/assets/videos/showroom-gopro-1.mp4", label: "Showroom Tour", thumb: "/assets/images/showroom-01.jpg" },
-  { src: "/assets/videos/showroom-gopro-2.mp4", label: "Flooring Displays", thumb: "/assets/images/showroom-03.jpg" },
-  { src: "/assets/videos/showroom-gopro-3.mp4", label: "Carpet Selection", thumb: "/assets/images/showroom-04.jpg" },
-  { src: "/assets/videos/showroom-gopro-4.mp4", label: "Hardwood & Laminate", thumb: "/assets/images/showroom-07.jpg" },
-  { src: "/assets/videos/showroom-walk-1.mp4", label: "Full Walkthrough", thumb: "/assets/images/showroom-09.jpg" },
-  { src: "/assets/videos/showroom-walk-2.mp4", label: "Tile & Vinyl", thumb: "/assets/images/showroom-11.jpg" },
+  { src: "/assets/videos/showroom-gopro-1.mp4", label: "Showroom Tour", thumb: "/assets/images/showroom-01.webp" },
+  { src: "/assets/videos/showroom-gopro-2.mp4", label: "Flooring Displays", thumb: "/assets/images/showroom-03.webp" },
+  { src: "/assets/videos/showroom-gopro-3.mp4", label: "Carpet Selection", thumb: "/assets/images/showroom-04.webp" },
+  { src: "/assets/videos/showroom-gopro-4.mp4", label: "Hardwood & Laminate", thumb: "/assets/images/showroom-07.webp" },
+  { src: "/assets/videos/showroom-walk-1.mp4", label: "Full Walkthrough", thumb: "/assets/images/showroom-09.webp" },
+  { src: "/assets/videos/showroom-walk-2.mp4", label: "Tile & Vinyl", thumb: "/assets/images/showroom-11.webp" },
 ];
 
 export default function VideoGallery() {
@@ -29,13 +29,14 @@ export default function VideoGallery() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
           >
-            {/* Thumbnail via video poster */}
-            <video
-              src={v.src}
+            {/* Thumbnail image — no video loaded until user clicks */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={v.thumb}
+              alt={v.label}
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
-              muted
-              preload="metadata"
-              playsInline
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
             {/* Play button */}
@@ -83,6 +84,7 @@ export default function VideoGallery() {
                 controls
                 autoPlay
                 playsInline
+                preload="metadata"
               />
             </motion.div>
           </motion.div>

@@ -6,18 +6,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const photos = [
-  { src: "/assets/images/showroom-01.jpg", alt: "Kelowna Flooring Superstore showroom" },
-  { src: "/assets/images/showroom-02.jpg", alt: "Flooring display in Kelowna showroom" },
-  { src: "/assets/images/showroom-03.jpg", alt: "Hardwood flooring samples" },
-  { src: "/assets/images/showroom-04.jpg", alt: "Carpet selection at Kelowna Flooring Superstore" },
-  { src: "/assets/images/showroom-05.jpg", alt: "Vinyl plank flooring display" },
-  { src: "/assets/images/showroom-06.jpg", alt: "Tile and stone flooring options" },
-  { src: "/assets/images/showroom-07.jpg", alt: "Laminate flooring samples" },
-  { src: "/assets/images/showroom-08.jpg", alt: "Showroom interior" },
-  { src: "/assets/images/showroom-09.jpg", alt: "Flooring selection display" },
-  { src: "/assets/images/showroom-10.jpg", alt: "In-stock flooring Kelowna" },
-  { src: "/assets/images/showroom-11.jpg", alt: "Kelowna flooring store interior" },
-  { src: "/assets/images/showroom-12.jpg", alt: "Flooring samples and displays" },
+  { src: "/assets/images/showroom-01.webp", alt: "Kelowna Flooring Superstore showroom" },
+  { src: "/assets/images/showroom-02.webp", alt: "Flooring display in Kelowna showroom" },
+  { src: "/assets/images/showroom-03.webp", alt: "Hardwood flooring samples" },
+  { src: "/assets/images/showroom-04.webp", alt: "Carpet selection at Kelowna Flooring Superstore" },
+  { src: "/assets/images/showroom-05.webp", alt: "Vinyl plank flooring display" },
+  { src: "/assets/images/showroom-06.webp", alt: "Tile and stone flooring options" },
+  { src: "/assets/images/showroom-07.webp", alt: "Laminate flooring samples" },
+  { src: "/assets/images/showroom-08.webp", alt: "Showroom interior" },
+  { src: "/assets/images/showroom-09.webp", alt: "Flooring selection display" },
+  { src: "/assets/images/showroom-10.webp", alt: "In-stock flooring Kelowna" },
+  { src: "/assets/images/showroom-11.webp", alt: "Kelowna flooring store interior" },
+  { src: "/assets/images/showroom-12.webp", alt: "Flooring samples and displays" },
 ];
 
 export default function ShowroomGallery() {
