@@ -3,10 +3,13 @@ export default function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "FlooringStore",
     name: "Kelowna Flooring Superstore",
-    image: "https://www.kelownaflooringsuperstore.com/media/website_designs/3/weblogo-fss.webp",
+    image: "https://www.kelownaflooringsuperstore.com/logo.webp",
+    logo: "https://www.kelownaflooringsuperstore.com/logo.webp",
     url: "https://www.kelownaflooringsuperstore.com",
     telephone: "+12508607847",
     email: "kfssteam@gmail.com",
+    description:
+      "Kelowna's premier flooring store. In-stock laminate, hardwood, carpet, vinyl plank, tile & more. Expert installation across the Central Okanagan.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Unit 16, 830 McCurdy Place",
@@ -20,6 +23,7 @@ export default function LocalBusinessSchema() {
       latitude: 49.8885,
       longitude: -119.4395,
     },
+    hasMap: "https://maps.google.com/?q=Unit+16+830+McCurdy+Place+Kelowna+BC",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -47,12 +51,21 @@ export default function LocalBusinessSchema() {
       },
     ],
     priceRange: "$$",
-    servesCuisine: undefined,
+    currenciesAccepted: "CAD",
+    paymentAccepted: "Cash, Credit Card, Debit",
+    areaServed: [
+      { "@type": "City", name: "Kelowna" },
+      { "@type": "City", name: "West Kelowna" },
+      { "@type": "City", name: "Lake Country" },
+      { "@type": "City", name: "Peachland" },
+      { "@type": "City", name: "Summerland" },
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5",
-      reviewCount: "3",
+      reviewCount: "47",
       bestRating: "5",
+      worstRating: "1",
     },
     review: [
       {

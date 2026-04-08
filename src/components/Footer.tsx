@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MapPin, Clock } from "lucide-react";
 
 function FacebookIcon() {
@@ -56,27 +57,21 @@ const hours = [
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white">
+    <footer className="bg-[#0d1526] text-white border-t-4 border-accent">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand column */}
         <div>
-          <Link href="/" className="flex items-center gap-3 mb-5">
-            <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center shrink-0">
-              <svg viewBox="0 0 36 36" fill="none" className="w-5 h-5">
-                <rect x="3" y="18" width="30" height="4" rx="1" fill="white" />
-                <rect x="3" y="26" width="30" height="4" rx="1" fill="white" />
-                <rect x="3" y="10" width="30" height="4" rx="1" fill="white" />
-                <rect x="3" y="2" width="30" height="4" rx="1" fill="white" opacity="0.5" />
-              </svg>
-            </div>
-            <div>
-              <div className="text-white font-black text-sm leading-none tracking-tight">
-                KELOWNA FLOORING
-              </div>
-              <div className="text-accent font-bold text-[9px] tracking-[0.2em] uppercase">
-                SUPERSTORE
-              </div>
+          <Link href="/" className="block mb-2">
+            <Image
+              src="/logo.webp"
+              alt="Flooring Superstores — Kelowna"
+              width={180}
+              height={50}
+              className="h-10 w-auto brightness-0 invert mb-1"
+            />
+            <div className="text-white/40 text-[10px] font-semibold tracking-[0.18em] uppercase mt-2">
+              Kelowna, BC
             </div>
           </Link>
           <p className="text-white/55 text-sm leading-relaxed mb-6">

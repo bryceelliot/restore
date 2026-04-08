@@ -1,14 +1,27 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { flooringTypes, getFlooringBySlug } from "@/lib/flooring-data";
-import { CheckCircle2, ArrowRight, Phone, ChevronRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Phone, ChevronRight, Eye } from "lucide-react";
 import bp from "@/lib/bp";
 
 interface Props {
   params: Promise<{ type: string }>;
 }
+
+/* Map slug → local hero photo */
+const typePhotos: Record<string, { src: string; focal: string }> = {
+  "hardwood":       { src: "/assets/images/hero-walnut.webp",   focal: "center 55%" },
+  "vinyl-plank":    { src: "/assets/images/hero-kurang.webp",   focal: "center 45%" },
+  "laminate":       { src: "/assets/images/showroom-08.webp",   focal: "center 50%" },
+  "carpet":         { src: "/assets/images/showroom-10.webp",   focal: "center 40%" },
+  "tile":           { src: "/assets/images/showroom-07.webp",   focal: "center 50%" },
+  "area-rugs":      { src: "/assets/images/showroom-04.webp",   focal: "center 45%" },
+  "commercial":     { src: "/assets/images/showroom-01.webp",   focal: "center 50%" },
+  "linoleum-sheet": { src: "/assets/images/showroom-05.webp",   focal: "center 50%" },
+};
 
 export async function generateStaticParams() {
   return flooringTypes.map((f) => ({ type: f.slug }));
@@ -21,9 +34,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${flooring.name} Flooring Kelowna`,
     description: flooring.metaDescription,
+    alternates: { canonical: `https://www.kelownaflooringsuperstore.com/flooring/${flooring.slug}` },
     openGraph: {
       title: `${flooring.name} Flooring | Kelowna Flooring Superstore`,
       description: flooring.metaDescription,
+      images: typePhotos[flooring.slug]
+        ? [{ url: typePhotos[flooring.slug].src, width: 1200, height: 630, alt: `${flooring.name} flooring` }]
+        : [],
     },
   };
 }
@@ -33,39 +50,43 @@ export default async function FlooringTypePage({ params }: Props) {
   const flooring = getFlooringBySlug(type);
   if (!flooring) notFound();
 
+  const photo = typePhotos[flooring.slug];
+
   return (
     <>
-      {/* Hero */}
-      <section
-        className={`relative pt-40 pb-24 bg-gradient-to-br ${flooring.gradient} overflow-hidden`}
-      >
-        <div className="absolute inset-0 bg-dark/50" />
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
+      {/* ── Hero ──────────────────────────────────────────────── */}
+      <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
+        {photo && (
+          <Image
+            src={photo.src}
+            alt={`${flooring.name} flooring`}
+            fill
+            priority
+            className="object-cover opacity-28"
+            style={{ objectPosition: photo.focal }}
+            sizes="100vw"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1526]/96 via-[#0d1526]/72 to-[#0d1526]/35" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-white/40 text-sm mb-8">
+          <nav className="flex items-center gap-2 text-white/40 text-xs sm:text-sm mb-8">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={13} />
+            <ChevronRight size={12} />
             <Link href="/flooring" className="hover:text-white transition-colors">Flooring</Link>
-            <ChevronRight size={13} />
+            <ChevronRight size={12} />
             <span className="text-white/70">{flooring.name}</span>
           </nav>
 
           <AnimateOnScroll>
             <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              In-Stock Available
+              In-Stock — Kelowna Showroom
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
-              {flooring.name}
-              <br />
-              <span className="text-accent/80">Flooring</span>
+              {flooring.name}<br />
+              <span className="text-accent">Flooring</span>
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
               {flooring.tagline}
@@ -74,33 +95,35 @@ export default async function FlooringTypePage({ params }: Props) {
               <Link href="/estimates" className="btn-primary text-sm">
                 Get Free Estimate <ArrowRight size={16} />
               </Link>
-              <a href="tel:2508607847" className="flex items-center gap-2 glass text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all hover:bg-white/10">
-                <Phone size={16} /> (250) 860-7847
+              <a href="tel:2508607847" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-5 py-3 rounded-xl text-sm transition-all">
+                <Phone size={15} /> (250) 860-7847
               </a>
+              <Link href="/room-visualizer" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-5 py-3 rounded-xl text-sm transition-all">
+                <Eye size={15} /> Visualize in Your Room
+              </Link>
             </div>
           </AnimateOnScroll>
         </div>
       </section>
 
-      {/* Vinyl Plank video — only shown on vinyl-plank page */}
+      {/* Vinyl Plank video */}
       {flooring.slug === "vinyl-plank" && (
-        <section className="py-20 bg-charcoal">
+        <section className="py-20 bg-[#0d1526]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="text-center mb-10">
-              <span className="inline-flex items-center gap-2 bg-teal-500/15 border border-teal-500/30 text-teal-400 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
+              <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
                 See It In Action
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-white mt-2">
                 Waterproof Luxury. Real Results.
               </h2>
             </AnimateOnScroll>
-            <div className="rounded-2xl overflow-hidden max-w-3xl mx-auto shadow-2xl shadow-black/50">
+            <div className="rounded-2xl overflow-hidden max-w-3xl mx-auto shadow-2xl shadow-black/50 border border-white/10">
               <video
                 controls
                 playsInline
                 preload="metadata"
                 className="w-full aspect-video bg-black"
-                poster={`${bp}/assets/images/showroom-04.webp`}
               >
                 <source src={`${bp}/assets/videos/vinylpost.mp4`} type="video/mp4" />
               </video>
@@ -109,8 +132,8 @@ export default async function FlooringTypePage({ params }: Props) {
         </section>
       )}
 
-      {/* Overview */}
-      <section className="py-20 bg-white">
+      {/* ── Overview ──────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <AnimateOnScroll direction="right">
@@ -124,25 +147,46 @@ export default async function FlooringTypePage({ params }: Props) {
               <p className="text-gray-500 leading-relaxed mt-4">
                 {flooring.installInfo}
               </p>
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Link href="/estimates" className="btn-primary text-sm">
+                  Get a Free Quote <ArrowRight size={16} />
+                </Link>
+                <Link href="/room-visualizer" className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-primary text-charcoal hover:text-primary font-semibold px-5 py-3 rounded-xl text-sm transition-all">
+                  <Eye size={15} /> Try in Your Room
+                </Link>
+              </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll direction="left" delay={0.15}>
-              <div className="bg-light rounded-2xl p-8">
-                <h3 className="font-black text-charcoal text-xl mb-6">
-                  Key Features
-                </h3>
-                <ul className="space-y-3">
-                  {flooring.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3">
-                      <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
-                      <span className="text-gray-600 text-sm leading-relaxed">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                  <Link href="/estimates" className="btn-primary text-sm w-full justify-center">
-                    Get a Free Quote <ArrowRight size={16} />
-                  </Link>
+              <div className="bg-light rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                {photo && (
+                  <div className="relative h-48">
+                    <Image
+                      src={photo.src}
+                      alt={`${flooring.name} flooring installed`}
+                      fill
+                      className="object-cover"
+                      style={{ objectPosition: photo.focal }}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-light/80 to-transparent" />
+                  </div>
+                )}
+                <div className="p-7">
+                  <h3 className="font-black text-charcoal text-xl mb-5">Key Features</h3>
+                  <ul className="space-y-3">
+                    {flooring.features.map((f) => (
+                      <li key={f} className="flex items-start gap-3">
+                        <CheckCircle2 size={17} className="text-primary shrink-0 mt-0.5" />
+                        <span className="text-gray-600 text-sm leading-relaxed">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-7 pt-6 border-t border-gray-200">
+                    <Link href="/estimates" className="btn-primary text-sm w-full justify-center">
+                      Get a Free Quote <ArrowRight size={16} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -150,8 +194,8 @@ export default async function FlooringTypePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Types */}
-      <section className="py-20 bg-light">
+      {/* ── Types / Styles ────────────────────────────────────── */}
+      <section className="py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">{flooring.name} Options</span>
@@ -160,10 +204,10 @@ export default async function FlooringTypePage({ params }: Props) {
             </h2>
           </AnimateOnScroll>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {flooring.types.map((t, i) => (
               <AnimateOnScroll key={t.name} delay={i * 0.08}>
-                <div className="bg-white rounded-2xl p-7 card-hover h-full border-l-4 border-primary">
+                <div className="bg-white rounded-2xl p-7 card-hover h-full border-l-4 border-primary shadow-sm">
                   <h3 className="font-bold text-charcoal text-lg mb-3">{t.name}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{t.description}</p>
                 </div>
@@ -173,8 +217,8 @@ export default async function FlooringTypePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Care */}
-      <section className="py-20 bg-charcoal">
+      {/* ── Care & Maintenance ────────────────────────────────── */}
+      <section className="py-24 bg-[#0d1526]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
@@ -200,17 +244,14 @@ export default async function FlooringTypePage({ params }: Props) {
             </AnimateOnScroll>
 
             <AnimateOnScroll direction="left" delay={0.15}>
-              <div className="glass rounded-2xl p-8 text-center">
-                <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-6">
-                  <Phone size={28} className="text-primary" />
+              <div className="bg-white/8 backdrop-blur-sm border border-white/12 rounded-2xl p-8 text-center">
+                <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-6">
+                  <Phone size={28} className="text-white" />
                 </div>
-                <h3 className="text-white font-black text-2xl mb-3">
-                  Have Questions?
-                </h3>
+                <h3 className="text-white font-black text-2xl mb-3">Have Questions?</h3>
                 <p className="text-white/55 text-sm leading-relaxed mb-6">
-                  Our flooring specialists are happy to answer any questions about
-                  {" "}{flooring.name.toLowerCase()} flooring — care, installation,
-                  pricing, and more.
+                  Our flooring specialists are happy to answer any questions about{" "}
+                  {flooring.name.toLowerCase()} flooring — care, installation, pricing, and more.
                 </p>
                 <a
                   href="tel:2508607847"
@@ -219,10 +260,17 @@ export default async function FlooringTypePage({ params }: Props) {
                   Call (250) 860-7847
                 </a>
                 <Link
-                  href="/contact"
+                  href="/estimates"
+                  className="block w-full text-center bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all mb-3"
+                >
+                  Get Free Estimate
+                </Link>
+                <Link
+                  href="/room-visualizer"
                   className="block w-full text-center bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all"
                 >
-                  Send a Message
+                  <Eye size={14} className="inline mr-1.5" />
+                  Visualize in Your Room
                 </Link>
               </div>
             </AnimateOnScroll>
@@ -230,7 +278,7 @@ export default async function FlooringTypePage({ params }: Props) {
         </div>
       </section>
 
-      {/* FAQ section */}
+      {/* ── FAQ ───────────────────────────────────────────────── */}
       {flooring.faqs && flooring.faqs.length > 0 && (
         <>
           <script
@@ -247,7 +295,7 @@ export default async function FlooringTypePage({ params }: Props) {
               }),
             }}
           />
-          <section className="py-20 bg-white">
+          <section className="py-24 bg-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
               <AnimateOnScroll className="text-center mb-12">
                 <span className="section-label mb-4">FAQ</span>
@@ -255,7 +303,7 @@ export default async function FlooringTypePage({ params }: Props) {
                   Common Questions About {flooring.name}
                 </h2>
               </AnimateOnScroll>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {flooring.faqs.map((faq, i) => (
                   <AnimateOnScroll key={faq.q} delay={i * 0.07}>
                     <details className="group bg-light rounded-2xl border border-gray-200 overflow-hidden">
@@ -275,24 +323,35 @@ export default async function FlooringTypePage({ params }: Props) {
         </>
       )}
 
-      {/* Other flooring types */}
+      {/* ── Other flooring types ──────────────────────────────── */}
       <section className="py-16 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
-            <h2 className="text-3xl font-black text-charcoal">
-              Explore Other Flooring Types
-            </h2>
+            <h2 className="text-3xl font-black text-charcoal">Explore Other Flooring Types</h2>
           </AnimateOnScroll>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
             {flooringTypes
               .filter((f) => f.slug !== flooring.slug)
               .map((f, i) => (
                 <AnimateOnScroll key={f.slug} delay={i * 0.05}>
                   <Link
                     href={`/flooring/${f.slug}`}
-                    className="px-5 py-2.5 bg-white border border-gray-200 hover:border-primary hover:bg-primary/5 rounded-xl text-charcoal font-semibold text-sm transition-all card-hover"
+                    className="group relative overflow-hidden rounded-xl h-24 block"
                   >
-                    {f.name}
+                    {typePhotos[f.slug] && (
+                      <Image
+                        src={typePhotos[f.slug].src}
+                        alt={f.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        style={{ objectPosition: typePhotos[f.slug].focal }}
+                        sizes="(max-width: 640px) 50vw, 15vw"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-[#0d1526]/60 group-hover:bg-primary/70 transition-colors duration-300" />
+                    <div className="absolute inset-0 flex items-center justify-center p-2">
+                      <span className="text-white font-bold text-xs text-center leading-tight">{f.name}</span>
+                    </div>
                   </Link>
                 </AnimateOnScroll>
               ))}

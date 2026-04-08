@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, ChevronDown, MapPin } from "lucide-react";
@@ -21,6 +22,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Flooring", href: "/flooring", hasDropdown: true },
+  { name: "Room Visualizer", href: "/room-visualizer" },
   { name: "Sales", href: "/sales" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
@@ -53,12 +55,12 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-charcoal/97 backdrop-blur-md shadow-xl shadow-black/20"
-          : "bg-charcoal"
+          ? "bg-[#0d1526]/97 backdrop-blur-md shadow-xl shadow-black/30 border-b border-white/5"
+          : "bg-[#0d1526]"
       }`}
     >
       {/* Top bar */}
-      <div className="bg-primary">
+      <div className="bg-primary border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex flex-wrap justify-between items-center gap-x-4">
           <span className="flex items-center gap-1.5 text-white/70 text-xs">
             <MapPin size={11} />
@@ -78,21 +80,21 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
-              <svg viewBox="0 0 36 36" fill="none" className="w-5 h-5">
-                <rect x="3" y="18" width="30" height="4" rx="1" fill="white" />
-                <rect x="3" y="26" width="30" height="4" rx="1" fill="white" />
-                <rect x="3" y="10" width="30" height="4" rx="1" fill="white" />
-                <rect x="3" y="2" width="30" height="4" rx="1" fill="white" opacity="0.5" />
-              </svg>
-            </div>
-            <div>
-              <div className="text-white font-black text-base leading-none tracking-tight">
-                KELOWNA FLOORING
+          <Link href="/" className="flex items-center gap-3 shrink-0 py-1">
+            <Image
+              src="/logo.webp"
+              alt="Flooring Superstores — Kelowna"
+              width={160}
+              height={44}
+              className="h-9 w-auto brightness-0 invert"
+              priority
+            />
+            <div className="hidden sm:block border-l border-white/20 pl-3">
+              <div className="text-white/50 font-semibold text-[10px] tracking-[0.18em] uppercase leading-none">
+                Kelowna
               </div>
-              <div className="text-accent font-bold text-[10px] tracking-[0.2em] uppercase">
-                SUPERSTORE
+              <div className="text-white font-black text-[11px] tracking-[0.12em] uppercase leading-none mt-0.5">
+                BC, Canada
               </div>
             </div>
           </Link>
