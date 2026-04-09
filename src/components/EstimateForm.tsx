@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 
-// Same Formspree endpoint — or create a second form for estimates
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/kfssteam@gmail.com";
 
 const flooringOptions = [
   "Laminate", "Hardwood", "Carpet", "Vinyl Plank",

@@ -3,9 +3,7 @@
 import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 
-// Formspree endpoint — go to formspree.io, create a free form pointed at kfssteam@gmail.com, paste the ID here
-// e.g. "https://formspree.io/f/xpznkqrb"
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/kfssteam@gmail.com";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
