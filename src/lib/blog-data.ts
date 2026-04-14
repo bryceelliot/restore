@@ -649,6 +649,571 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "best-flooring-for-pets",
+    title: "Best Flooring for Pets: What Actually Holds Up",
+    excerpt:
+      "Dogs, cats, and claws can destroy the wrong floor fast. We break down the best and worst flooring choices for pet owners — from scratch resistance to easy cleanup.",
+    category: "Buying Guide",
+    readTime: "5 min read",
+    date: "Apr 2026",
+    img: "/assets/images/hero-kurang.webp",
+    focal: "center 45%",
+    metaDescription:
+      "Best flooring for pets in Kelowna — scratch-resistant, waterproof, and easy to clean. Expert advice on LVP, tile, hardwood, and carpet for dog and cat owners.",
+    content: [
+      {
+        type: "intro",
+        text: "Pets are hard on floors. Claws scratch. Accidents happen. Water bowls overflow. If you've ever replaced flooring after a dog spent a few years in the house, you know how costly the wrong choice can be. Here's an honest breakdown of how each flooring type holds up to the real demands of pet ownership.",
+      },
+      {
+        type: "h2",
+        text: "The Three Things Pet Owners Need to Care About",
+      },
+      {
+        type: "ul",
+        items: [
+          "Scratch resistance — claws dig in, especially from larger or more active dogs",
+          "Waterproofing — accidents, water bowls, and wet paws all introduce moisture",
+          "Easy cleaning — fur, dander, and messes need to come up quickly without damaging the surface",
+        ],
+      },
+      {
+        type: "h2",
+        text: "#1: Luxury Vinyl Plank (LVP) — Best All-Around Choice",
+      },
+      {
+        type: "p",
+        text: "LVP is our top recommendation for most pet owners. It's 100% waterproof, so accidents — even ones that sit for a while — won't cause permanent damage. A 20 mil or thicker wear layer resists everyday claw marks well. It's also easy to clean and doesn't trap dander or fur the way carpet does.",
+      },
+      {
+        type: "tip",
+        text: "For dogs over 50 lbs or especially active dogs, look for LVP with a 20 mil wear layer minimum. Thinner wear layers (6–12 mil) will show scratches over time.",
+      },
+      {
+        type: "h2",
+        text: "#2: Porcelain Tile — Best for Heavy Abuse",
+      },
+      {
+        type: "p",
+        text: "Porcelain tile is virtually indestructible — no claw will ever scratch it. It's 100% waterproof, easy to mop, and doesn't retain odors. The downsides: it's cold and hard underfoot, and loud when pets run across it. Grout lines can collect dirt and pet hair, so choose larger format tiles with fewer grout lines.",
+      },
+      {
+        type: "h2",
+        text: "#3: Hardwood — Use With Caution",
+      },
+      {
+        type: "p",
+        text: "Hardwood floors and dogs are a complicated relationship. The good news: hardwood can be refinished after years of claw marks, restoring it to like-new condition. The bad news: the scratches happen fast with larger dogs, and any urine that reaches the wood can cause deep staining and structural damage.",
+      },
+      {
+        type: "p",
+        text: "If you're set on hardwood with pets, choose a harder species (white oak, maple, hickory) with a matte or wire-brushed finish that hides surface marks better. Oil-finished hardwood shows individual scratches less dramatically than polyurethane.",
+      },
+      {
+        type: "h2",
+        text: "#4: Laminate — Decent, With Caveats",
+      },
+      {
+        type: "p",
+        text: "Modern laminate has a hard surface that resists scratches reasonably well — often better than hardwood. But the HDF core is not waterproof. A pet accident that soaks into the seams can cause swelling that's impossible to repair without replacing the boards. Water-resistant laminate has improved significantly, but it's still a risk in pet households.",
+      },
+      {
+        type: "h2",
+        text: "#5: Carpet — Think Carefully",
+      },
+      {
+        type: "p",
+        text: "Carpet is warm and comfortable — pets often love it. But it's the hardest floor type to keep truly clean with pets. Odors can work their way into the pad. Urine requires immediate treatment to prevent permanent staining and smell. If you choose carpet in a pet household, nylon fibre with a strong stain warranty and a quality moisture-barrier pad is essential.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Best for pets: Luxury vinyl plank (20+ mil wear layer), porcelain tile",
+          "Good with care: Hardwood (harder species, matte finish), water-resistant laminate",
+          "Use caution: Standard laminate, carpet (without moisture-barrier pad)",
+        ],
+      },
+      {
+        type: "cta",
+        text: "Bring in your pet's breed and habits when you visit our Kelowna showroom — we'll steer you toward products that will hold up to your specific situation.",
+      },
+    ],
+  },
+  {
+    slug: "engineered-vs-solid-hardwood",
+    title: "Engineered Hardwood vs Solid Hardwood: What's the Difference?",
+    excerpt:
+      "Both are real wood — but they behave very differently. Learn the key differences in construction, stability, installation, and where each one belongs in your home.",
+    category: "Buying Guide",
+    readTime: "5 min read",
+    date: "Apr 2026",
+    img: "/assets/images/hero-walnut.webp",
+    focal: "center 55%",
+    metaDescription:
+      "Engineered hardwood vs solid hardwood — what's the real difference? Compare stability, moisture tolerance, installation, cost, and refinishing in this expert guide from Kelowna Flooring Superstore.",
+    content: [
+      {
+        type: "intro",
+        text: "Both solid and engineered hardwood are real wood products — but they are built differently and behave differently in your home. The wrong choice for your specific situation can lead to gapping, cupping, or expensive repairs. Here's what you need to know before choosing.",
+      },
+      {
+        type: "h2",
+        text: "What Is Solid Hardwood?",
+      },
+      {
+        type: "p",
+        text: "Solid hardwood is exactly what the name says: a single, solid piece of wood milled to a consistent thickness (typically 3/4\"). It's the traditional choice — the floors your grandparents had. When they wear down, they can be sanded and refinished multiple times over their lifetime. A solid hardwood floor installed properly can last 100 years.",
+      },
+      {
+        type: "h2",
+        text: "What Is Engineered Hardwood?",
+      },
+      {
+        type: "p",
+        text: "Engineered hardwood has a real hardwood veneer on top — identical to solid hardwood in terms of what you see and feel — bonded to a plywood core beneath. The cross-ply construction of the core makes it dramatically more dimensionally stable than solid wood.",
+      },
+      {
+        type: "h2",
+        text: "The Core Difference: Stability and Moisture",
+      },
+      {
+        type: "p",
+        text: "Wood moves — it expands in humid conditions and contracts when dry. Solid hardwood can show significant seasonal movement, especially in dry climates like the Okanagan. Wide planks move more than narrow ones. This is why solid hardwood cannot be installed below grade (basements) and requires careful acclimation.",
+      },
+      {
+        type: "p",
+        text: "Engineered hardwood's plywood core resists this movement. It can be installed below grade, over radiant heat, and in spaces where humidity fluctuates. It still needs some acclimation — but it handles challenging conditions much better than solid.",
+      },
+      {
+        type: "tip",
+        text: "In Kelowna's dry climate, engineered hardwood is often the smarter choice — the lower humidity levels that cause excessive shrinkage in solid hardwood affect engineered products far less.",
+      },
+      {
+        type: "h2",
+        text: "Installation Methods",
+      },
+      {
+        type: "ul",
+        items: [
+          "Solid hardwood: Nail or staple down over wood subfloor only — cannot be glued to concrete or floated",
+          "Engineered hardwood: Can be nailed, stapled, glued down (including to concrete), or floated — far more versatile",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Refinishing: How Many Times Can You Sand It?",
+      },
+      {
+        type: "p",
+        text: "Solid hardwood can typically be sanded and refinished 4–6 times over its life — the 3/4\" thickness gives you plenty of material to work with. Engineered hardwood depends on the veneer thickness: a 2 mm veneer can usually be refinished once; a 4–6 mm veneer can handle 2–3 refinishes.",
+      },
+      {
+        type: "h2",
+        text: "Cost Comparison",
+      },
+      {
+        type: "ul",
+        items: [
+          "Solid hardwood: $6–$18/sq ft depending on species and grade",
+          "Engineered hardwood: $5–$16/sq ft — comparable, sometimes less for equivalent appearance",
+          "Installation: Similar costs; engineered glue-down can be slightly higher",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Which One Is Right for You?",
+      },
+      {
+        type: "ul",
+        items: [
+          "Choose solid hardwood for: Above-grade installations, wood subfloors, classic homes, maximum refinishing potential",
+          "Choose engineered hardwood for: Basements, concrete slabs, radiant heat, Okanagan climate, wide planks (7\"+ where solid would move too much)",
+          "Either works for: Main floors over wood subfloor in conditioned spaces",
+        ],
+      },
+      {
+        type: "cta",
+        text: "Our showroom carries both solid and engineered hardwood in a wide range of species and widths. Come in and we'll help you decide which is right for your specific rooms and subfloor situation.",
+      },
+    ],
+  },
+  {
+    slug: "how-long-does-floor-installation-take",
+    title: "How Long Does Floor Installation Take?",
+    excerpt:
+      "Wondering how long you'll be out of your living room? Here's a realistic timeline for installing every type of flooring — from a single bedroom to a whole-home renovation.",
+    category: "Installation",
+    readTime: "4 min read",
+    date: "Mar 2026",
+    img: "/assets/images/showroom-01.webp",
+    focal: "center 50%",
+    metaDescription:
+      "How long does flooring installation take? Realistic timelines for hardwood, vinyl plank, laminate, carpet, and tile — from a single room to a full-home install in Kelowna.",
+    content: [
+      {
+        type: "intro",
+        text: "One of the first questions homeowners ask when booking a flooring installation is: how long will I be without my room? The honest answer depends on the type of flooring, the room size, the condition of your subfloor, and how the job is sequenced. Here's a realistic breakdown.",
+      },
+      {
+        type: "h2",
+        text: "The Factors That Affect Timeline",
+      },
+      {
+        type: "ul",
+        items: [
+          "Room size — a 200 sq ft bedroom and a 1,000 sq ft open-plan main floor are very different jobs",
+          "Subfloor condition — leveling, patching, or replacing a subfloor can add a full day",
+          "Old floor removal — if we're tearing out existing flooring, budget extra time",
+          "Acclimation requirements — hardwood and some engineered products need 48–72 hours to acclimate before install",
+          "Product type — tile sets slowly; hardwood needs finish dry time; LVP and carpet can be walked on immediately or within hours",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Luxury Vinyl Plank (LVP)",
+      },
+      {
+        type: "p",
+        text: "LVP is the fastest flooring to install. A typical 1,000–1,500 sq ft main floor takes one full day for our crew. Larger homes may take two days. Because LVP is a floating floor and doesn't require adhesive cure time, you can walk on it and move furniture back the same day installation finishes.",
+      },
+      {
+        type: "h2",
+        text: "Laminate",
+      },
+      {
+        type: "p",
+        text: "Similar to LVP — a standard main floor typically takes one day. Laminate also floats and can be walked on immediately. The main variable is subfloor prep: laminate is less forgiving of uneven subfloors than LVP, so leveling work may add time.",
+      },
+      {
+        type: "h2",
+        text: "Engineered and Solid Hardwood",
+      },
+      {
+        type: "p",
+        text: "Hardwood installation is more involved. First, the product needs to acclimate in your home for 48–72 hours before installation begins. Installation itself — nail-down over wood subfloor — typically takes 1–2 days for a standard-sized main floor.",
+      },
+      {
+        type: "p",
+        text: "If your hardwood is site-finished (sanded and finished after installation rather than pre-finished), add 2–3 days for finish coats and cure time. Pre-finished hardwood can be walked on within hours.",
+      },
+      {
+        type: "h2",
+        text: "Carpet",
+      },
+      {
+        type: "p",
+        text: "Carpet is typically one of the fastest installations — a crew can carpet 3–4 average bedrooms in a single day. The room is walkable immediately after installation. For a full-home carpet replacement (main floor and upstairs), expect 1–2 days.",
+      },
+      {
+        type: "h2",
+        text: "Ceramic and Porcelain Tile",
+      },
+      {
+        type: "p",
+        text: "Tile is the most time-intensive installation. Setting the tile takes 1–2 days for a typical kitchen or bathroom. Then the thinset needs to cure — typically 24 hours before grouting. Then grout needs 24–48 hours to cure before the floor is fully usable. Total: plan for 3–5 days from start to walkable.",
+      },
+      {
+        type: "tip",
+        text: "Pro Tip: If you're doing multiple rooms, we sequence the work so each area is completed before we move to the next — minimizing the number of rooms you're out of simultaneously.",
+      },
+      {
+        type: "h2",
+        text: "Whole-Home Renovation Timeline",
+      },
+      {
+        type: "ul",
+        items: [
+          "1–2 bedroom apartment or condo: 1–2 days",
+          "3-bedroom home (LVP or laminate throughout): 2–3 days",
+          "3-bedroom home (hardwood main floor + carpet upstairs): 3–5 days including acclimation",
+          "Whole-home tile and hardwood mix: 5–10 days depending on scope",
+        ],
+      },
+      {
+        type: "cta",
+        text: "Want an accurate timeline for your specific project? Book a free estimate and our team will assess your space, subfloor, and scope — and give you a realistic schedule.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-prepare-for-flooring-installation",
+    title: "How to Prepare Your Home for New Flooring",
+    excerpt:
+      "A little preparation before your flooring crew arrives makes the job faster and protects your belongings. Here's exactly what to do — and what not to do.",
+    category: "Installation",
+    readTime: "4 min read",
+    date: "Feb 2026",
+    img: "/assets/images/showroom-05.webp",
+    focal: "center 50%",
+    metaDescription:
+      "How to prepare your home for flooring installation — what to move, what to leave, how to protect your home, and what to expect on installation day. Tips from Kelowna Flooring Superstore.",
+    content: [
+      {
+        type: "intro",
+        text: "The best flooring installation is a smooth one — and a lot of that smoothness comes from good preparation. Here's what to do before our crew arrives so the job goes efficiently and your home and belongings are protected throughout.",
+      },
+      {
+        type: "h2",
+        text: "1. Clear the Rooms",
+      },
+      {
+        type: "p",
+        text: "Furniture needs to be out of every room being floored before installation begins. This means sofas, beds, dressers, dining tables — everything. Installers work around furniture when absolutely necessary, but it slows the job, increases the chance of damage, and creates uneven installation conditions.",
+      },
+      {
+        type: "p",
+        text: "If you can't move large pieces yourself, ask us in advance — many installers offer furniture moving as an add-on service, but it needs to be arranged ahead of time.",
+      },
+      {
+        type: "h2",
+        text: "2. Remove Area Rugs, Curtain Panels, and Fragile Items",
+      },
+      {
+        type: "p",
+        text: "Area rugs need to come up so the subfloor can be inspected and the new floor can go underneath. Low-hanging curtain panels can get in the way — consider removing them or tying them up. Remove any fragile décor from rooms adjacent to the work area — vibrations from nailers and saws travel.",
+      },
+      {
+        type: "h2",
+        text: "3. Check Doorway Clearances",
+      },
+      {
+        type: "p",
+        text: "New flooring adds height. Interior doors may need to be trimmed — typically 1/4\" to 1/2\" — so they clear the new surface. Our installers can trim doors as part of the job; let us know which doors you're concerned about beforehand so we can plan accordingly.",
+      },
+      {
+        type: "tip",
+        text: "Pro Tip: New flooring typically raises your floor height by 3/8\" to 3/4\" depending on the product and underlay. If you have appliances with tight height clearances (dishwashers, refrigerators), check before install day.",
+      },
+      {
+        type: "h2",
+        text: "4. Acclimate the Product First",
+      },
+      {
+        type: "p",
+        text: "For hardwood and some engineered products, the flooring needs to sit inside your home for 48–72 hours before installation. This allows the wood to adjust to your home's temperature and humidity — preventing movement after installation. If we're delivering product in advance, stack it flat in the rooms where it will be installed.",
+      },
+      {
+        type: "h2",
+        text: "5. Ensure Access and a Clean Work Path",
+      },
+      {
+        type: "p",
+        text: "Our crew will be carrying flooring materials, tools, and equipment in and out throughout the day. Ensure there's a clear path from the entry to the work areas. Move vehicles from the driveway if possible so our van can park close to the entrance.",
+      },
+      {
+        type: "h2",
+        text: "6. Plan for Dust and Noise",
+      },
+      {
+        type: "p",
+        text: "Flooring installation involves cutting — and cutting creates dust. We use dust-minimizing techniques and clean up after ourselves, but some dust migration is unavoidable. If you're sensitive to dust, plan to be elsewhere during installation. The noise level is significant — nailers and saws are loud — so plan for pets and young children to be out of the home if possible.",
+      },
+      {
+        type: "h2",
+        text: "7. Protect Adjacent Rooms",
+      },
+      {
+        type: "p",
+        text: "If we're not flooring adjacent rooms, close the doors or hang plastic sheeting to limit dust migration. Let us know if you have new paint or freshly refinished cabinets nearby — we'll take extra precautions.",
+      },
+      {
+        type: "h2",
+        text: "On Installation Day",
+      },
+      {
+        type: "ul",
+        items: [
+          "Be present or available by phone when the crew arrives to walk through the scope",
+          "Point out any subfloor concerns you've noticed — squeaks, soft spots, high spots",
+          "Let the crew work without hovering — check in at natural break points",
+          "Do a walkthrough before the crew leaves to ensure you're satisfied",
+        ],
+      },
+      {
+        type: "cta",
+        text: "Have questions about what to expect on installation day? Call us at (250) 860-7847 or stop in — we're happy to walk you through the process before your booking.",
+      },
+    ],
+  },
+  {
+    slug: "choosing-flooring-for-open-plan-homes",
+    title: "How to Choose Flooring for an Open-Plan Home",
+    excerpt:
+      "Open-plan layouts present unique flooring challenges — flow, consistency, and transitions all matter. Here's how to nail it.",
+    category: "Design",
+    readTime: "5 min read",
+    date: "Jan 2026",
+    img: "/assets/images/hero-oak.webp",
+    focal: "center 40%",
+    metaDescription:
+      "How to choose flooring for an open-plan home — running the same floor throughout, transition strips, mixing materials, and design tips from Kelowna Flooring Superstore.",
+    content: [
+      {
+        type: "intro",
+        text: "Open-plan homes — where the kitchen, dining, and living areas share one continuous space — are one of the most popular layouts in new Kelowna construction and renovations. But they create a flooring challenge: what do you do across a large, connected space? Run one floor throughout? Transition between materials? Here's how to think through it.",
+      },
+      {
+        type: "h2",
+        text: "Option 1: One Floor Throughout — The Cleanest Look",
+      },
+      {
+        type: "p",
+        text: "The most visually cohesive approach is running a single flooring type through the entire open-plan area. This makes spaces feel larger, eliminates transition strips mid-room, and creates a unified aesthetic. LVP and hardwood both work beautifully this way.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Best materials for whole-floor continuity: LVP (most practical), engineered hardwood (premium), laminate (budget-friendly)",
+          "Run planks lengthwise in the direction of the longest wall or toward the main light source",
+          "For LVP and floating floors, you may need expansion breaks in very large areas (typically over 30 ft in either direction)",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Option 2: Intentional Material Transitions",
+      },
+      {
+        type: "p",
+        text: "Using two different materials — wood-look LVP in the living area, large-format tile in the kitchen — can look deliberate and sophisticated when done right. The key is making the transition at a natural boundary: a doorway, an island, or a change in ceiling height.",
+      },
+      {
+        type: "p",
+        text: "Avoid transitions in the middle of open spaces with no architectural boundary — it looks arbitrary. And choose materials that complement each other in tone: warm LVP with warm-toned tile, or both in the same cool grey family.",
+      },
+      {
+        type: "tip",
+        text: "Design Tip: T-bar transition strips can look cheap. Consider a recessed metal border strip, a flush tile-to-wood transition using a schluter strip, or simply running both materials to a natural threshold.",
+      },
+      {
+        type: "h2",
+        text: "Colour and Tone Consistency",
+      },
+      {
+        type: "p",
+        text: "In an open-plan space, your flooring is visible from multiple perspectives simultaneously. Warm and cool tones that work in separate rooms can clash when visible together. Bring large samples of both materials and lay them next to each other in your actual space — under your actual lighting conditions.",
+      },
+      {
+        type: "h2",
+        text: "Kitchen Considerations",
+      },
+      {
+        type: "p",
+        text: "Kitchens have specific demands: spills, dropped items, standing water near the sink and dishwasher. Tile and LVP are the most practical kitchen floor choices. If you run hardwood from the living area into the kitchen, protect it with a mat at the sink and be vigilant about water.",
+      },
+      {
+        type: "h2",
+        text: "Plank Direction in Large Spaces",
+      },
+      {
+        type: "p",
+        text: "Direction matters in large open-plan spaces. Running planks lengthwise through the space draws the eye down the room and makes it feel longer. Running them toward the main view (a window or outdoor space) leads the eye naturally outward. Diagonal installation is a bold look that works in large spaces but creates more waste.",
+      },
+      {
+        type: "h2",
+        text: "Common Mistakes to Avoid",
+      },
+      {
+        type: "ul",
+        items: [
+          "Too many transitions in one open space — keep it to two materials maximum",
+          "Transitions placed arbitrarily in the middle of walkways",
+          "Choosing flooring in the store under fluorescent light without testing it at home",
+          "Forgetting to account for the height transition between two different floor types",
+          "Short planks — in large spaces, use longer planks (48\"+ for LVP; 5\"+ for hardwood) for a more premium look",
+        ],
+      },
+      {
+        type: "cta",
+        text: "Bring in your floor plan when you visit our showroom — our team can help you visualize how different products and transitions will look in your specific space.",
+      },
+    ],
+  },
+  {
+    slug: "waterproof-flooring-guide",
+    title: "Waterproof Flooring: What It Really Means",
+    excerpt:
+      "Not all 'waterproof' flooring claims are equal. Learn what's truly waterproof, what's water-resistant, and which products are safe for wet areas in your Kelowna home.",
+    category: "Buying Guide",
+    readTime: "4 min read",
+    date: "Dec 2025",
+    img: "/assets/images/showroom-06.webp",
+    focal: "center 50%",
+    metaDescription:
+      "What does waterproof flooring actually mean? The difference between waterproof and water-resistant, which products are safe for bathrooms and basements, and what to avoid.",
+    content: [
+      {
+        type: "intro",
+        text: "Walk through any flooring showroom and you'll see 'waterproof' on a lot of labels. But not all waterproof claims mean the same thing — and choosing incorrectly for a bathroom, laundry room, or basement can mean a very expensive mistake. Here's what the terminology actually means.",
+      },
+      {
+        type: "h2",
+        text: "Waterproof vs Water-Resistant: The Critical Difference",
+      },
+      {
+        type: "p",
+        text: "Water-resistant flooring can handle surface moisture for a limited time — spills that are wiped up quickly, minor splashing, damp mopping. It is not designed to handle standing water, flooding, or moisture vapor coming up through a concrete slab.",
+      },
+      {
+        type: "p",
+        text: "Truly waterproof flooring has a core that does not absorb or transmit water — period. If water gets under the floor (flooding, plumbing leak), a waterproof floor can often be dried out and reinstalled without damage. A water-resistant floor cannot.",
+      },
+      {
+        type: "h2",
+        text: "What's Truly Waterproof",
+      },
+      {
+        type: "ul",
+        items: [
+          "100% PVC luxury vinyl plank (LVP) — waterproof through the entire thickness",
+          "Porcelain and ceramic tile — the tile itself is waterproof; note that grout is not unless sealed",
+          "Sheet vinyl / linoleum — seamless installation means no joints for water to penetrate",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What's Water-Resistant (Not Waterproof)",
+      },
+      {
+        type: "ul",
+        items: [
+          "Laminate with water-resistant coating — the core is still HDF; prolonged moisture causes swelling",
+          "Engineered hardwood — the veneer can handle surface moisture, but the plywood core will eventually absorb and swell with prolonged exposure",
+          "Some 'waterproof' laminate claims — read the fine print; most cover surface moisture only",
+        ],
+      },
+      {
+        type: "tip",
+        text: "Important: Even truly waterproof LVP has seams. If water gets under the floor, it can migrate under the click-lock joints and sit on the subfloor. In wet areas, seal the perimeter where the floor meets the wall for extra protection.",
+      },
+      {
+        type: "h2",
+        text: "Room-by-Room Guide",
+      },
+      {
+        type: "ul",
+        items: [
+          "Bathroom: LVP or tile only — no laminate, no hardwood",
+          "Laundry room: LVP or tile only — washing machine hoses fail, and when they do, water goes everywhere",
+          "Basement: LVP strongly preferred; carpet with moisture-barrier pad acceptable in dry basements",
+          "Kitchen: LVP or tile ideal; hardwood and laminate acceptable in lower-risk zones away from the sink",
+          "Living areas / bedrooms: Any flooring type works — waterproofing is less critical",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What About Waterproof Underlayment?",
+      },
+      {
+        type: "p",
+        text: "Some installers recommend a waterproof underlayment under non-waterproof flooring in moderate-risk areas. This can help with minor moisture vapor transmission from below, but it doesn't make a non-waterproof floor waterproof — if water gets through the joints above, the underlayment only traps it against the core, potentially making damage worse.",
+      },
+      {
+        type: "cta",
+        text: "Not sure if your chosen floor is appropriate for your specific area? Bring your floor plan and installation location to our showroom — we'll give you an honest assessment and recommend the right product.",
+      },
+    ],
+  },
 ];
 
 export const categoryColors: Record<string, string> = {
@@ -657,4 +1222,6 @@ export const categoryColors: Record<string, string> = {
   "Room Guide": "bg-charcoal",
   "Tile & Stone": "bg-[#2d4a7a]",
   "Trends": "bg-accent",
+  "Installation": "bg-[#1a3a2a]",
+  "Design": "bg-[#4a2d7a]",
 };

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Clock, Send } from "lucide-react";
+import { trackPhoneClick } from "@/lib/ga";
 
 function FacebookIcon() {
   return (
@@ -40,19 +41,6 @@ const flooringLinks = [
   { name: "Area Rugs", href: "/flooring/area-rugs" },
 ];
 
-const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "All Flooring", href: "/flooring" },
-  { name: "Free Estimate", href: "/estimates" },
-  { name: "Financing", href: "/financing" },
-  { name: "Sales & Promotions", href: "/sales" },
-  { name: "Room Visualizer", href: "/room-visualizer" },
-  { name: "Blog", href: "/blog" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
-];
-
 const hours = [
   { day: "Monday – Tuesday", time: "9:00 AM – 5:00 PM" },
   { day: "Wednesday", time: "9:00 AM – 2:00 PM" },
@@ -86,10 +74,10 @@ function NewsletterStrip() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
           <div>
             <p className="text-white font-bold text-base">Get Sale Alerts & Flooring Tips</p>
-            <p className="text-white/50 text-sm mt-0.5">No spam. Just deals and advice from our Kelowna team.</p>
+            <p className="text-white/50 text-base mt-0.5">No spam. Just deals and advice from our Kelowna team.</p>
           </div>
           {status === "sent" ? (
-            <p className="text-accent font-bold text-sm">You&apos;re subscribed — thanks!</p>
+            <p className="text-accent font-bold text-base">You&apos;re subscribed — thanks!</p>
           ) : (
             <form onSubmit={handleSubmit} className="flex gap-2 w-full sm:w-auto">
               <input
@@ -98,11 +86,11 @@ function NewsletterStrip() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 required
-                className="flex-1 sm:w-64 bg-white/10 border border-white/20 text-white placeholder-white/35 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-accent transition-colors"
+                className="flex-1 sm:w-64 bg-white/10 border border-white/20 text-white placeholder-white/35 rounded-xl px-4 py-2.5 text-base focus:outline-none focus:border-accent transition-colors"
               />
               <button
                 type="submit"
-                className="bg-accent hover:bg-accent-dark text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-colors flex items-center gap-1.5 shrink-0"
+                className="bg-accent hover:bg-accent-dark text-white font-bold px-4 py-2.5 rounded-xl text-base transition-colors flex items-center gap-1.5 shrink-0"
               >
                 <Send size={14} /> Subscribe
               </button>
@@ -110,7 +98,7 @@ function NewsletterStrip() {
           )}
         </div>
         {status === "error" && (
-          <p className="text-red-400 text-xs mt-2 text-right">Something went wrong — please try again.</p>
+          <p className="text-red-400 text-sm mt-2 text-right">Something went wrong — please try again.</p>
         )}
       </div>
     </div>
@@ -126,20 +114,22 @@ export default function Footer() {
         {/* Brand column */}
         <div>
           <Link href="/" className="block mb-2">
-            <Image
-              src="/logo.webp"
-              alt="Flooring Superstores — Kelowna"
-              width={180}
-              height={50}
-              className="h-10 w-auto brightness-0 invert mb-1"
-            />
-            <div className="text-white/40 text-[10px] font-semibold tracking-[0.18em] uppercase mt-2">
+            <div className="inline-block bg-white rounded-lg px-4 py-2 mb-1">
+              <Image
+                src="/logo.webp"
+                alt="Flooring Superstores — Kelowna"
+                width={220}
+                height={60}
+                className="h-12 w-auto"
+              />
+            </div>
+            <div className="text-white/40 text-sm font-semibold tracking-[0.18em] uppercase mt-2">
               Kelowna, BC
             </div>
           </Link>
-          <p className="text-white/55 text-sm leading-relaxed mb-6">
+          <p className="text-white/55 text-base leading-relaxed mb-6">
             Kelowna&apos;s premier flooring destination. A massive selection of
-            in-stock flooring with expert installation across the Okanagan.
+            flooring with expert installation across the Okanagan. Order from samples — arrives in 3–5 days.
           </p>
           <div className="flex items-center gap-3">
             <a href="https://www.facebook.com/KelownaFlooringSuperStore" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
@@ -154,17 +144,17 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Quick links */}
+        {/* Flooring types */}
         <div>
-          <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-5">
-            Quick Links
+          <h3 className="text-white font-bold text-base uppercase tracking-widest mb-5">
+            Flooring Types
           </h3>
           <ul className="space-y-2.5">
-            {quickLinks.map((l) => (
+            {flooringLinks.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="text-white/55 hover:text-accent text-sm transition-colors"
+                  className="text-white/55 hover:text-accent text-base transition-colors"
                 >
                   {l.name}
                 </Link>
@@ -173,17 +163,26 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Flooring types */}
+        {/* Quick links */}
         <div>
-          <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-5">
-            Flooring Types
+          <h3 className="text-white font-bold text-base uppercase tracking-widest mb-5">
+            Quick Links
           </h3>
           <ul className="space-y-2.5">
-            {flooringLinks.map((l) => (
+            {[
+              { name: "Free Estimate",    href: "/estimates" },
+              { name: "Financing",        href: "/financing" },
+              { name: "Room Visualizer",  href: "/room-visualizer" },
+              { name: "Current Sales",    href: "/sales" },
+              { name: "FAQ",              href: "/faq" },
+              { name: "About Us",         href: "/about" },
+              { name: "Blog",             href: "/blog" },
+              { name: "Contact",          href: "/contact" },
+            ].map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="text-white/55 hover:text-accent text-sm transition-colors"
+                  className="text-white/55 hover:text-accent text-base transition-colors"
                 >
                   {l.name}
                 </Link>
@@ -194,7 +193,7 @@ export default function Footer() {
 
         {/* Contact & hours */}
         <div>
-          <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-5">
+          <h3 className="text-white font-bold text-base uppercase tracking-widest mb-5">
             Visit Us
           </h3>
           <ul className="space-y-4">
@@ -204,7 +203,7 @@ export default function Footer() {
                 href="https://maps.google.com/?q=Unit+16+830+McCurdy+Place+Kelowna+BC"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/55 hover:text-white text-sm leading-relaxed transition-colors"
+                className="text-white/55 hover:text-white text-base leading-relaxed transition-colors"
               >
                 Unit 16, 830 McCurdy Place<br />Kelowna, BC V1X 8C8
               </a>
@@ -213,7 +212,8 @@ export default function Footer() {
               <Phone size={16} className="text-accent mt-0.5 shrink-0" />
               <a
                 href="tel:2508607847"
-                className="text-white/55 hover:text-white text-sm transition-colors"
+                onClick={() => trackPhoneClick("footer")}
+                className="text-white/55 hover:text-white text-base transition-colors"
               >
                 (250) 860-7847
               </a>
@@ -223,8 +223,8 @@ export default function Footer() {
               <div className="space-y-1.5">
                 {hours.map((h) => (
                   <div key={h.day} className="flex flex-col">
-                    <span className="text-white/80 text-xs font-semibold">{h.day}</span>
-                    <span className="text-white/50 text-xs">{h.time}</span>
+                    <span className="text-white/80 text-sm font-semibold">{h.day}</span>
+                    <span className="text-white/50 text-sm">{h.time}</span>
                   </div>
                 ))}
               </div>
@@ -236,12 +236,18 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-white/35 text-xs">
+          <p className="text-white/35 text-sm">
             &copy; {new Date().getFullYear()} Kelowna Flooring Superstore. All rights reserved.
           </p>
-          <p className="text-white/25 text-xs">
-            Proudly serving Kelowna &amp; the Central Okanagan
-          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="text-white/40 hover:text-white/70 text-sm transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-white/20 text-sm">·</span>
+            <p className="text-white/40 text-sm">
+              Proudly serving Kelowna &amp; the Central Okanagan
+            </p>
+          </div>
         </div>
       </div>
     </footer>

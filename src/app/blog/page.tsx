@@ -31,7 +31,7 @@ export default function BlogPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-sm font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
               Expert Tips &amp; Inspiration
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
@@ -43,9 +43,9 @@ export default function BlogPage() {
               experts — helping Kelowna homeowners make confident decisions.
             </p>
             <div className="flex items-center gap-3 mt-6">
-              <span className="text-white/40 text-sm">{posts.length} articles</span>
+              <span className="text-white/40 text-base">{posts.length} articles</span>
               <span className="w-1 h-1 rounded-full bg-white/30" />
-              <span className="text-white/40 text-sm">Updated regularly</span>
+              <span className="text-white/40 text-base">Updated regularly</span>
             </div>
           </AnimateOnScroll>
         </div>
@@ -66,21 +66,21 @@ export default function BlogPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-transparent lg:bg-gradient-to-r" />
-                <span className={`absolute top-4 left-4 ${categoryColors[posts[0].category] ?? "bg-primary"} text-white text-[10px] font-black tracking-wider uppercase px-3 py-1.5 rounded-full`}>
+                <span className={`absolute top-4 left-4 ${categoryColors[posts[0].category] ?? "bg-primary"} text-white text-xs font-black tracking-wider uppercase px-3 py-1.5 rounded-full`}>
                   {posts[0].category}
                 </span>
               </div>
               <div className="p-8">
-                <div className="flex items-center gap-4 text-gray-400 text-xs mb-4">
-                  <span className="flex items-center gap-1.5"><Calendar size={12} /> {posts[0].date}</span>
-                  <span className="flex items-center gap-1.5"><Clock size={12} /> {posts[0].readTime}</span>
+                <div className="flex items-center gap-4 text-gray-400 text-sm mb-4">
+                  <span className="flex items-center gap-1.5"><Calendar size={14} /> {posts[0].date}</span>
+                  <span className="flex items-center gap-1.5"><Clock size={14} /> {posts[0].readTime}</span>
                 </div>
                 <h2 className="text-charcoal font-black text-2xl sm:text-3xl leading-tight mb-4">
                   {posts[0].title}
                 </h2>
                 <p className="text-gray-500 leading-relaxed mb-6">{posts[0].excerpt}</p>
-                <div className="inline-flex items-center gap-1.5 text-primary font-bold text-sm group-hover:gap-3 transition-all">
-                  Read Article <ArrowRight size={15} />
+                <div className="inline-flex items-center gap-1.5 text-primary font-bold text-base group-hover:gap-3 transition-all">
+                  Read Article <ArrowRight size={16} />
                 </div>
               </div>
             </Link>
@@ -106,24 +106,24 @@ export default function BlogPage() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0d1526]/50 to-transparent" />
-                    <span className={`absolute top-3 left-3 ${categoryColors[post.category] ?? "bg-primary"} text-white text-[10px] font-black tracking-wider uppercase px-3 py-1.5 rounded-full`}>
+                    <span className={`absolute top-3 left-3 ${categoryColors[post.category] ?? "bg-primary"} text-white text-xs font-black tracking-wider uppercase px-3 py-1.5 rounded-full`}>
                       {post.category}
                     </span>
                   </div>
 
                   <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-4 text-gray-400 text-xs mb-3">
-                      <span className="flex items-center gap-1"><Calendar size={11} /> {post.date}</span>
-                      <span className="flex items-center gap-1"><Clock size={11} /> {post.readTime}</span>
+                    <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
+                      <span className="flex items-center gap-1"><Calendar size={13} /> {post.date}</span>
+                      <span className="flex items-center gap-1"><Clock size={13} /> {post.readTime}</span>
                     </div>
                     <h2 className="text-charcoal font-black text-lg leading-tight mb-3 flex-1">
                       {post.title}
                     </h2>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-5 line-clamp-3">
+                    <p className="text-gray-500 text-base leading-relaxed mb-5 line-clamp-3">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center gap-1.5 text-primary text-sm font-bold group-hover:gap-3 transition-all mt-auto">
-                      Read Article <ArrowRight size={13} />
+                    <div className="flex items-center gap-1.5 text-primary text-base font-bold group-hover:gap-3 transition-all mt-auto">
+                      Read Article <ArrowRight size={15} />
                     </div>
                   </div>
                 </article>
@@ -144,10 +144,10 @@ export default function BlogPage() {
             Visit our Kelowna showroom or get a free in-home estimate.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Link href="/estimates" className="bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-sm transition-all hover:shadow-lg hover:shadow-accent/30">
+            <Link href="/estimates" className="bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-base transition-all hover:shadow-lg hover:shadow-accent/30">
               Free Estimate
             </Link>
-            <Link href="/flooring" className="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold px-8 py-4 rounded-xl text-sm transition-all">
+            <Link href="/flooring" className="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold px-8 py-4 rounded-xl text-base transition-all">
               Shop Flooring
             </Link>
           </div>

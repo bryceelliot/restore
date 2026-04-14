@@ -1,9 +1,6 @@
-// Replace G-XXXXXXXXXX with your real GA4 Measurement ID
-// Get it free at: analytics.google.com → Admin → Data Streams → Web
-const GA_ID = "G-XXXXXXXXXX";
+const GA_ID = "G-5PBNCF2VQQ";
 
 export default function GoogleAnalytics() {
-  if (!GA_ID || GA_ID === "G-XXXXXXXXXX") return null;
   return (
     <>
       <script

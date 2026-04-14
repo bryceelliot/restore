@@ -2,58 +2,34 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, ChevronDown, MapPin } from "lucide-react";
 
 const flooringTypes = [
-  { name: "Laminate",       href: "/flooring/laminate",       desc: "Affordable & durable" },
-  { name: "Hardwood",       href: "/flooring/hardwood",       desc: "Classic & timeless" },
-  { name: "Carpet",         href: "/flooring/carpet",         desc: "Soft & warm" },
-  { name: "Vinyl Plank",    href: "/flooring/vinyl-plank",    desc: "Waterproof & versatile" },
-  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", desc: "Resilient & eco-friendly" },
-  { name: "Tile",           href: "/flooring/tile",           desc: "Elegant & lasting" },
-  { name: "Commercial",     href: "/flooring/commercial",     desc: "Built for business" },
-  { name: "Area Rugs",      href: "/flooring/area-rugs",      desc: "Style & comfort" },
+  { name: "Laminate",       href: "/flooring/laminate" },
+  { name: "Hardwood",       href: "/flooring/hardwood" },
+  { name: "Carpet",         href: "/flooring/carpet" },
+  { name: "Vinyl Plank",    href: "/flooring/vinyl-plank" },
+  { name: "Tile",           href: "/flooring/tile" },
+  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet" },
+  { name: "Commercial",     href: "/flooring/commercial" },
+  { name: "Area Rugs",      href: "/flooring/area-rugs" },
 ];
 
-// "More" dropdown links
-const moreLinks = [
-  { name: "Room Visualizer", href: "/room-visualizer", desc: "See floors in your space" },
-  { name: "Financing",       href: "/financing",       desc: "Flexible payment options" },
-  { name: "FAQ",             href: "/faq",             desc: "Common questions answered" },
-  { name: "About Us",        href: "/about",           desc: "Our story & franchise" },
-  { name: "Blog",            href: "/blog",            desc: "Tips, guides & trends" },
-];
-
-// Primary nav — kept short so desktop doesn't overflow
-const primaryLinks = [
-  { name: "Home",    href: "/" },
-  { name: "Flooring", href: "/flooring", hasDropdown: "flooring" },
-  { name: "Sales",   href: "/sales" },
-  { name: "Contact", href: "/contact" },
-  { name: "More",    href: "#",          hasDropdown: "more" },
-];
-
-// All links shown flat in mobile menu
-const mobileLinks = [
-  { name: "Home",            href: "/" },
-  { name: "About",           href: "/about" },
-  { name: "Flooring",        href: "/flooring", hasDropdown: true },
-  { name: "Room Visualizer", href: "/room-visualizer" },
-  { name: "Sales",           href: "/sales" },
-  { name: "Financing",       href: "/financing" },
-  { name: "Blog",            href: "/blog" },
-  { name: "FAQ",             href: "/faq" },
-  { name: "Contact",         href: "/contact" },
+const navLinks = [
+  { name: "Home",       href: "/" },
+  { name: "Flooring",   href: "/flooring", dropdown: true },
+  { name: "Financing",  href: "/financing" },
+  { name: "About Us",   href: "/about" },
+  { name: "Blog",       href: "/blog" },
+  { name: "Contact",    href: "/contact" },
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen]                       = useState(false);
-  const [scrolled, setScrolled]                   = useState(false);
-  const [flooringOpen, setFlooringOpen]           = useState(false);
-  const [moreOpen, setMoreOpen]                   = useState(false);
+  const [isOpen, setIsOpen]     = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [dropOpen, setDropOpen] = useState(false);
   const [mobileFlooringOpen, setMobileFlooringOpen] = useState(false);
   const pathname = usePathname();
 
@@ -65,8 +41,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsOpen(false);
-    setFlooringOpen(false);
-    setMoreOpen(false);
+    setDropOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -82,18 +57,18 @@ export default function Navbar() {
           : "bg-[#0d1526]"
       }`}
     >
-      {/* Top bar */}
+      {/* Top info bar */}
       <div className="bg-primary border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex flex-wrap justify-between items-center gap-x-4">
-          <span className="flex items-center gap-1.5 text-white/70 text-xs">
-            <MapPin size={11} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex flex-wrap justify-between items-center gap-x-4">
+          <span className="flex items-center gap-2 text-white/60 text-base">
+            <MapPin size={14} className="shrink-0" />
             Unit 16, 830 McCurdy Place, Kelowna, BC
           </span>
           <a
             href="tel:2508607847"
-            className="flex items-center gap-1.5 text-white font-bold text-sm hover:text-accent transition-colors"
+            className="flex items-center gap-2 text-white font-bold text-lg hover:text-accent transition-colors"
           >
-            <Phone size={13} />
+            <Phone size={15} />
             (250) 860-7847
           </a>
         </div>
@@ -101,158 +76,111 @@ export default function Navbar() {
 
       {/* Main nav */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 py-1">
-            <Image
-              src="/logo.webp"
-              alt="Flooring Superstores — Kelowna"
-              width={160}
-              height={44}
-              className="h-9 w-auto brightness-0 invert"
-              priority
-            />
-            <div className="hidden sm:block border-l border-white/20 pl-3">
-              <div className="text-white/50 font-semibold text-[10px] tracking-[0.18em] uppercase leading-none">
-                Kelowna
-              </div>
-              <div className="text-white font-black text-[11px] tracking-[0.12em] uppercase leading-none mt-0.5">
-                BC, Canada
-              </div>
-            </div>
+        <div className="flex items-center justify-between h-[72px]">
+
+          {/* Wordmark / site name */}
+          <Link
+            href="/"
+            aria-label="Kelowna Flooring Superstore — Home"
+            className="shrink-0 flex flex-col leading-none py-1"
+          >
+            <span className="text-white font-black text-lg tracking-tight">Kelowna Flooring</span>
+            <span className="text-accent font-bold text-sm tracking-widest uppercase">Superstore</span>
           </Link>
 
-          {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-0.5">
-            {primaryLinks.map((link) => {
-              if (link.hasDropdown === "flooring") {
-                return (
-                  <div
-                    key={link.name}
-                    className="relative"
-                    onMouseEnter={() => setFlooringOpen(true)}
-                    onMouseLeave={() => setFlooringOpen(false)}
+          {/* Desktop nav links */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => setDropOpen(true)}
+                  onMouseLeave={() => setDropOpen(false)}
+                >
+                  <button
+                    className={`flex items-center gap-1.5 px-5 py-3 text-base font-semibold rounded-xl transition-all min-h-[48px] ${
+                      pathname.startsWith("/flooring")
+                        ? "text-accent bg-white/8"
+                        : "text-white hover:text-white hover:bg-white/8"
+                    }`}
+                    aria-haspopup="true"
+                    aria-expanded={dropOpen}
                   >
-                    <button
-                      className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
-                        pathname.startsWith("/flooring")
-                          ? "text-accent"
-                          : "text-white/75 hover:text-white hover:bg-white/5"
-                      }`}
-                    >
-                      {link.name}
-                      <ChevronDown size={13} className={`transition-transform duration-200 ${flooringOpen ? "rotate-180" : ""}`} />
-                    </button>
-                    <AnimatePresence>
-                      {flooringOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 6, scale: 0.97 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 6, scale: 0.97 }}
-                          transition={{ duration: 0.15, ease: "easeOut" }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-charcoal border border-white/10 rounded-2xl shadow-2xl shadow-black/40 overflow-hidden"
+                    {link.name}
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform duration-200 ${dropOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {dropOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-[#0d1526] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden py-2"
+                        role="menu"
+                      >
+                        <Link
+                          href="/flooring"
+                          className="flex items-center justify-between mx-2 px-5 py-3 mb-1 rounded-xl bg-accent/15 hover:bg-accent/25 transition-colors"
+                          role="menuitem"
                         >
+                          <span className="text-base font-bold text-accent">All Flooring</span>
+                          <ChevronDown size={14} className="-rotate-90 text-accent/70" />
+                        </Link>
+                        {flooringTypes.map((type) => (
                           <Link
-                            href="/flooring"
-                            className="flex items-center justify-between px-5 py-3.5 border-b border-white/10 hover:bg-primary/20 transition-colors group"
+                            key={type.href}
+                            href={type.href}
+                            role="menuitem"
+                            className={`block mx-2 px-5 py-3 rounded-xl text-base transition-colors ${
+                              pathname === type.href
+                                ? "text-accent font-semibold bg-primary/20"
+                                : "text-white/80 hover:text-white hover:bg-white/8 font-medium"
+                            }`}
                           >
-                            <span className="text-sm font-bold text-accent">All Flooring Types</span>
-                            <ChevronDown size={14} className="text-white/30 -rotate-90 group-hover:text-accent transition-colors" />
+                            {type.name}
                           </Link>
-                          <div className="grid grid-cols-2 gap-px p-1 bg-white/5">
-                            {flooringTypes.map((type) => (
-                              <Link
-                                key={type.href}
-                                href={type.href}
-                                className="flex flex-col px-4 py-3 rounded-xl hover:bg-primary/25 transition-colors group"
-                              >
-                                <span className="text-sm font-semibold text-white/85 group-hover:text-white transition-colors">{type.name}</span>
-                                <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors mt-0.5">{type.desc}</span>
-                              </Link>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              }
-
-              if (link.hasDropdown === "more") {
-                return (
-                  <div
-                    key={link.name}
-                    className="relative"
-                    onMouseEnter={() => setMoreOpen(true)}
-                    onMouseLeave={() => setMoreOpen(false)}
-                  >
-                    <button
-                      className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
-                        moreLinks.some((m) => pathname === m.href)
-                          ? "text-accent"
-                          : "text-white/75 hover:text-white hover:bg-white/5"
-                      }`}
-                    >
-                      {link.name}
-                      <ChevronDown size={13} className={`transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`} />
-                    </button>
-                    <AnimatePresence>
-                      {moreOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 6, scale: 0.97 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 6, scale: 0.97 }}
-                          transition={{ duration: 0.15, ease: "easeOut" }}
-                          className="absolute top-full right-0 mt-2 w-56 bg-charcoal border border-white/10 rounded-2xl shadow-2xl shadow-black/40 overflow-hidden p-1.5"
-                        >
-                          {moreLinks.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              className="flex flex-col px-4 py-3 rounded-xl hover:bg-primary/25 transition-colors group"
-                            >
-                              <span className="text-sm font-semibold text-white/85 group-hover:text-white transition-colors">{item.name}</span>
-                              <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors mt-0.5">{item.desc}</span>
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              }
-
-              return (
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
+                  className={`px-5 py-3 text-base font-semibold rounded-xl transition-all min-h-[48px] flex items-center ${
                     pathname === link.href
-                      ? "text-accent"
-                      : "text-white/75 hover:text-white hover:bg-white/5"
+                      ? "text-accent bg-white/8"
+                      : "text-white hover:text-white hover:bg-white/8"
                   }`}
                 >
                   {link.name}
                 </Link>
-              );
-            })}
+              )
+            )}
           </div>
 
-          {/* Desktop CTA */}
+          {/* CTA button */}
           <Link
             href="/estimates"
-            className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5"
+            className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3 rounded-xl text-base transition-all hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 min-h-[48px]"
           >
             Free Estimate
           </Link>
 
-          {/* Hamburger */}
+          {/* Hamburger — big tap target */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-white p-2 rounded-xl hover:bg-white/8 transition-colors"
-            aria-label="Toggle menu"
+            className="lg:hidden text-white p-3 rounded-xl hover:bg-white/10 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </nav>
@@ -264,62 +192,86 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="lg:hidden overflow-hidden border-t border-white/8"
+            transition={{ duration: 0.22 }}
+            className="lg:hidden overflow-hidden border-t border-white/10"
           >
-            <div className="bg-dark px-4 py-5 space-y-1">
-              {mobileLinks.map((link) =>
-                link.hasDropdown ? (
-                  <div key={link.name}>
-                    <button
-                      onClick={() => setMobileFlooringOpen(!mobileFlooringOpen)}
-                      className="flex items-center justify-between w-full px-4 py-3 text-white/80 font-semibold rounded-xl hover:bg-white/5 transition-colors"
+            <div className="bg-[#0d1526] px-4 py-5 space-y-2">
+
+              {/* Home */}
+              <Link
+                href="/"
+                className={`block px-5 py-4 text-lg font-semibold rounded-xl transition-colors min-h-[56px] flex items-center ${
+                  pathname === "/" ? "text-accent bg-primary/10" : "text-white hover:bg-white/5"
+                }`}
+              >
+                Home
+              </Link>
+
+              {/* Flooring with expandable sub-list */}
+              <div>
+                <button
+                  onClick={() => setMobileFlooringOpen(!mobileFlooringOpen)}
+                  className="flex items-center justify-between w-full px-5 py-4 text-lg font-semibold text-white rounded-xl hover:bg-white/5 transition-colors min-h-[56px]"
+                >
+                  Flooring
+                  <ChevronDown
+                    size={20}
+                    className={`transition-transform ${mobileFlooringOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {mobileFlooringOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden pl-4 mt-1 space-y-1"
                     >
-                      Flooring
-                      <ChevronDown size={16} className={`transition-transform ${mobileFlooringOpen ? "rotate-180" : ""}`} />
-                    </button>
-                    <AnimatePresence>
-                      {mobileFlooringOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          className="overflow-hidden pl-4 mt-1 space-y-0.5"
+                      <Link
+                        href="/flooring"
+                        className="block px-5 py-3.5 text-accent text-base font-bold rounded-xl hover:bg-accent/10 transition-colors min-h-[48px] flex items-center"
+                      >
+                        All Flooring Types
+                      </Link>
+                      {flooringTypes.map((type) => (
+                        <Link
+                          key={type.href}
+                          href={type.href}
+                          className="block px-5 py-3.5 text-white/75 text-base rounded-xl hover:text-white hover:bg-white/5 transition-colors min-h-[48px] flex items-center"
                         >
-                          <Link href="/flooring" className="block px-4 py-2.5 text-accent text-sm font-bold rounded-lg hover:bg-primary/15 transition-colors">
-                            All Flooring Types
-                          </Link>
-                          {flooringTypes.map((type) => (
-                            <Link
-                              key={type.href}
-                              href={type.href}
-                              className="block px-4 py-2.5 text-white/65 text-sm rounded-lg hover:text-white hover:bg-white/5 transition-colors"
-                            >
-                              {type.name}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`block px-4 py-3 font-semibold rounded-xl transition-colors ${
-                      pathname === link.href
-                        ? "text-accent bg-primary/10"
-                        : "text-white/80 hover:text-white hover:bg-white/5"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                )
-              )}
-              <div className="pt-3">
+                          {type.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Other flat links */}
+              {[
+                { name: "Financing",  href: "/financing" },
+                { name: "About Us",   href: "/about" },
+                { name: "Blog",       href: "/blog" },
+                { name: "Contact",    href: "/contact" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`block px-5 py-4 text-lg font-semibold rounded-xl transition-colors min-h-[56px] flex items-center ${
+                    pathname === link.href
+                      ? "text-accent bg-primary/10"
+                      : "text-white hover:bg-white/5"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              {/* CTA */}
+              <div className="pt-2 pb-1">
                 <Link
                   href="/estimates"
-                  className="block w-full text-center bg-accent hover:bg-accent-dark text-white font-bold px-5 py-3.5 rounded-xl text-sm transition-all"
+                  className="block w-full text-center bg-accent hover:bg-accent-dark text-white font-bold px-5 py-4 rounded-xl text-lg transition-all min-h-[56px]"
                 >
                   Get Free Estimate
                 </Link>

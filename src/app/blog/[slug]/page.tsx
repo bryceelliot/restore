@@ -197,7 +197,7 @@ export default async function BlogPostPage({
               <div className="bg-light rounded-2xl p-6 border border-gray-100">
                 <h3 className="font-black text-charcoal text-base mb-3">Kelowna Flooring Superstore</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                  Your local flooring experts in Kelowna, BC. In-stock selection, free estimates, and professional installation.
+                  Your local flooring experts in Kelowna, BC. Huge sample selection, free estimates, and professional installation — orders arrive in 3–5 days.
                 </p>
                 <Link
                   href="/estimates"

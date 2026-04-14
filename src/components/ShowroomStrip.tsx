@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useRef } from "react";
 
 const photos = [
   { src: "/assets/images/showroom-05.webp", label: "Vinyl & Hardwood" },
@@ -18,8 +15,6 @@ const photos = [
 const doubled = [...photos, ...photos];
 
 export default function ShowroomStrip() {
-  const trackRef = useRef<HTMLDivElement>(null);
-
   return (
     <div className="bg-[#0d1526] py-10 overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-5">
@@ -38,13 +33,7 @@ export default function ShowroomStrip() {
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0d1526] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0d1526] to-transparent z-10 pointer-events-none" />
 
-        <div
-          ref={trackRef}
-          className="flex gap-4 animate-scroll"
-          style={{
-            width: "max-content",
-          }}
-        >
+        <div className="flex gap-4 animate-scroll w-max">
           {doubled.map((photo, i) => (
             <div
               key={i}
@@ -66,18 +55,6 @@ export default function ShowroomStrip() {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-scroll {
-          animation: scroll 35s linear infinite;
-        }
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   );
 }

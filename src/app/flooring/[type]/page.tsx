@@ -82,7 +82,7 @@ export default async function FlooringTypePage({ params }: Props) {
 
           <AnimateOnScroll>
             <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              In-Stock — Kelowna Showroom
+              Samples on Display — Ships in 3–5 Days
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
               {flooring.name}<br />

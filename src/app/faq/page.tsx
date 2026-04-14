@@ -16,7 +16,7 @@ const faqCategories = [
     questions: [
       {
         q: "How do I get started with a flooring project?",
-        a: "The easiest way is to book a free in-home estimate. One of our flooring specialists will visit your home, measure your space, show you samples, and provide a written quote — with no obligation. You can also visit our showroom at Unit 16, 830 McCurdy Place in Kelowna to browse our full in-stock selection first.",
+        a: "The easiest way is to book a free in-home estimate. One of our flooring specialists will visit your home, measure your space, show you samples, and provide a written quote — with no obligation. You can also visit our showroom at Unit 16, 830 McCurdy Place in Kelowna to browse our full sample selection first.",
       },
       {
         q: "Do you offer free estimates?",
@@ -37,7 +37,7 @@ const faqCategories = [
     questions: [
       {
         q: "What types of flooring do you carry?",
-        a: "We carry a full range including laminate, hardwood, engineered hardwood, carpet, luxury vinyl plank (LVP), linoleum sheet, ceramic and porcelain tile, commercial flooring, and area rugs. Everything is in-stock at our Kelowna showroom — no weeks-long lead times.",
+        a: "We carry a full range including laminate, hardwood, engineered hardwood, carpet, luxury vinyl plank (LVP), linoleum sheet, ceramic and porcelain tile, commercial flooring, and area rugs. All styles are on display in our Kelowna showroom — choose your sample and your order typically arrives within 3–5 business days.",
       },
       {
         q: "What's the best flooring for a home with pets?",

@@ -43,7 +43,7 @@ export default function FlooringPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
             <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              All In-Stock
+              Ships in 3–5 Days
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
               Every Type of<br />
@@ -51,7 +51,7 @@ export default function FlooringPage() {
             </h1>
             <p className="text-white/60 text-lg sm:text-xl mt-6 max-w-2xl leading-relaxed">
               From cozy carpet to stunning hardwood — our Kelowna showroom
-              has everything you need, in-stock and ready to install.
+              has everything you need on display — order from samples and we'll have it ready to install within days.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               {["Laminate", "Hardwood", "Carpet", "Vinyl Plank", "Tile", "Area Rugs"].map((type) => (
@@ -126,18 +126,17 @@ export default function FlooringPage() {
             <AnimateOnScroll direction="right">
               <span className="section-label mb-4">Why Shop With Us</span>
               <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4 leading-tight">
-                In Stock Means Ready{" "}
-                <span className="gradient-text">Today</span>
+                Browse Samples,{" "}
+                <span className="gradient-text">Installed in Days</span>
               </h2>
               <p className="text-gray-500 text-lg mt-5 leading-relaxed">
-                Unlike many flooring stores that require weeks of lead time, our showroom
-                carries a massive in-stock selection. See it, love it, take it home —
-                or we&apos;ll install it as soon as your schedule allows.
+                Our Kelowna showroom has hundreds of styles on display — choose your favourite
+                sample and your order arrives in just 3–5 days, ready for our crew to install.
               </p>
               <ul className="mt-6 space-y-3">
                 {[
                   "Hundreds of styles on display in our showroom",
-                  "No waiting — take it home or book install today",
+                  "Order from samples — arrives in 3–5 days",
                   "Free in-home estimates across the Okanagan",
                   "Professional installation by our experienced crews",
                   "Part of the Flooring Superstores franchise network",

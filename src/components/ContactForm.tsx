@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
+import { trackFormSubmit } from "@/lib/ga";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/kfssteam@gmail.com";
 
@@ -22,6 +23,7 @@ export default function ContactForm() {
       });
       if (res.ok) {
         setSubmitted(true);
+        trackFormSubmit("contact");
       } else {
         setError("Something went wrong. Please call us at (250) 860-7847.");
       }

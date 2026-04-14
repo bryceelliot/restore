@@ -16,10 +16,10 @@ const sales = [
   {
     tag: "On Sale",
     badge: "BEST DEAL",
-    title: "In-Stock Carpet",
+    title: "Carpet — On Sale Now",
     description:
-      "Select Beaulieu and Mohawk carpet styles on sale now. Soft, stain-resistant options for every bedroom and living space. While quantities last.",
-    bullets: ["Nylon & polyester options", "Stain-resistant fibres", "Multiple colours in stock", "Includes underlayment options"],
+      "Select Beaulieu and Mohawk carpet styles on sale now. Soft, stain-resistant options for every bedroom and living space. Order from our showroom samples.",
+    bullets: ["Nylon & polyester options", "Stain-resistant fibres", "Wide colour selection", "Includes underlayment options"],
     img: "/assets/images/showroom-10.webp",
     href: "/flooring/carpet",
     highlight: true,
@@ -31,18 +31,18 @@ const sales = [
     title: "Select Area Rugs",
     description:
       "Add warmth and style instantly. Discounted area rugs in a variety of sizes and patterns — perfect over LVP, hardwood, or tile.",
-    bullets: ["Multiple sizes available", "Indoor & entryway styles", "Easy to layer over hard floors", "In-store pickup same day"],
+    bullets: ["Multiple sizes available", "Indoor & entryway styles", "Easy to layer over hard floors", "See styles in our showroom"],
     img: "/assets/images/showroom-04.webp",
     href: "/flooring/area-rugs",
     highlight: true,
     focal: "center 45%",
   },
   {
-    tag: "In Stock",
+    tag: "3–5 Day Delivery",
     badge: null,
     title: "Luxury Vinyl Plank",
     description:
-      "Our full range of in-stock waterproof LVP is ready to go — perfect for kitchens, bathrooms, basements, and pet-friendly homes.",
+      "Choose from our full range of waterproof LVP samples — perfect for kitchens, bathrooms, basements, and pet-friendly homes. Arrives in 3–5 days.",
     bullets: ["100% waterproof core", "Wear layers up to 20 mil", "Click-lock floating install", "Wood & stone looks"],
     img: "/assets/images/hero-kurang.webp",
     href: "/flooring/vinyl-plank",
@@ -50,11 +50,11 @@ const sales = [
     focal: "center 45%",
   },
   {
-    tag: "In Stock",
+    tag: "3–5 Day Delivery",
     badge: null,
     title: "Laminate Flooring",
     description:
-      "Hardwood looks without the hardwood price. In-stock laminate in a wide range of widths and finishes — ready for immediate installation.",
+      "Hardwood looks without the hardwood price. Browse laminate samples in a wide range of widths and finishes — order today, arrives in 3–5 days.",
     bullets: ["AC3 & AC4 wear ratings", "Multiple plank widths", "Easy DIY-friendly install", "Budget to mid-range options"],
     img: "/assets/images/showroom-08.webp",
     href: "/flooring/laminate",
@@ -91,7 +91,7 @@ export default function SalesPage() {
               <span className="text-accent">Promotions</span>
             </h1>
             <p className="text-white/60 text-lg sm:text-xl mt-6 max-w-xl leading-relaxed">
-              In-stock specials that won&apos;t last. Inventory moves fast — see our current deals below or call to confirm availability.
+              Current deals on display in our showroom. Choose your sample and your order arrives in 3–5 days — call to confirm pricing and availability.
             </p>
 
             {/* Countdown */}
@@ -118,9 +118,9 @@ export default function SalesPage() {
       <section className="py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">In-Stock Now</span>
+            <span className="section-label mb-4">On Sale Now</span>
             <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
-              Ready to Go <span className="gradient-text">Today</span>
+              See Samples, <span className="gradient-text">Ships in Days</span>
             </h2>
             <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
               No waiting. No back-orders. These styles are on our showroom floor right now.
@@ -191,7 +191,7 @@ export default function SalesPage() {
           <div className="flex items-center gap-3">
             <Tag size={16} className="shrink-0" />
             <p className="font-bold text-sm sm:text-base text-center sm:text-left">
-              In-stock inventory changes daily — prices and availability not guaranteed after today.
+              Pricing and availability subject to change — call to confirm before visiting.
             </p>
           </div>
           <a href="tel:2508607847" className="shrink-0 bg-white text-accent font-black px-6 py-2.5 rounded-xl text-sm hover:bg-white/90 transition-colors whitespace-nowrap">
@@ -210,7 +210,7 @@ export default function SalesPage() {
           </AnimateOnScroll>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: "🏪", title: "In-Stock Today", desc: "See it in the showroom and take it home the same day." },
+              { icon: "🏪", title: "Showroom Samples", desc: "Browse hundreds of styles in person and pick your favourite." },
               { icon: "🔨", title: "Pro Installation", desc: "Our experienced crews handle the whole project start to finish." },
               { icon: "📋", title: "Free Estimate", desc: "In-home measurement and written quote at no charge." },
               { icon: "⭐", title: "4.9 Star Rating", desc: "47 Google reviews from happy Kelowna homeowners." },
