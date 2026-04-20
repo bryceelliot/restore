@@ -3,6 +3,12 @@ export interface FAQ {
   a: string;
 }
 
+export interface Brand {
+  name: string;
+  logo: string;
+  url: string;
+}
+
 export interface FlooringType {
   slug: string;
   name: string;
@@ -17,7 +23,77 @@ export interface FlooringType {
   installInfo: string;
   metaDescription: string;
   faqs: FAQ[];
+  brands?: Brand[];
 }
+
+/* Brand logo paths — used across flooring category pages */
+const LOGO = {
+  mohawk:      "/assets/images/brands/mohawk.svg",
+  shaw:        "/assets/images/brands/shaw.webp",
+  beaulieu:    "/assets/images/brands/beaulieu.jpg",
+  grandeur:    "/assets/images/brands/grandeur.svg",
+  aladdin:     "/assets/images/brands/aladdin.svg",
+  ames:        "/assets/images/brands/ames.png",
+  daltile:     "/assets/images/brands/daltile.png",
+  opus:        "/assets/images/brands/opus.svg",
+  godfrey:     "/assets/images/brands/godfrey.png",
+  dreamweaver: "/assets/images/brands/dreamweaver.svg",
+  fuzion:      "/assets/images/brands/fuzion.jpg",
+  torlys:      "/assets/images/brands/torlys.svg",
+  cosmos:      "/assets/images/brands/cosmos.svg",
+  affiliated:  "/assets/images/brands/affiliated.svg",
+};
+
+/* Per-category deep-link URLs — drop visitors straight into the brand's
+ * section for that flooring type (rather than the brand home page). */
+export const brandDeepLinks = {
+  carpet: [
+    { name: "Mohawk",          logo: LOGO.mohawk,      url: "https://www.mohawkflooring.com/carpet" },
+    { name: "Shaw Floors",     logo: LOGO.shaw,        url: "https://shawfloors.com/flooring/carpet" },
+    { name: "Beaulieu Canada", logo: LOGO.beaulieu,    url: "https://beaulieucanada.com/" },
+    { name: "DreamWeaver",     logo: LOGO.dreamweaver, url: "https://dreamweavercarpet.com/" },
+    { name: "Godfrey Hirst",   logo: LOGO.godfrey,     url: "https://www.godfreyhirst.com/" },
+  ],
+  hardwood: [
+    { name: "Mohawk",          logo: LOGO.mohawk,   url: "https://www.mohawkflooring.com/hardwood" },
+    { name: "Shaw Floors",     logo: LOGO.shaw,     url: "https://shawfloors.com/flooring/hardwood" },
+    { name: "Grandeur",        logo: LOGO.grandeur, url: "https://grandeurflooring.ca/" },
+    { name: "Opus Hardwood",   logo: LOGO.opus,     url: "https://opushardwood.com/" },
+    { name: "Fuzion Flooring", logo: LOGO.fuzion,   url: "https://fuzionflooring.com/products/hardwood" },
+  ],
+  "vinyl-plank": [
+    { name: "Mohawk",          logo: LOGO.mohawk,   url: "https://www.mohawkflooring.com/luxury-vinyl-tile" },
+    { name: "Shaw Floors",     logo: LOGO.shaw,     url: "https://shawfloors.com/flooring/vinyl" },
+    { name: "TORLYS",          logo: LOGO.torlys,   url: "https://www.torlys.com/en-ca/product/residential/luxury-vinyl/" },
+    { name: "Beaulieu Canada", logo: LOGO.beaulieu, url: "https://beaulieucanada.com/" },
+    { name: "Fuzion Flooring", logo: LOGO.fuzion,   url: "https://fuzionflooring.com/products/vinyl" },
+  ],
+  laminate: [
+    { name: "Mohawk",          logo: LOGO.mohawk, url: "https://www.mohawkflooring.com/laminate" },
+    { name: "Shaw Floors",     logo: LOGO.shaw,   url: "https://shawfloors.com/flooring/laminate" },
+    { name: "TORLYS",          logo: LOGO.torlys, url: "https://www.torlys.com/en-ca/product/residential/laminate/" },
+    { name: "Fuzion Flooring", logo: LOGO.fuzion, url: "https://fuzionflooring.com/products/laminate" },
+  ],
+  tile: [
+    { name: "Daltile",   logo: LOGO.daltile, url: "https://www.daltile.com/" },
+    { name: "Ames Tile", logo: LOGO.ames,    url: "https://amestile.com/" },
+  ],
+  "linoleum-sheet": [
+    { name: "Beaulieu Canada", logo: LOGO.beaulieu, url: "https://beaulieucanada.com/" },
+    { name: "TORLYS",          logo: LOGO.torlys,   url: "https://www.torlys.com/en-ca/" },
+  ],
+  "area-rugs": [
+    { name: "Cosmos Carpet",        logo: LOGO.cosmos,      url: "https://cosmoscarpets.com/" },
+    { name: "Affiliated Weavers",   logo: LOGO.affiliated,  url: "https://www.affiliatedweavers.com/" },
+    { name: "Godfrey Hirst",        logo: LOGO.godfrey,     url: "https://www.godfreyhirst.com/" },
+    { name: "DreamWeaver",          logo: LOGO.dreamweaver, url: "https://dreamweavercarpet.com/" },
+  ],
+  commercial: [
+    { name: "Aladdin Commercial", logo: LOGO.aladdin, url: "https://www.aladdincommercial.com/" },
+    { name: "Shaw Contract",      logo: LOGO.shaw,    url: "https://www.shawcontract.com/" },
+    { name: "Mohawk",             logo: LOGO.mohawk,  url: "https://www.mohawkflooring.com/commercial" },
+  ],
+} as const;
 
 export const flooringTypes: FlooringType[] = [
   {

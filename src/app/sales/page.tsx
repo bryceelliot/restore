@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import SaleCountdown from "@/components/SaleCountdown";
-import { ArrowRight, Phone, Tag, Clock, CheckCircle2, Flame } from "lucide-react";
+import { ArrowRight, Phone, Tag, CheckCircle2, Flame } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sales & Promotions — Flooring Deals Kelowna",
   description:
     "Current flooring sales and promotions at Kelowna Flooring Superstore. In-stock deals on carpet, vinyl plank, laminate, area rugs and more. Limited stock. Call (250) 860-7847.",
-  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/sales" },
+  alternates: { canonical: "https://www.kfssflooring.com/sales" },
 };
 
 const sales = [
@@ -67,7 +66,7 @@ export default function SalesPage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
+      <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image
           src="/assets/images/showroom-04.webp"
           alt=""
@@ -82,25 +81,17 @@ export default function SalesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <div className="inline-flex items-center gap-2 bg-accent text-white text-xs font-black tracking-widest uppercase px-5 py-2 rounded-full mb-6 shadow-lg shadow-accent/30">
+            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
               <Flame size={12} />
-              Limited Time — While Stocks Last
-            </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+              While Stocks Last
+            </span>
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Sales &amp;<br />
               <span className="text-accent">Promotions</span>
             </h1>
-            <p className="text-white/60 text-lg sm:text-xl mt-6 max-w-xl leading-relaxed">
+            <p className="text-white/60 text-base sm:text-lg mt-5 max-w-xl leading-relaxed">
               Current deals on display in our showroom. Choose your sample and your order arrives in 3–5 days — call to confirm pricing and availability.
             </p>
-
-            {/* Countdown */}
-            <div className="mt-8">
-              <p className="text-white/40 text-xs font-semibold uppercase tracking-widest mb-3 flex items-center gap-2">
-                <Clock size={12} /> Sale ends this month
-              </p>
-              <SaleCountdown />
-            </div>
 
             <div className="flex flex-wrap items-center gap-4 mt-8">
               <Link href="/estimates" className="btn-primary text-sm">
@@ -119,7 +110,7 @@ export default function SalesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">On Sale Now</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               See Samples, <span className="gradient-text">Ships in Days</span>
             </h2>
             <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
@@ -210,17 +201,30 @@ export default function SalesPage() {
           </AnimateOnScroll>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: "🏪", title: "Showroom Samples", desc: "Browse hundreds of styles in person and pick your favourite." },
-              { icon: "🔨", title: "Pro Installation", desc: "Our experienced crews handle the whole project start to finish." },
-              { icon: "📋", title: "Free Estimate", desc: "In-home measurement and written quote at no charge." },
-              { icon: "⭐", title: "4.9 Star Rating", desc: "47 Google reviews from happy Kelowna homeowners." },
+              { icon: "🏪", title: "Showroom Samples", desc: "Browse hundreds of styles in person and pick your favourite.", href: null },
+              { icon: "🔨", title: "Pro Installation",  desc: "Our experienced crews handle the whole project start to finish.", href: null },
+              { icon: "📋", title: "Free Estimate",     desc: "In-home measurement and written quote at no charge.",          href: "/estimates" },
+              { icon: "⭐", title: "4.9 Star Rating",    desc: "Verified Google reviews from happy Kelowna homeowners.",        href: "https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews#mpd=~6968423193531731233/customers/reviews" },
             ].map((item, i) => (
               <AnimateOnScroll key={item.title} delay={i * 0.08}>
-                <div className="bg-light rounded-2xl p-6 border border-gray-100 text-center">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <h3 className="font-bold text-charcoal mb-1">{item.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                </div>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="block bg-light rounded-2xl p-6 border border-gray-100 text-center hover:border-accent/40 hover:shadow-md transition-all"
+                  >
+                    <div className="text-3xl mb-3">{item.icon}</div>
+                    <h3 className="font-bold text-charcoal mb-1">{item.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                  </a>
+                ) : (
+                  <div className="bg-light rounded-2xl p-6 border border-gray-100 text-center">
+                    <div className="text-3xl mb-3">{item.icon}</div>
+                    <h3 className="font-bold text-charcoal mb-1">{item.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                )}
               </AnimateOnScroll>
             ))}
           </div>

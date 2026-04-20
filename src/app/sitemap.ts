@@ -4,7 +4,7 @@ import type { MetadataRoute } from "next";
 import { flooringTypes } from "@/lib/flooring-data";
 import { posts } from "@/lib/blog-data";
 
-const baseUrl = "https://www.kelownaflooringsuperstore.com";
+const baseUrl = "https://www.kfssflooring.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const flooringPages = flooringTypes.map((f) => ({
@@ -28,7 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/contact`,              lastModified: new Date(), changeFrequency: "monthly",  priority: 0.8 },
     { url: `${baseUrl}/sales`,                lastModified: new Date(), changeFrequency: "weekly",   priority: 0.8 },
     { url: `${baseUrl}/financing`,            lastModified: new Date(), changeFrequency: "monthly",  priority: 0.7 },
-    { url: `${baseUrl}/room-visualizer`,      lastModified: new Date(), changeFrequency: "monthly",  priority: 0.7 },
+    { url: `${baseUrl}/calculator`,           lastModified: new Date(), changeFrequency: "monthly",  priority: 0.8 },
+    { url: `${baseUrl}/find-my-floor`,        lastModified: new Date(), changeFrequency: "monthly",  priority: 0.7 },
+    { url: `${baseUrl}/wishlist`,             lastModified: new Date(), changeFrequency: "monthly",  priority: 0.5 },
     { url: `${baseUrl}/about`,                lastModified: new Date(), changeFrequency: "monthly",  priority: 0.7 },
     { url: `${baseUrl}/blog`,                 lastModified: new Date(), changeFrequency: "weekly",   priority: 0.7 },
     { url: `${baseUrl}/faq`,                  lastModified: new Date(), changeFrequency: "monthly",  priority: 0.6 },

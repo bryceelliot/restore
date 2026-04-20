@@ -10,7 +10,7 @@
   --color-dark: #0d1526;
   --color-charcoal: #111827;
   --color-light: #f4f6fb;
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-jakarta);
 }
 
 html {
@@ -30,12 +30,26 @@ html {
 body {
   background: #fff;
   color: #111827;
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.7;
 }
+
+@media (min-width: 768px) {
+  body { font-size: 18px; }
+}
+
+/* Airbnb-inspired heading typography: warm weight, negative tracking */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+h1 { letter-spacing: -0.03em; }
+h2 { letter-spacing: -0.025em; }
+h3 { letter-spacing: -0.02em; }
 
 /* Animations */
 @keyframes float {
@@ -59,6 +73,9 @@ body {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+.scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
 
 .animate-float { animation: float 5s ease-in-out infinite; }
 .animate-pulse-ring { animation: pulse-ring 2.5s ease-in-out infinite; }
@@ -90,12 +107,36 @@ body {
   border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* Airbnb three-layer warm card shadow */
+.shadow-card-warm {
+  box-shadow: rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.10) 0px 4px 8px;
+}
+.shadow-hover-warm {
+  box-shadow: rgba(0,0,0,0.08) 0px 4px 12px;
+}
+
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 64px rgba(27,42,82,0.18);
+  transform: translateY(-4px);
+  box-shadow: rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.06) 0px 4px 12px, rgba(0,0,0,0.14) 0px 12px 32px;
+}
+
+/* When btn-primary/outline are inside a flex-col stack on mobile, stretch to full width */
+.flex-col > .btn-primary,
+.flex-col > .btn-outline,
+.flex-col > a.btn-primary,
+.flex-col > a.btn-outline {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .flex-col > .btn-primary,
+  .flex-col > .btn-outline,
+  .flex-col > a.btn-primary,
+  .flex-col > a.btn-outline {
+    width: auto;
+  }
 }
 
 .btn-primary {
@@ -149,8 +190,27 @@ body {
   border: 1px solid rgba(27,42,82,0.18);
 }
 
-/* ── Senior-friendly minimum font sizes ──────────────────────────────────── */
-/* Tailwind's text-xs (12px) and text-sm (14px) are too small for elderly     */
-/* readers. Raise the floor so nothing renders below ~15px.                   */
-.text-xs  { font-size: 0.9375rem; line-height: 1.65; } /* 15px  */
-.text-sm  { font-size: 1rem;      line-height: 1.65; } /* 16px  */
+/* ── Minimum font sizes ──────────────────────────────────────────────────── */
+.text-xs  { font-size: 0.8125rem; line-height: 1.6; }  /* 13px mobile */
+.text-sm  { font-size: 0.875rem;  line-height: 1.6; }  /* 14px mobile */
+
+@media (min-width: 768px) {
+  .text-xs { font-size: 0.9375rem; line-height: 1.65; } /* 15px desktop */
+  .text-sm { font-size: 1rem;      line-height: 1.65; } /* 16px desktop */
+}
+
+/* Hide scrollbar on the brand marquee while keeping scroll behavior */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* ── Roomvo widget — push up on mobile so it sits above MobileBottomBar ─── */
+@media (max-width: 1023px) {
+  iframe[id^="roomvo"],
+  iframe[src*="roomvo"],
+  [id^="roomvo-"],
+  [class*="roomvo-widget"],
+  #rv-home-icon,
+  #rv-assistant-container {
+    bottom: 70px !important;
+  }
+}

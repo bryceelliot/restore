@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   title: "All Flooring Types — In-Stock Kelowna",
   description:
     "Browse all flooring types at Kelowna Flooring Superstore — laminate, hardwood, carpet, vinyl plank, tile, linoleum, commercial, and area rugs. All in-stock with expert installation.",
-  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/flooring" },
+  alternates: { canonical: "https://www.kfssflooring.com/flooring" },
 };
 
 const flooringPhotos: Record<string, { img: string; focal: string; tag: string }> = {
   "laminate":        { img: "/assets/images/showroom-08.webp", focal: "center 50%", tag: "Popular" },
-  "hardwood":        { img: "/assets/images/hero-walnut.webp", focal: "center 55%", tag: "Premium" },
+  "hardwood":        { img: "/assets/images/showroom-01.webp", focal: "center 50%", tag: "Premium" },
   "carpet":          { img: "/assets/images/showroom-10.webp", focal: "center 40%", tag: "Cozy" },
-  "vinyl-plank":     { img: "/assets/images/hero-kurang.webp", focal: "center 45%", tag: "Waterproof" },
+  "vinyl-plank":     { img: "/assets/images/showroom-06.webp", focal: "center 50%", tag: "Waterproof" },
   "linoleum-sheet":  { img: "/assets/images/showroom-05.webp", focal: "center 50%", tag: "Durable" },
   "tile":            { img: "/assets/images/showroom-07.webp", focal: "center 50%", tag: "Elegant" },
-  "commercial":      { img: "/assets/images/showroom-01.webp", focal: "center 50%", tag: "Business" },
+  "commercial":      { img: "/assets/images/showroom-02.webp", focal: "center 50%", tag: "Business" },
   "area-rugs":       { img: "/assets/images/showroom-04.webp", focal: "center 45%", tag: "Style" },
 };
 
@@ -27,7 +27,7 @@ export default function FlooringPage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
+      <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image
           src="/assets/images/showroom-01.webp"
           alt=""
@@ -45,15 +45,15 @@ export default function FlooringPage() {
             <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
               Ships in 3–5 Days
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Every Type of<br />
               <span className="text-accent">Flooring</span>
             </h1>
-            <p className="text-white/60 text-lg sm:text-xl mt-6 max-w-2xl leading-relaxed">
+            <p className="text-white/60 text-base sm:text-lg mt-5 max-w-2xl leading-relaxed">
               From cozy carpet to stunning hardwood — our Kelowna showroom
               has everything you need on display — order from samples and we'll have it ready to install within days.
             </p>
-            <div className="flex flex-wrap gap-3 mt-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               {["Laminate", "Hardwood", "Carpet", "Vinyl Plank", "Tile", "Area Rugs"].map((type) => (
                 <span key={type} className="bg-white/10 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1.5 rounded-full">
                   {type}
@@ -70,7 +70,7 @@ export default function FlooringPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Our Collection</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               Browse by Category
             </h2>
             <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ export default function FlooringPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
               <span className="section-label mb-4">Why Shop With Us</span>
-              <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4 leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4 leading-tight">
                 Browse Samples,{" "}
                 <span className="gradient-text">Installed in Days</span>
               </h2>
@@ -147,7 +147,7 @@ export default function FlooringPage() {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
                 <Link href="/estimates" className="btn-primary text-sm">
                   Get Free Estimate <ArrowRight size={16} />
                 </Link>

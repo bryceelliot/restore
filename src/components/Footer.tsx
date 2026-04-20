@@ -123,7 +123,7 @@ export default function Footer() {
                 className="h-12 w-auto"
               />
             </div>
-            <div className="text-white/40 text-sm font-semibold tracking-[0.18em] uppercase mt-2">
+            <div className="text-white/55 text-sm font-semibold tracking-[0.18em] uppercase mt-2">
               Kelowna, BC
             </div>
           </Link>
@@ -132,10 +132,10 @@ export default function Footer() {
             flooring with expert installation across the Okanagan. Order from samples — arrives in 3–5 days.
           </p>
           <div className="flex items-center gap-3">
-            <a href="https://www.facebook.com/KelownaFlooringSuperStore" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
+            <a href="https://facebook.kfssflooring.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
               <FacebookIcon />
             </a>
-            <a href="https://www.instagram.com/kelownaflooringss" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
+            <a href="https://instagram.kfssflooring.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
               <InstagramIcon />
             </a>
             <a href="https://x.com/KelownaFloorSS" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
@@ -172,12 +172,13 @@ export default function Footer() {
             {[
               { name: "Free Estimate",    href: "/estimates" },
               { name: "Financing",        href: "/financing" },
-              { name: "Room Visualizer",  href: "/room-visualizer" },
               { name: "Current Sales",    href: "/sales" },
               { name: "FAQ",              href: "/faq" },
               { name: "About Us",         href: "/about" },
               { name: "Blog",             href: "/blog" },
               { name: "Contact",          href: "/contact" },
+              { name: "Cost Calculator",  href: "/calculator" },
+              { name: "Find My Floor",    href: "/find-my-floor" },
             ].map((l) => (
               <li key={l.href}>
                 <Link
@@ -200,7 +201,7 @@ export default function Footer() {
             <li className="flex gap-3">
               <MapPin size={16} className="text-accent mt-0.5 shrink-0" />
               <a
-                href="https://maps.google.com/?q=Unit+16+830+McCurdy+Place+Kelowna+BC"
+                href="https://gmb.kfssflooring.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/55 hover:text-white text-base leading-relaxed transition-colors"
@@ -236,15 +237,15 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-white/35 text-sm">
+          <p className="text-white/55 text-sm">
             &copy; {new Date().getFullYear()} Kelowna Flooring Superstore. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-white/40 hover:text-white/70 text-sm transition-colors">
+            <Link href="/privacy" className="text-white/55 hover:text-white/80 text-sm transition-colors">
               Privacy Policy
             </Link>
             <span className="text-white/20 text-sm">·</span>
-            <p className="text-white/40 text-sm">
+            <p className="text-white/55 text-sm">
               Proudly serving Kelowna &amp; the Central Okanagan
             </p>
           </div>

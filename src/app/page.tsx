@@ -3,13 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import HeroSection from "@/components/HeroSection";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import BrandPartners from "@/components/BrandPartners";
-import VideoGallery from "@/components/VideoGallery";
+import InstagramFeed from "@/components/InstagramFeed";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import {
-  Phone, ArrowRight, CheckCircle2, Star,
+  Phone, ArrowRight, Star,
   ExternalLink, MapPin,
 } from "lucide-react";
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Kelowna Flooring Superstore | In-Stock Flooring For Life",
   description:
     "Kelowna's premier flooring store. In-stock laminate, hardwood, carpet, vinyl plank, tile & more. Expert installation across the Okanagan. Free estimates. Call (250) 860-7847.",
-  alternates: { canonical: "https://www.kelownaflooringsuperstore.com" },
+  alternates: { canonical: "https://www.kfssflooring.com" },
 };
 
 /* ─── FAQ schema (SEO) ─────────────────────────────────────── */
@@ -70,14 +70,14 @@ const faqSchema = {
 
 /* ─── Data ──────────────────────────────────────────────────── */
 const flooring = [
-  { name: "Laminate", href: "/flooring/laminate", img: "/assets/images/showroom-08.webp", tag: "Popular", sale: true },
-  { name: "Hardwood", href: "/flooring/hardwood", img: "/assets/images/hero-walnut.webp", tag: "Premium", sale: false },
-  { name: "Carpet", href: "/flooring/carpet", img: "/assets/images/showroom-10.webp", tag: "Cozy", sale: true },
-  { name: "Vinyl Plank", href: "/flooring/vinyl-plank", img: "/assets/images/hero-kurang.webp", tag: "Waterproof", sale: false },
-  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", img: "/assets/images/showroom-05.webp", tag: "Durable", sale: false },
-  { name: "Tile", href: "/flooring/tile", img: "/assets/images/showroom-07.webp", tag: "Elegant", sale: false },
-  { name: "Commercial", href: "/flooring/commercial", img: "/assets/images/showroom-01.webp", tag: "Business", sale: false },
-  { name: "Area Rugs", href: "/flooring/area-rugs", img: "/assets/images/showroom-04.webp", tag: "Style", sale: true },
+  { name: "Laminate",       href: "/flooring/laminate",       img: "/assets/images/showroom-08.webp", tag: "Popular",    sale: true  },
+  { name: "Hardwood",       href: "/flooring/hardwood",       img: "/assets/images/showroom-01.webp", tag: "Premium",    sale: false },
+  { name: "Carpet",         href: "/flooring/carpet",         img: "/assets/images/showroom-10.webp", tag: "Cozy",       sale: true  },
+  { name: "Vinyl Plank",    href: "/flooring/vinyl-plank",    img: "/assets/images/showroom-06.webp", tag: "Waterproof", sale: false },
+  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", img: "/assets/images/showroom-05.webp", tag: "Durable",    sale: false },
+  { name: "Tile",           href: "/flooring/tile",           img: "/assets/images/showroom-07.webp", tag: "Elegant",    sale: false },
+  { name: "Commercial",     href: "/flooring/commercial",     img: "/assets/images/showroom-02.webp", tag: "Business",   sale: false },
+  { name: "Area Rugs",      href: "/flooring/area-rugs",      img: "/assets/images/showroom-04.webp", tag: "Style",      sale: true  },
 ];
 
 
@@ -164,11 +164,19 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6 divide-y-0 lg:divide-x lg:divide-white/15">
             {/* Stat 1 */}
             <AnimateOnScroll delay={0} className="text-center lg:px-8">
-              <div className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
-                <AnimatedCounter to={5} suffix="★" />
-              </div>
-              <div className="text-white font-bold text-base mt-2">Google Rating</div>
-              <div className="text-white/45 text-sm mt-1">Verified reviews</div>
+              <a
+                href="https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews#mpd=~6968423193531731233/customers/reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:opacity-90 transition-opacity"
+                aria-label="Read our Google reviews"
+              >
+                <div className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
+                  4.9<span className="text-amber-400">★</span>
+                </div>
+                <div className="text-white font-bold text-base mt-2">Google Rating</div>
+                <div className="text-white/45 text-sm mt-1">Verified reviews</div>
+              </a>
             </AnimateOnScroll>
             {/* Stat 2 — Canadian Owned (no counter) */}
             <AnimateOnScroll delay={0.08} className="text-center lg:px-8">
@@ -236,7 +244,7 @@ export default function HomePage() {
             {/* Right: CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <Link
-                href="/estimates"
+                href="/financing"
                 className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-0.5 whitespace-nowrap"
               >
                 Ask About Financing
@@ -254,83 +262,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Room Visualizer ───────────────────────────────────── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">Try Before You Buy</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
-              See Any Floor In Your Room
-            </h2>
-            <p className="text-gray-500 text-xl mt-4 max-w-2xl mx-auto">
-              Upload a photo of your room and preview any floor from our collection — right on your own walls and floors.
-            </p>
-          </AnimateOnScroll>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: feature highlights */}
-            <AnimateOnScroll direction="right">
-              <div className="space-y-6">
-                {[
-                  { icon: "📸", title: "Upload Your Room Photo", desc: "Take a photo of any room in your home — living room, kitchen, bedroom, hallway." },
-                  { icon: "🎨", title: "Browse Hundreds of Floors", desc: "Swap through our full collection of hardwood, vinyl, carpet, tile, and laminate styles." },
-                  { icon: "✅", title: "Choose With Confidence", desc: "See exactly how it looks before committing. No guessing, no surprises." },
-                ].map((f) => (
-                  <div key={f.title} className="flex gap-5 items-start">
-                    <div className="text-4xl shrink-0">{f.icon}</div>
-                    <div>
-                      <h3 className="text-xl font-bold text-charcoal">{f.title}</h3>
-                      <p className="text-gray-500 text-lg mt-1">{f.desc}</p>
-                    </div>
-                  </div>
-                ))}
-                <div className="pt-4">
-                  <Link
-                    href="/room-visualizer"
-                    className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
-                  >
-                    Open Room Visualizer
-                    <ArrowRight size={20} />
-                  </Link>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Right: preview image */}
-            <AnimateOnScroll delay={0.15}>
-              <Link href="/room-visualizer" className="group relative block rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/assets/images/showroom-01.webp"
-                  alt="Room visualizer — see flooring in your home"
-                  width={700}
-                  height={500}
-                  className="object-cover w-full h-80 sm:h-[26rem] group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1526]/80 via-transparent to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/20 backdrop-blur-sm border border-white/40 rounded-full w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-9 h-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.069A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="absolute bottom-6 left-6">
-                  <span className="inline-block bg-accent text-white text-sm font-bold px-4 py-2 rounded-full">
-                    Try It Free — No Account Needed
-                  </span>
-                </div>
-              </Link>
-            </AnimateOnScroll>
-          </div>
-        </div>
-      </section>
-
       {/* ── Flooring categories grid ──────────────────────────── */}
       <section className="py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Our Collection</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               Every Type of Flooring,{" "}
               <span className="gradient-text">In Stock</span>
             </h2>
@@ -342,7 +279,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {flooring.map((f, i) => (
               <AnimateOnScroll key={f.name} delay={i * 0.06}>
-                <Link href={f.href} className="group relative overflow-hidden rounded-2xl h-44 sm:h-52 block card-hover shadow-md">
+                <Link href={f.href} className="group relative overflow-hidden rounded-2xl h-44 sm:h-52 block card-hover shadow-card-warm">
                   <Image
                     src={f.img}
                     alt={`${f.name} flooring at Kelowna Flooring Superstore`}
@@ -384,81 +321,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Before / After ────────────────────────────────────── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">The Transformation</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
-              See the Difference<br />
-              <span className="gradient-text">A New Floor Makes</span>
-            </h2>
-            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-              Drag the slider to compare before and after. This is the kind of transformation our team delivers every week.
-            </p>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll>
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="h-80 sm:h-96">
-                <BeforeAfterSlider
-                  before="/assets/images/flooring/stairs-before.jpg"
-                  after="/assets/images/flooring/stairs-after.jpg"
-                  beforeAlt="Stairs before — old carpet removed, bare wood"
-                  afterAlt="Stairs after — new grey carpet installed"
-                />
-              </div>
-              <div className="space-y-5">
-                <h3 className="text-2xl sm:text-3xl font-black text-charcoal leading-tight">
-                  From Dated to Stunning —<br />
-                  <span className="text-primary">In Just Days</span>
-                </h3>
-                <p className="text-gray-500 leading-relaxed">
-                  Most of our installations are completed in 1–3 days. Our experienced crews handle everything — from removing the old floor to laying the last plank perfectly.
-                </p>
-                <ul className="space-y-2.5">
-                  {[
-                    "Old floor removal & disposal included",
-                    "Subfloor prep & leveling",
-                    "Clean installation with minimal disruption",
-                    "Complete in 1–3 days for most homes",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-gray-600 text-sm">
-                      <CheckCircle2 size={16} className="text-primary shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-3 pt-2">
-                  <Link href="/estimates" className="btn-primary text-sm">
-                    Book Free Estimate <ArrowRight size={15} />
-                  </Link>
-                  <Link href="/flooring" className="inline-flex items-center gap-2 border border-gray-200 hover:border-primary text-charcoal hover:text-primary font-semibold px-5 py-3 rounded-xl text-sm transition-all">
-                    Browse Flooring
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </AnimateOnScroll>
-        </div>
-      </section>
 
 
-      {/* ── Video gallery ─────────────────────────────────────── */}
+      {/* ── Showroom gallery ──────────────────────────────────── */}
       <section className="py-24 bg-[#0d1526]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-sm font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
-              Watch &amp; Explore
+              Inside Our Showroom
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black text-white mt-2">
-              Take a Virtual Tour
+            <h2 className="text-2xl sm:text-4xl font-black text-white mt-2">
+              Take a Look Around
             </h2>
             <p className="text-white/50 text-lg mt-3 max-w-xl mx-auto">
-              Browse our showroom from home. Click any clip to watch full-screen.
+              A glimpse of our Kelowna showroom. Drop in to see hundreds of samples in person.
             </p>
           </AnimateOnScroll>
-          <VideoGallery />
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              { src: "/assets/images/showroom-01.webp", label: "Main Showroom" },
+              { src: "/assets/images/showroom-03.webp", label: "Hardwood Display" },
+              { src: "/assets/images/showroom-04.webp", label: "Carpet Selection" },
+              { src: "/assets/images/showroom-07.webp", label: "Tile Collection" },
+              { src: "/assets/images/showroom-08.webp", label: "Laminate Samples" },
+              { src: "/assets/images/showroom-10.webp", label: "Carpet Studio" },
+              { src: "/assets/images/showroom-11.webp", label: "Vinyl Plank" },
+              { src: "/assets/images/showroom-13.webp", label: "Area Rugs" },
+            ].map((shot, i) => (
+              <AnimateOnScroll key={shot.src} delay={(i % 4) * 0.06}>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
+                  <Image
+                    src={shot.src}
+                    alt={shot.label}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <p className="absolute bottom-3 left-4 right-4 text-white font-bold text-sm">
+                    {shot.label}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          <AnimateOnScroll className="text-center mt-10">
+            <p className="text-white/50 text-base">
+              Full walk-through video coming soon.
+            </p>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -467,18 +380,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Real Reviews</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               What Our Customers Say
             </h2>
             <p className="text-gray-500 text-base mt-3">
-              Verified Google reviews from real Kelowna customers.
+              <span className="font-bold text-charcoal">4.9★</span> · Verified Google reviews from real Kelowna customers.
             </p>
           </AnimateOnScroll>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
               <AnimateOnScroll key={t.name} delay={i * 0.08}>
-                <div className="bg-white rounded-2xl p-7 card-hover h-full flex flex-col shadow-sm border border-gray-100">
+                <div className="bg-white rounded-2xl p-7 card-hover h-full flex flex-col shadow-card-warm border border-gray-100/50">
                   {/* Header: avatar + name + date */}
                   <div className="flex items-center gap-4 mb-5">
                     <div
@@ -497,7 +410,7 @@ export default function HomePage() {
                           <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
                           <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                         </svg>
-                        <span className="text-gray-400 text-sm">Google · {t.date}</span>
+                        <span className="text-gray-600 text-sm">Google · {t.date}</span>
                       </div>
                     </div>
                   </div>
@@ -518,7 +431,7 @@ export default function HomePage() {
 
           <AnimateOnScroll className="text-center mt-10">
             <a
-              href="https://share.google/PuQ3CuaKFDmxceU8t"
+              href="https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews#mpd=~6968423193531731233/customers/reviews"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-primary text-charcoal hover:text-primary font-semibold px-6 py-3.5 rounded-xl text-sm transition-all card-hover shadow-sm"
@@ -568,6 +481,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Instagram feed ────────────────────────────────────── */}
+      <InstagramFeed />
+
+      {/* ── Before & After slider ─────────────────────────────── */}
+      <section className="py-20 sm:py-24 bg-light">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll className="text-center mb-10">
+            <span className="section-label mb-4">Before &amp; After</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal mt-4 leading-tight">
+              Drag to See the<br className="sm:hidden" /> <span className="gradient-text">Transformation</span>
+            </h2>
+            <p className="text-gray-500 text-base sm:text-lg mt-4 max-w-xl mx-auto">
+              Carpeted staircase renovation in a Kelowna home. Slide the handle to compare.
+            </p>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll>
+            <div className="relative h-[400px] sm:h-[520px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+              <BeforeAfterSlider
+                before="/assets/images/flooring/stairs-before.jpg"
+                after="/assets/images/flooring/stairs-after.jpg"
+                beforeAlt="Worn carpet on staircase — before"
+                afterAlt="Brand new carpet on staircase — after"
+              />
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
       {/* ── Final CTA ─────────────────────────────────────────── */}
       <section className="py-24 relative overflow-hidden bg-[#0d1526]">
         {/* Background image with heavy overlay */}
@@ -590,7 +532,7 @@ export default function HomePage() {
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
 
         <AnimateOnScroll className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
             Ready to Transform{" "}
             <span className="text-accent">Your Space?</span>
           </h2>

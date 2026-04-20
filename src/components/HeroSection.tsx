@@ -7,10 +7,12 @@ import Image from "next/image";
 import { Phone, ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const slides = [
-  { src: "/assets/images/hero-walnut.webp",  type: "Engineered Hardwood", tagline: "Timeless. Warm. Unforgettable.",      focal: "center 60%" },
-  { src: "/assets/images/hero-kurang.webp",  type: "Luxury Vinyl Plank",  tagline: "Bright. Modern. Effortless.",          focal: "center 50%" },
-  { src: "/assets/images/hero-oak.webp",     type: "Engineered Hardwood", tagline: "Bold. Sophisticated. Lasting.",        focal: "center 40%" },
-  { src: "/assets/images/showroom-01.webp",  type: "Kelowna Showroom",    tagline: "Choose a Sample. Arrives in 3–5 Days.", focal: "center 50%" },
+  { src: "/assets/images/hero-walnut.webp",  type: "Engineered Hardwood", tagline: "Timeless warmth for every home.",      focal: "center 60%", href: "/flooring/hardwood"    },
+  { src: "/assets/images/hero-kurang.webp",  type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",      focal: "center 50%", href: "/flooring/vinyl-plank" },
+  { src: "/assets/images/showroom-10.webp",  type: "Premium Carpet",      tagline: "Soft. Cozy. Inviting.",                focal: "center 50%", href: "/flooring/carpet"      },
+  { src: "/assets/images/showroom-08.webp",  type: "Laminate Flooring",   tagline: "Durable. Beautiful. Affordable.",      focal: "center 50%", href: "/flooring/laminate"    },
+  { src: "/assets/images/showroom-07.webp",  type: "Porcelain Tile",      tagline: "Timeless. Waterproof. Built for the Okanagan.", focal: "center 50%", href: "/flooring/tile"        },
+  { src: "/assets/images/showroom-01.webp",  type: "Kelowna Showroom",    tagline: "Choose a sample. Arrives in 3–5 days.",focal: "center 50%", href: "/flooring"             },
 ];
 
 const INTERVAL = 5500;
@@ -35,14 +37,14 @@ export default function HeroSection() {
     >
       <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-30" />
 
-      {/* Backgrounds */}
+      {/* Background slideshow */}
       <AnimatePresence mode="sync">
         <motion.div
           key={current}
-          initial={{ opacity: 0, scale: 1.04 }}
+          initial={{ opacity: 0, scale: 1.03 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 1.1, ease: "easeInOut" }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
           className="absolute inset-0"
         >
           <Image
@@ -54,151 +56,155 @@ export default function HeroSection() {
             style={{ objectPosition: slides[current].focal }}
             sizes="100vw"
           />
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(180deg, rgba(13,21,38,0.78) 0%, rgba(13,21,38,0.55) 50%, rgba(13,21,38,0.70) 100%)" }}
-          />
-          <div className="absolute bottom-0 left-0 right-0 h-52 bg-gradient-to-t from-[#0d1526] to-transparent" />
+          <div className="absolute inset-0 bg-[#0d1526]/60" />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0d1526] to-transparent" />
         </motion.div>
       </AnimatePresence>
 
-      {/* Centered content */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-32 flex flex-col items-center text-center">
+      {/* Content — centered, logo is the hero */}
+      <div className="relative z-10 w-full flex flex-col items-center text-center px-5 pt-36 lg:pt-28 pb-28">
 
-        {/* Large centered logo */}
+        {/* ── LOGO — main focal point ── */}
         <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mb-8"
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-6"
         >
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-8 py-5 shadow-2xl shadow-black/40 inline-block">
+          <div className="bg-white rounded-2xl px-8 py-5 shadow-2xl shadow-black/50 inline-block">
             <Image
               src="/logo.webp"
               alt="Kelowna Flooring Superstore"
-              width={340}
-              height={94}
-              className="h-20 sm:h-24 w-auto"
+              width={260}
+              height={72}
+              className="h-14 sm:h-16 w-auto"
               priority
             />
           </div>
         </motion.div>
 
-        {/* Slide type badge */}
+        {/* Slide type badge — clicks through to that flooring category */}
         <AnimatePresence mode="wait">
           <motion.div
             key={`tag-${current}`}
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2.5 bg-accent/20 border border-accent/40 text-white text-sm font-bold tracking-[0.14em] uppercase px-5 py-2.5 rounded-full mb-5"
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="mb-3"
           >
-            <span className="w-2 h-2 rounded-full bg-accent" />
-            {slides[current].type}
+            <Link
+              href={slides[current].href}
+              className="inline-flex items-center gap-1.5 bg-black/30 hover:bg-black/50 border border-white/15 hover:border-accent/50 text-white/70 hover:text-white text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+              {slides[current].type}
+              <ArrowRight size={12} className="opacity-60" />
+            </Link>
           </motion.div>
         </AnimatePresence>
 
-        {/* Tagline */}
+        {/* Tagline — small, secondary */}
         <AnimatePresence mode="wait">
-          <motion.h1
-            key={`headline-${current}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white mb-10 max-w-3xl"
+          <motion.p
+            key={`line-${current}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="text-white/55 text-sm sm:text-base mb-8 max-w-xs sm:max-w-sm leading-relaxed"
           >
-            {slides[current].tagline.split(" ").slice(0, -1).join(" ")}{" "}
-            <span className="text-accent">{slides[current].tagline.split(" ").slice(-1)}</span>
-          </motion.h1>
+            {slides[current].tagline}
+          </motion.p>
         </AnimatePresence>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-4 justify-center mb-10">
+        <div className="flex flex-col sm:flex-row gap-2.5 mb-7 w-full max-w-xs sm:max-w-none sm:w-auto">
           <Link
-            href="/flooring"
-            className="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5"
+            href={slides[current].href}
+            className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/30"
           >
-            Browse Flooring <ArrowRight size={18} />
+            Shop {slides[current].type} <ArrowRight size={14} />
           </Link>
           <Link
             href="/estimates"
-            className="flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-0.5"
+            className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/18 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all"
           >
             Free Estimate
           </Link>
           <a
             href="tel:2508607847"
-            className="flex items-center gap-2 bg-white/10 hover:bg-white/18 border border-white/20 text-white font-semibold px-7 py-4 rounded-xl text-lg transition-all"
+            className="flex items-center justify-center gap-1.5 text-white/55 hover:text-white text-sm transition-colors py-3 sm:px-2"
           >
-            <Phone size={18} />
-            (250) 860-7847
+            <Phone size={13} className="text-accent" /> (250) 860-7847
           </a>
         </div>
 
-        {/* Social proof */}
-        <div className="flex items-center gap-4 justify-center">
-          <div className="flex -space-x-2">
-            {["R", "J", "T", "M"].map((initial, i) => (
-              <div key={i} className="w-9 h-9 rounded-full bg-primary border-2 border-[#0d1526] flex items-center justify-center text-white text-sm font-black">
-                {initial}
-              </div>
+        {/* Social proof — compact, clickable to Google reviews (newest) */}
+        <a
+          href="https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews#mpd=~6968423193531731233/customers/reviews"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Read our newest Google reviews"
+          className="flex items-center gap-2.5 hover:opacity-90 transition-opacity"
+        >
+          <div className="flex -space-x-1.5">
+            {["R","J","T","M"].map((l, i) => (
+              <div key={i} className="w-6 h-6 rounded-full bg-primary border-2 border-[#0d1526] flex items-center justify-center text-white text-[10px] font-black">{l}</div>
             ))}
           </div>
-          <div>
-            <div className="flex gap-0.5 mb-0.5 justify-center">
-              {[...Array(5)].map((_, i) => <Star key={i} size={14} className="fill-amber-400 text-amber-400" />)}
-            </div>
-            <p className="text-white/60 text-base">
-              <span className="text-white font-bold">5.0</span> · Trusted by hundreds of Kelowna families
-            </p>
+          <div className="flex items-center gap-1">
+            {[...Array(5)].map((_, i) => <Star key={i} size={10} className="fill-amber-400 text-amber-400" />)}
           </div>
-        </div>
+          <span className="text-white/45 text-xs group-hover:text-white/70"><span className="text-white/70 font-semibold">4.9</span> · Hundreds of Kelowna families</span>
+        </a>
+
       </div>
 
       {/* Arrows */}
       <button
         onClick={() => { setCurrent((c) => (c - 1 + slides.length) % slides.length); setPaused(true); }}
         aria-label="Previous slide"
-        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/15 hover:bg-white/30 border border-white/30 flex items-center justify-center text-white transition-all hover:scale-110 backdrop-blur-sm"
+        className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/22 border border-white/15 flex items-center justify-center text-white transition-all backdrop-blur-sm"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={18} />
       </button>
       <button
         onClick={() => { setCurrent((c) => (c + 1) % slides.length); setPaused(true); }}
         aria-label="Next slide"
-        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/15 hover:bg-white/30 border border-white/30 flex items-center justify-center text-white transition-all hover:scale-110 backdrop-blur-sm"
+        className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/22 border border-white/15 flex items-center justify-center text-white transition-all backdrop-blur-sm"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={18} />
       </button>
 
-      {/* Dot progress */}
-      <div className="absolute bottom-7 left-0 right-0 z-20 flex items-center justify-center gap-6">
-        <div className="flex items-center gap-2.5">
+      {/* Progress dots */}
+      <div className="absolute bottom-6 left-0 right-0 z-20 flex items-center justify-center gap-4">
+        <div className="flex items-center gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => { setCurrent(i); setPaused(true); }}
               aria-label={`Go to slide ${i + 1}`}
-              className="relative rounded-full overflow-hidden transition-all duration-300 focus:outline-none"
-              style={{ width: i === current ? 36 : 10, height: 10, background: i === current ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.3)" }}
+              className="relative flex items-center justify-center focus:outline-none"
+              style={{ minWidth: 18, minHeight: 18 }}
             >
-              {i === current && (
-                <motion.div
-                  className="absolute inset-y-0 left-0 bg-accent rounded-full"
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: INTERVAL / 1000, ease: "linear" }}
-                  key={`progress-${current}`}
-                />
-              )}
+              <span
+                className="relative rounded-full overflow-hidden block transition-all duration-300"
+                style={{ width: i === current ? 24 : 7, height: 7, background: i === current ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.22)" }}
+              >
+                {i === current && (
+                  <motion.div
+                    className="absolute inset-y-0 left-0 bg-accent rounded-full"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: INTERVAL / 1000, ease: "linear" }}
+                    key={`progress-${current}`}
+                  />
+                )}
+              </span>
             </button>
           ))}
         </div>
-        <span className="text-white/40 text-sm font-bold tracking-widest tabular-nums">
-          {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
-        </span>
       </div>
     </section>
   );

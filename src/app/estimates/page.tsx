@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Free Flooring Estimate Kelowna",
   description:
     "Get a free flooring estimate from Kelowna Flooring Superstore. We measure your space and provide a detailed quote — no obligation. Call (250) 860-7847.",
-  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/estimates" },
+  alternates: { canonical: "https://www.kfssflooring.com/estimates" },
 };
 
 const steps = [
@@ -23,7 +23,7 @@ export default function EstimatesPage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
+      <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image
           src="/assets/images/hero-kurang.webp"
           alt=""
@@ -41,15 +41,15 @@ export default function EstimatesPage() {
             <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
               No Obligation · 100% Free
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Free In-Home<br />
               <span className="text-accent">Estimate</span>
             </h1>
-            <p className="text-white/60 text-lg sm:text-xl mt-6 max-w-xl leading-relaxed">
+            <p className="text-white/60 text-base sm:text-lg mt-5 max-w-xl leading-relaxed">
               We come to you, measure every room, and provide a detailed transparent
               quote — completely free and with no pressure or obligation.
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               <a href="#estimate-form" className="btn-primary text-sm">
                 Request Estimate
               </a>
@@ -94,7 +94,7 @@ export default function EstimatesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-start">
           <AnimateOnScroll direction="right">
             <span className="section-label mb-4">Get Started</span>
-            <h2 className="text-4xl font-black text-charcoal leading-tight mt-4 mb-5">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal leading-tight mt-4 mb-5">
               Request Your Free Estimate
             </h2>
             <p className="text-gray-500 leading-relaxed mb-8">
@@ -123,7 +123,7 @@ export default function EstimatesPage() {
               <a href="tel:2508607847" className="text-primary font-black text-2xl hover:text-accent transition-colors block">
                 (250) 860-7847
               </a>
-              <p className="text-gray-400 text-xs mt-1">Mon–Fri 9–5 · Wed 9–2 · Sat 10–2</p>
+              <p className="text-gray-600 text-xs mt-1">Mon–Fri 9–5 · Wed 9–2 · Sat 10–2</p>
             </div>
 
             {/* Photo teaser */}
@@ -151,7 +151,7 @@ export default function EstimatesPage() {
                 </div>
                 <div>
                   <h3 className="font-black text-charcoal text-lg leading-none">Book Your Estimate</h3>
-                  <p className="text-gray-400 text-xs mt-0.5">Usually scheduled within 2–3 business days</p>
+                  <p className="text-gray-600 text-xs mt-0.5">Usually scheduled within 2–3 business days</p>
                 </div>
               </div>
               <EstimateForm />

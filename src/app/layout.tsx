@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Script from "next/script";
-import ScrollCTA from "@/components/ScrollCTA";
 import MobileBottomBar from "@/components/MobileBottomBar";
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -52,14 +52,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Kelowna Flooring Superstore" }],
   creator: "Kelowna Flooring Superstore",
   publisher: "Flooring Superstores",
-  metadataBase: new URL("https://www.kelownaflooringsuperstore.com"),
+  metadataBase: new URL("https://www.kfssflooring.com"),
   alternates: {
-    canonical: "https://www.kelownaflooringsuperstore.com",
+    canonical: "https://www.kfssflooring.com",
   },
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://www.kelownaflooringsuperstore.com",
+    url: "https://www.kfssflooring.com",
     siteName: "Kelowna Flooring Superstore",
     title: "Kelowna Flooring Superstore | Flooring For Life",
     description:
@@ -98,10 +98,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={plusJakartaSans.variable}>
       <head>
         <LocalBusinessSchema />
-        <GoogleAnalytics />
+        <link rel="preload" as="image" href="/assets/images/hero-walnut.webp" fetchPriority="high" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <Script
           id="roomvoAssistant"
           src="https://www.roomvo.com/static/scripts/b2b/common/assistant.js"
@@ -114,10 +115,10 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <ScrollCTA />
         <MobileBottomBar />
         {/* Bottom padding so mobile content isn't hidden by sticky bar */}
         <div className="h-[57px] lg:hidden" />
+        <GoogleAnalytics />
       </body>
     </html>
   );

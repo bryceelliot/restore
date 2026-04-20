@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, ChevronDown, MapPin } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, MapPin, Calculator, Sparkles } from "lucide-react";
 
 const flooringTypes = [
   { name: "Laminate",       href: "/flooring/laminate" },
@@ -20,17 +20,25 @@ const flooringTypes = [
 const navLinks = [
   { name: "Home",       href: "/" },
   { name: "Flooring",   href: "/flooring", dropdown: true },
+  { name: "Tools",      href: "/calculator", toolsDropdown: true },
   { name: "Financing",  href: "/financing" },
   { name: "About Us",   href: "/about" },
   { name: "Blog",       href: "/blog" },
   { name: "Contact",    href: "/contact" },
 ];
 
+const toolLinks = [
+  { name: "Cost Calculator",   href: "/calculator",       icon: Calculator, desc: "Estimate your project cost" },
+  { name: "Find My Floor",     href: "/find-my-floor",    icon: Sparkles,   desc: "5-question style quiz" },
+];
+
 export default function Navbar() {
-  const [isOpen, setIsOpen]     = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [dropOpen, setDropOpen] = useState(false);
+  const [isOpen, setIsOpen]           = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
+  const [dropOpen, setDropOpen]       = useState(false);
+  const [toolsOpen, setToolsOpen]     = useState(false);
   const [mobileFlooringOpen, setMobileFlooringOpen] = useState(false);
+  const [mobileToolsOpen, setMobileToolsOpen]       = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -59,8 +67,8 @@ export default function Navbar() {
     >
       {/* Top info bar */}
       <div className="bg-primary border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex flex-wrap justify-between items-center gap-x-4">
-          <span className="flex items-center gap-2 text-white/60 text-base">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
+          <span className="hidden sm:flex items-center gap-2 text-white/60 text-base">
             <MapPin size={14} className="shrink-0" />
             Unit 16, 830 McCurdy Place, Kelowna, BC
           </span>
@@ -78,20 +86,57 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-[72px]">
 
-          {/* Wordmark / site name */}
-          <Link
-            href="/"
-            aria-label="Kelowna Flooring Superstore — Home"
-            className="shrink-0 flex flex-col leading-none py-1"
-          >
-            <span className="text-white font-black text-lg tracking-tight">Kelowna Flooring</span>
-            <span className="text-accent font-bold text-sm tracking-widest uppercase">Superstore</span>
-          </Link>
-
           {/* Desktop nav links */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) =>
-              link.dropdown ? (
+              link.toolsDropdown ? (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => setToolsOpen(true)}
+                  onMouseLeave={() => setToolsOpen(false)}
+                >
+                  <button
+                    className={`flex items-center gap-1.5 px-5 py-3 text-base font-semibold rounded-xl transition-all min-h-[48px] ${
+                      ["/calculator", "/find-my-floor"].some(p => pathname.startsWith(p))
+                        ? "text-accent bg-white/8"
+                        : "text-white hover:text-white hover:bg-white/8"
+                    }`}
+                    aria-haspopup="true"
+                    aria-expanded={toolsOpen}
+                  >
+                    {link.name}
+                    <ChevronDown size={16} className={`transition-transform duration-200 ${toolsOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  <AnimatePresence>
+                    {toolsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#0d1526] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden py-2"
+                        role="menu"
+                      >
+                        {toolLinks.map((t) => (
+                          <Link
+                            key={t.href}
+                            href={t.href}
+                            role="menuitem"
+                            className="flex items-center gap-3 mx-2 px-4 py-3 rounded-xl hover:bg-white/8 transition-colors group"
+                          >
+                            <t.icon size={16} className="text-accent shrink-0" />
+                            <div>
+                              <p className="text-white font-semibold text-sm">{t.name}</p>
+                              <p className="text-white/40 text-xs">{t.desc}</p>
+                            </div>
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : link.dropdown ? (
                 <div
                   key={link.name}
                   className="relative"
@@ -169,7 +214,7 @@ export default function Navbar() {
           {/* CTA button */}
           <Link
             href="/estimates"
-            className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3 rounded-xl text-base transition-all hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 min-h-[48px]"
+            className="hidden lg:inline-flex items-center gap-2 bg-accent-dark hover:bg-[#a8281e] text-white font-bold px-6 py-3 rounded-xl text-base transition-all hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 min-h-[48px]"
           >
             Free Estimate
           </Link>
@@ -247,6 +292,38 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
+              {/* Tools expandable */}
+              <div>
+                <button
+                  onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
+                  className="flex items-center justify-between w-full px-5 py-4 text-lg font-semibold text-white rounded-xl hover:bg-white/5 transition-colors min-h-[56px]"
+                >
+                  Tools
+                  <ChevronDown size={20} className={`transition-transform ${mobileToolsOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileToolsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden pl-4 mt-1 space-y-1"
+                    >
+                      {toolLinks.map(t => (
+                        <Link
+                          key={t.href}
+                          href={t.href}
+                          className="flex items-center gap-3 px-5 py-3.5 text-white/75 text-base rounded-xl hover:text-white hover:bg-white/5 transition-colors min-h-[48px]"
+                        >
+                          <t.icon size={15} className="text-accent shrink-0" />
+                          {t.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               {/* Other flat links */}
               {[
                 { name: "Financing",  href: "/financing" },
@@ -271,7 +348,7 @@ export default function Navbar() {
               <div className="pt-2 pb-1">
                 <Link
                   href="/estimates"
-                  className="block w-full text-center bg-accent hover:bg-accent-dark text-white font-bold px-5 py-4 rounded-xl text-lg transition-all min-h-[56px]"
+                  className="block w-full text-center bg-accent-dark hover:bg-[#a8281e] text-white font-bold px-5 py-4 rounded-xl text-lg transition-all min-h-[56px]"
                 >
                   Get Free Estimate
                 </Link>

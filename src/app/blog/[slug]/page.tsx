@@ -21,7 +21,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.metaDescription,
     alternates: {
-      canonical: `https://www.kelownaflooringsuperstore.com/blog/${slug}`,
+      canonical: `https://www.kfssflooring.com/blog/${slug}`,
     },
     openGraph: {
       title: post.title,
@@ -116,19 +116,19 @@ export default async function BlogPostPage({
     "@type": "Article",
     headline: post.title,
     description: post.metaDescription,
-    image: `https://www.kelownaflooringsuperstore.com${post.img}`,
+    image: `https://www.kfssflooring.com${post.img}`,
     datePublished: post.date,
     author: {
       "@type": "Organization",
       name: "Kelowna Flooring Superstore",
-      url: "https://www.kelownaflooringsuperstore.com",
+      url: "https://www.kfssflooring.com",
     },
     publisher: {
       "@type": "Organization",
       name: "Kelowna Flooring Superstore",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.kelownaflooringsuperstore.com/logo.webp",
+        url: "https://www.kfssflooring.com/logo.webp",
       },
     },
   };
@@ -141,7 +141,7 @@ export default async function BlogPostPage({
       />
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
+      <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image
           src={post.img}
           alt={post.title}
@@ -259,7 +259,7 @@ export default async function BlogPostPage({
                   </span>
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
-                  <div className="flex items-center gap-3 text-gray-400 text-xs mb-2">
+                  <div className="flex items-center gap-3 text-gray-600 text-xs mb-2">
                     <span className="flex items-center gap-1"><Calendar size={11} /> {p.date}</span>
                     <span className="flex items-center gap-1"><Clock size={11} /> {p.readTime}</span>
                   </div>

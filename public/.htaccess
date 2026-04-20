@@ -3,7 +3,7 @@ Options -MultiViews -Indexes
 # Override any parent .htaccess rewrite rules (e.g. WordPress)
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /website_ae22452a/
+  RewriteBase /
 
   # Serve real files and directories directly (CSS, JS, images, videos)
   RewriteCond %{REQUEST_FILENAME} -f [OR]

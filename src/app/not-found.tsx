@@ -21,7 +21,7 @@ export default function NotFound() {
         }}
       />
 
-      <div className="relative z-10 max-w-2xl mx-auto text-center pt-32 pb-20">
+      <div className="relative z-10 max-w-2xl mx-auto text-center pt-44 lg:pt-32 pb-20">
         <div className="text-8xl sm:text-[10rem] font-black text-primary/20 leading-none select-none mb-4">
           404
         </div>

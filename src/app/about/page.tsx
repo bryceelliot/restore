@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Learn about Kelowna Flooring Superstore — Kelowna's locally owned flooring store, part of the Flooring Superstores franchise, with 30+ years serving the Central Okanagan.",
-  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/about" },
+  alternates: { canonical: "https://www.kfssflooring.com/about" },
 };
 
 const values = [
@@ -22,7 +22,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
+      <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image
           src="/assets/images/hero-walnut.webp"
           alt=""
@@ -40,16 +40,16 @@ export default function AboutPage() {
             <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
               Our Story
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Kelowna&apos;s Flooring<br />
               <span className="text-accent">Experts</span>
             </h1>
-            <p className="text-white/60 text-lg sm:text-xl mt-6 max-w-2xl leading-relaxed">
+            <p className="text-white/60 text-base sm:text-lg mt-5 max-w-2xl leading-relaxed">
               For over 30 years, we&apos;ve been helping Kelowna homeowners and
               businesses find the perfect flooring — with honest advice, expert
               installation, and a showroom unlike any other in the Okanagan.
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               <Link href="/estimates" className="btn-primary text-sm">
                 Get Free Estimate <ArrowRight size={16} />
               </Link>
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
               <span className="section-label mb-4">Who We Are</span>
-              <h2 className="text-4xl font-black text-charcoal mt-4 leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4 leading-tight">
                 More Than Just a Flooring Store
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed mt-6">
@@ -145,7 +145,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Our Values</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               What We Stand For
             </h2>
           </AnimateOnScroll>
@@ -171,7 +171,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Meet the Team</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               The People Behind<br />
               <span className="gradient-text">Your New Floor</span>
             </h2>
@@ -218,7 +218,7 @@ export default function AboutPage() {
           </div>
 
           <AnimateOnScroll className="text-center mt-10">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 text-sm">
               Come meet the team in person at our showroom on McCurdy Place — we&apos;d love to help you find your perfect floor.
             </p>
           </AnimateOnScroll>
@@ -230,7 +230,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <span className="section-label mb-4">Our Work</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               Floors We&apos;re Proud Of
             </h2>
             <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
@@ -269,7 +269,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimateOnScroll direction="right">
-              <h2 className="text-4xl font-black text-white mb-8">Find Us in Kelowna</h2>
+              <h2 className="text-2xl sm:text-4xl font-black text-white mb-8">Find Us in Kelowna</h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shrink-0">
@@ -278,7 +278,7 @@ export default function AboutPage() {
                   <div>
                     <div className="text-white font-semibold">Showroom Address</div>
                     <div className="text-white/55 text-sm mt-1">Unit 16, 830 McCurdy Place<br />Kelowna, BC V1X 8C8</div>
-                    <a href="https://maps.google.com/?q=Unit+16+830+McCurdy+Place+Kelowna+BC" target="_blank" rel="noopener noreferrer" className="text-accent text-sm font-semibold mt-1 block hover:underline">
+                    <a href="https://gmb.kfssflooring.com" target="_blank" rel="noopener noreferrer" className="text-accent text-sm font-semibold mt-1 block hover:underline">
                       Get Directions →
                     </a>
                   </div>

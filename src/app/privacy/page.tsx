@@ -6,24 +6,24 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for Kelowna Flooring Superstore — how we collect, use, and protect your information.",
   alternates: {
-    canonical: "https://www.kelownaflooringsuperstore.com/privacy",
+    canonical: "https://www.kfssflooring.com/privacy",
   },
   robots: { index: false, follow: false },
 };
 
 export default function PrivacyPage() {
   return (
-    <section className="pt-40 pb-24 bg-white">
+    <section className="pt-52 lg:pt-40 pb-24 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-primary text-sm font-semibold mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-gray-600 hover:text-primary text-sm font-semibold mb-8 transition-colors"
         >
           <ArrowLeft size={14} /> Back to Home
         </Link>
 
         <h1 className="text-4xl font-black text-charcoal mb-2">Privacy Policy</h1>
-        <p className="text-gray-400 text-sm mb-10">Last updated: April 10, 2026</p>
+        <p className="text-gray-600 text-sm mb-10">Last updated: April 10, 2026</p>
 
         <div className="prose prose-gray max-w-none space-y-8 text-gray-600 leading-relaxed">
 
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-charcoal mb-3">1. Who We Are</h2>
             <p>
               Kelowna Flooring Superstore (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) operates
-              the website at <strong>kelownaflooringsuperstore.com</strong>. We are located at Unit 16,
+              the website at <strong>kfssflooring.com</strong>. We are located at Unit 16,
               830 McCurdy Place, Kelowna, BC V1X 8C8. You can reach us at{" "}
               <a href="mailto:kfssteam@gmail.com" className="text-primary hover:underline">
                 kfssteam@gmail.com

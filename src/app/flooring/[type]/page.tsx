@@ -3,24 +3,26 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import { flooringTypes, getFlooringBySlug } from "@/lib/flooring-data";
-import { CheckCircle2, ArrowRight, Phone, ChevronRight, Eye } from "lucide-react";
+import { flooringTypes, getFlooringBySlug, brandDeepLinks } from "@/lib/flooring-data";
+import { CheckCircle2, ArrowRight, Phone, ChevronRight } from "lucide-react";
 import bp from "@/lib/bp";
+import WishlistButton from "@/components/WishlistButton";
 
 interface Props {
   params: Promise<{ type: string }>;
 }
 
-/* Map slug → local hero photo */
+/* Map slug → local hero photo — using real showroom shots where available.
+ * Tile and linoleum-sheet use stand-ins until we get real photos. */
 const typePhotos: Record<string, { src: string; focal: string }> = {
-  "hardwood":       { src: "/assets/images/hero-walnut.webp",   focal: "center 55%" },
-  "vinyl-plank":    { src: "/assets/images/hero-kurang.webp",   focal: "center 45%" },
-  "laminate":       { src: "/assets/images/showroom-08.webp",   focal: "center 50%" },
-  "carpet":         { src: "/assets/images/showroom-10.webp",   focal: "center 40%" },
-  "tile":           { src: "/assets/images/showroom-07.webp",   focal: "center 50%" },
-  "area-rugs":      { src: "/assets/images/showroom-04.webp",   focal: "center 45%" },
-  "commercial":     { src: "/assets/images/showroom-01.webp",   focal: "center 50%" },
-  "linoleum-sheet": { src: "/assets/images/showroom-05.webp",   focal: "center 50%" },
+  "hardwood":       { src: "/assets/images/showroom-01.webp",   focal: "center 50%" }, // real hardwood display rack
+  "vinyl-plank":    { src: "/assets/images/showroom-06.webp",   focal: "center 50%" }, // real Cascade Luxury Vinyl display
+  "laminate":       { src: "/assets/images/showroom-08.webp",   focal: "center 50%" }, // real laminate samples
+  "carpet":         { src: "/assets/images/showroom-10.webp",   focal: "center 40%" }, // real carpet display
+  "tile":           { src: "/assets/images/showroom-07.webp",   focal: "center 50%" }, // placeholder — need real tile photo
+  "area-rugs":      { src: "/assets/images/showroom-04.webp",   focal: "center 45%" }, // real area rugs
+  "commercial":     { src: "/assets/images/showroom-02.webp",   focal: "center 50%" }, // Fuzion display — professional look
+  "linoleum-sheet": { src: "/assets/images/showroom-05.webp",   focal: "center 50%" }, // placeholder — need real linoleum photo
 };
 
 export async function generateStaticParams() {
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${flooring.name} Flooring Kelowna`,
     description: flooring.metaDescription,
-    alternates: { canonical: `https://www.kelownaflooringsuperstore.com/flooring/${flooring.slug}` },
+    alternates: { canonical: `https://www.kfssflooring.com/flooring/${flooring.slug}` },
     openGraph: {
       title: `${flooring.name} Flooring | Kelowna Flooring Superstore`,
       description: flooring.metaDescription,
@@ -55,7 +57,7 @@ export default async function FlooringTypePage({ params }: Props) {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
+      <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         {photo && (
           <Image
             src={photo.src}
@@ -84,23 +86,21 @@ export default async function FlooringTypePage({ params }: Props) {
             <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
               Samples on Display — Ships in 3–5 Days
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               {flooring.name}<br />
               <span className="text-accent">Flooring</span>
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
               {flooring.tagline}
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               <Link href="/estimates" className="btn-primary text-sm">
                 Get Free Estimate <ArrowRight size={16} />
               </Link>
               <a href="tel:2508607847" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-5 py-3 rounded-xl text-sm transition-all">
                 <Phone size={15} /> (250) 860-7847
               </a>
-              <Link href="/room-visualizer" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-5 py-3 rounded-xl text-sm transition-all">
-                <Eye size={15} /> Visualize in Your Room
-              </Link>
+              <WishlistButton slug={flooring.slug} name={flooring.name} />
             </div>
           </AnimateOnScroll>
         </div>
@@ -138,7 +138,7 @@ export default async function FlooringTypePage({ params }: Props) {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <AnimateOnScroll direction="right">
               <span className="section-label mb-4">Overview</span>
-              <h2 className="text-4xl font-black text-charcoal mt-4 leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4 leading-tight">
                 Why Choose {flooring.name}?
               </h2>
               <p className="text-gray-600 leading-relaxed mt-5 text-lg">
@@ -147,12 +147,9 @@ export default async function FlooringTypePage({ params }: Props) {
               <p className="text-gray-500 leading-relaxed mt-4">
                 {flooring.installInfo}
               </p>
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
                 <Link href="/estimates" className="btn-primary text-sm">
                   Get a Free Quote <ArrowRight size={16} />
-                </Link>
-                <Link href="/room-visualizer" className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-primary text-charcoal hover:text-primary font-semibold px-5 py-3 rounded-xl text-sm transition-all">
-                  <Eye size={15} /> Try in Your Room
                 </Link>
               </div>
             </AnimateOnScroll>
@@ -194,12 +191,53 @@ export default async function FlooringTypePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── Brands we carry — moved up for prominence ─────────── */}
+      {brandDeepLinks[flooring.slug as keyof typeof brandDeepLinks]?.length > 0 && (
+        <section className="py-16 sm:py-20 bg-white border-y border-gray-100">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <AnimateOnScroll className="text-center mb-8">
+              <span className="section-label mb-4">Trusted Brands</span>
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+                {flooring.name} Brands We Carry
+              </h2>
+              <p className="text-gray-500 text-base sm:text-lg mt-3 max-w-xl mx-auto">
+                Click any brand to browse their {flooring.name.toLowerCase()} collection on the manufacturer&apos;s website.
+              </p>
+            </AnimateOnScroll>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {brandDeepLinks[flooring.slug as keyof typeof brandDeepLinks]?.map((b) => (
+                <a
+                  key={b.name}
+                  href={b.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${b.name}'s ${flooring.name.toLowerCase()} collection`}
+                  className="group flex flex-col items-center justify-center bg-light rounded-2xl border border-gray-100 shadow-sm p-6 h-32 hover:border-accent/40 hover:shadow-md transition-all"
+                >
+                  <Image
+                    src={b.logo}
+                    alt={b.name}
+                    width={140}
+                    height={44}
+                    className="object-contain max-h-12 w-auto grayscale group-hover:grayscale-0 transition-all"
+                    unoptimized
+                  />
+                  <span className="mt-3 text-xs font-bold text-gray-500 group-hover:text-accent transition-colors">
+                    {b.name} →
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Types / Styles ────────────────────────────────────── */}
       <section className="py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">{flooring.name} Options</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               Styles &amp; Types We Carry
             </h2>
           </AnimateOnScroll>
@@ -225,7 +263,7 @@ export default async function FlooringTypePage({ params }: Props) {
               <span className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
                 Maintenance Tips
               </span>
-              <h2 className="text-4xl font-black text-white leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-white leading-tight">
                 Caring for Your<br />
                 <span className="text-accent">{flooring.name}</span>
               </h2>
@@ -261,22 +299,16 @@ export default async function FlooringTypePage({ params }: Props) {
                 </a>
                 <Link
                   href="/estimates"
-                  className="block w-full text-center bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all mb-3"
+                  className="block w-full text-center bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all"
                 >
                   Get Free Estimate
-                </Link>
-                <Link
-                  href="/room-visualizer"
-                  className="block w-full text-center bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all"
-                >
-                  <Eye size={14} className="inline mr-1.5" />
-                  Visualize in Your Room
                 </Link>
               </div>
             </AnimateOnScroll>
           </div>
         </div>
       </section>
+
 
       {/* ── FAQ ───────────────────────────────────────────────── */}
       {flooring.faqs && flooring.faqs.length > 0 && (
@@ -299,7 +331,7 @@ export default async function FlooringTypePage({ params }: Props) {
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
               <AnimateOnScroll className="text-center mb-12">
                 <span className="section-label mb-4">FAQ</span>
-                <h2 className="text-4xl font-black text-charcoal mt-4">
+                <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
                   Common Questions About {flooring.name}
                 </h2>
               </AnimateOnScroll>

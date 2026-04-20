@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   title: "Flooring Blog — Tips, Guides & Trends",
   description:
     "Flooring tips, inspiration, and guides from the experts at Kelowna Flooring Superstore. Covering hardwood, carpet, vinyl plank, tile and more.",
-  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/blog" },
+  alternates: { canonical: "https://www.kfssflooring.com/blog" },
 };
 
 export default function BlogPage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
+      <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image
           src="/assets/images/showroom-01.webp"
           alt=""
@@ -34,11 +34,11 @@ export default function BlogPage() {
             <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-sm font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
               Expert Tips &amp; Inspiration
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Flooring<br />
               <span className="text-accent">Knowledge Hub</span>
             </h1>
-            <p className="text-white/60 text-lg sm:text-xl mt-6 max-w-xl leading-relaxed">
+            <p className="text-white/60 text-base sm:text-lg mt-5 max-w-xl leading-relaxed">
               Buying guides, care tips, trends, and inspiration from our flooring
               experts — helping Kelowna homeowners make confident decisions.
             </p>
@@ -71,7 +71,7 @@ export default function BlogPage() {
                 </span>
               </div>
               <div className="p-8">
-                <div className="flex items-center gap-4 text-gray-400 text-sm mb-4">
+                <div className="flex items-center gap-4 text-gray-600 text-sm mb-4">
                   <span className="flex items-center gap-1.5"><Calendar size={14} /> {posts[0].date}</span>
                   <span className="flex items-center gap-1.5"><Clock size={14} /> {posts[0].readTime}</span>
                 </div>
@@ -112,7 +112,7 @@ export default function BlogPage() {
                   </div>
 
                   <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
+                    <div className="flex items-center gap-4 text-gray-600 text-sm mb-3">
                       <span className="flex items-center gap-1"><Calendar size={13} /> {post.date}</span>
                       <span className="flex items-center gap-1"><Clock size={13} /> {post.readTime}</span>
                     </div>

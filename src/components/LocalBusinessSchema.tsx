@@ -3,9 +3,9 @@ export default function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "FlooringStore",
     name: "Kelowna Flooring Superstore",
-    image: "https://www.kelownaflooringsuperstore.com/logo.webp",
-    logo: "https://www.kelownaflooringsuperstore.com/logo.webp",
-    url: "https://www.kelownaflooringsuperstore.com",
+    image: "https://www.kfssflooring.com/logo.webp",
+    logo: "https://www.kfssflooring.com/logo.webp",
+    url: "https://www.kfssflooring.com",
     telephone: "+12508607847",
     email: "kfssteam@gmail.com",
     description:
@@ -23,7 +23,7 @@ export default function LocalBusinessSchema() {
       latitude: 49.8885,
       longitude: -119.4395,
     },
-    hasMap: "https://maps.google.com/?q=Unit+16+830+McCurdy+Place+Kelowna+BC",
+    hasMap: "https://gmb.kfssflooring.com",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -62,7 +62,7 @@ export default function LocalBusinessSchema() {
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5",
+      ratingValue: "4.9",
       reviewCount: "47",
       bestRating: "5",
       worstRating: "1",
@@ -91,8 +91,8 @@ export default function LocalBusinessSchema() {
       },
     ],
     sameAs: [
-      "https://www.facebook.com/KelownaFlooringSuperStore",
-      "https://www.instagram.com/kelownaflooringss",
+      "https://facebook.kfssflooring.com",
+      "https://instagram.kfssflooring.com",
       "https://x.com/KelownaFloorSS",
     ],
   };

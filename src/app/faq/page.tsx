@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Frequently Asked Questions — Flooring Kelowna",
   description:
     "Answers to the most common questions about flooring installation, costs, timelines, and products at Kelowna Flooring Superstore. Get expert answers before you buy.",
-  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/faq" },
+  alternates: { canonical: "https://www.kfssflooring.com/faq" },
 };
 
 const faqCategories = [
@@ -118,11 +118,27 @@ const faqCategories = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqCategories.flatMap((cat) =>
+    cat.questions.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    }))
+  ),
+};
+
 export default function FaqPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-44 pb-20 overflow-hidden bg-[#0d1526]">
+      <section className="relative pt-52 lg:pt-44 pb-20 overflow-hidden bg-[#0d1526]">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "repeating-linear-gradient(-45deg,#fff 0,#fff 1px,transparent 1px,transparent 14px)" }} />
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
@@ -130,7 +146,7 @@ export default function FaqPage() {
             <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
               Expert Answers
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Frequently Asked<br />
               <span className="text-accent">Questions</span>
             </h1>

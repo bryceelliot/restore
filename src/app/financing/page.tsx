@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Flooring Financing Options — Kelowna",
   description:
     "Flexible financing options for flooring in Kelowna. Get the floors you love now and pay over time. Ask about our current financing programs at Kelowna Flooring Superstore.",
-  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/financing" },
+  alternates: { canonical: "https://www.kfssflooring.com/financing" },
 };
 
 const benefits = [
@@ -80,7 +80,7 @@ export default function FinancingPage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
+      <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image
           src="/assets/images/hero-walnut.webp"
           alt=""
@@ -98,14 +98,14 @@ export default function FinancingPage() {
             <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
               Flexible Payments
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Get the Floors<br />
               <span className="text-accent">You Actually Want</span>
             </h1>
-            <p className="text-white/60 text-lg sm:text-xl mt-6 max-w-xl leading-relaxed">
+            <p className="text-white/60 text-base sm:text-lg mt-5 max-w-xl leading-relaxed">
               Don&apos;t let budget hold you back from beautiful floors. Our financing options let you invest in your home now and pay over time.
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               <Link
                 href="/estimates"
                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-base transition-all hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-0.5"
@@ -128,7 +128,7 @@ export default function FinancingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Why Finance?</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               Invest in Your Home<br />
               <span className="gradient-text">On Your Terms</span>
             </h2>
@@ -158,7 +158,7 @@ export default function FinancingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">How It Works</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
               Simple Process,<br />Beautiful Results
             </h2>
           </AnimateOnScroll>
@@ -183,7 +183,7 @@ export default function FinancingPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
               <span className="section-label mb-4">What&apos;s Covered</span>
-              <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4 leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4 leading-tight">
                 Finance Your{" "}
                 <span className="gradient-text">Entire Project</span>
               </h2>
@@ -205,7 +205,7 @@ export default function FinancingPage() {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
                 <Link href="/estimates" className="btn-primary text-sm">
                   Get Free Estimate <ArrowRight size={16} />
                 </Link>
@@ -243,7 +243,7 @@ export default function FinancingPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <span className="section-label mb-4">Common Questions</span>
-            <h2 className="text-4xl font-black text-charcoal mt-4">Financing FAQ</h2>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">Financing FAQ</h2>
           </AnimateOnScroll>
           <div className="space-y-4">
             {faqs.map((item, i) => (
@@ -262,7 +262,7 @@ export default function FinancingPage() {
       <section className="py-24 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "repeating-linear-gradient(-45deg,#fff 0px,#fff 1px,transparent 1px,transparent 12px)" }} />
         <AnimateOnScroll className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight">
+          <h2 className="text-2xl sm:text-4xl font-black text-white leading-tight">
             Ready to Get Started?
           </h2>
           <p className="text-white/65 text-lg mt-4 leading-relaxed max-w-xl mx-auto">
