@@ -225,45 +225,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Featured floors ───────────────────────────────────── */}
-      <section className="py-24 bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <AnimateOnScroll className="text-center mb-12">
-            <span className="section-label mb-4">Our Work</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
-              Floors We&apos;re Proud Of
-            </h2>
-            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-              Every installation is treated like our own home.
-            </p>
-          </AnimateOnScroll>
-          <div className="grid sm:grid-cols-3 gap-5">
-            {[
-              { src: "/assets/images/hero-walnut.webp", label: "Walnut Natural — Engineered Hardwood", focal: "center 55%" },
-              { src: "/assets/images/hero-kurang.webp", label: "Wildwood Kurang — Luxury Vinyl Plank", focal: "center 45%" },
-              { src: "/assets/images/hero-oak.webp", label: "Wildwood Oak — Engineered Hardwood", focal: "center 40%" },
-            ].map((photo, i) => (
-              <AnimateOnScroll key={photo.label} delay={i * 0.1}>
-                <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg group">
-                  <Image
-                    src={photo.src}
-                    alt={photo.label}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    style={{ objectPosition: photo.focal }}
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1526]/70 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white text-sm font-semibold">{photo.label}</p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Location & Hours ──────────────────────────────────── */}
       <section className="py-24 bg-[#0d1526]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

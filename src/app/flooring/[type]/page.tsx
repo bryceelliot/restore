@@ -5,7 +5,6 @@ import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { flooringTypes, getFlooringBySlug, brandDeepLinks } from "@/lib/flooring-data";
 import { CheckCircle2, ArrowRight, Phone, ChevronRight } from "lucide-react";
-import WishlistButton from "@/components/WishlistButton";
 import FlooringCarousel from "@/components/FlooringCarousel";
 import FlooringTypeReviews from "@/components/FlooringTypeReviews";
 
@@ -24,7 +23,7 @@ const typePhotos: Record<string, { src: string; focal: string }> = {
   "area-rugs":      { src: "/assets/images/showroom-04.webp",   focal: "center 45%" }, // real area rugs
   "commercial":     { src: "/assets/images/showroom-02.webp",   focal: "center 50%" }, // Fuzion display — professional look
   "linoleum-sheet": { src: "/assets/images/showroom-05.webp",   focal: "center 50%" }, // placeholder — need real linoleum photo
-  "cork":           { src: "/assets/images/showroom-09.webp",   focal: "center 50%" }, // placeholder — need real cork photo
+  "cork":           { src: "/assets/images/flooring/cork/cork-texture.webp", focal: "center 50%" },
 };
 
 /* Per-type in-store photo galleries — real Kelowna showroom shots. */
@@ -252,7 +251,6 @@ export default async function FlooringTypePage({ params }: Props) {
               <a href="tel:2508607847" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-5 py-3 rounded-xl text-sm transition-all">
                 <Phone size={15} /> (250) 860-7847
               </a>
-              <WishlistButton slug={flooring.slug} name={flooring.name} />
             </div>
           </AnimateOnScroll>
         </div>

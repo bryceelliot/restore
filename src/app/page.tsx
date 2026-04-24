@@ -287,12 +287,12 @@ export default function HomePage() {
             {[
               { src: "/assets/images/showroom-01.webp", label: "Main Showroom" },
               { src: "/assets/images/showroom-03.webp", label: "Hardwood Display" },
-              { src: "/assets/images/showroom-04.webp", label: "Carpet Selection" },
+              { src: "/assets/images/showroom-13.webp", label: "Carpet Selection" },
               { src: "/assets/images/showroom-07.webp", label: "Tile Collection" },
               { src: "/assets/images/showroom-08.webp", label: "Laminate Samples" },
               { src: "/assets/images/showroom-10.webp", label: "Carpet Studio" },
               { src: "/assets/images/showroom-11.webp", label: "Vinyl Plank" },
-              { src: "/assets/images/showroom-13.webp", label: "Area Rugs" },
+              { src: "/assets/images/showroom-04.webp", label: "Area Rugs" },
             ].map((shot, i) => (
               <AnimateOnScroll key={shot.src} delay={(i % 4) * 0.06}>
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">

@@ -20,11 +20,12 @@ export default function EmailSignup() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: "New Newsletter Signup — KFSS",
+          subject: "[NEWSLETTER] New Newsletter Signup — KFSS",
           from_name: "KFSS Newsletter",
           replyto: email,
           email,
           source: "Newsletter signup",
+          route_to: "kfss.bryce@gmail.com",
           botcheck: "",
         }),
       });

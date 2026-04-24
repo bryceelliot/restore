@@ -13,6 +13,7 @@ const flooringTypes = [
   { name: "Vinyl Plank",    href: "/flooring/vinyl-plank" },
   { name: "Tile",           href: "/flooring/tile" },
   { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet" },
+  { name: "Cork",           href: "/flooring/cork" },
   { name: "Commercial",     href: "/flooring/commercial" },
   { name: "Area Rugs",      href: "/flooring/area-rugs" },
 ];

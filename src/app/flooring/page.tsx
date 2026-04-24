@@ -16,7 +16,7 @@ const flooringPhotos: Record<string, { img: string; focal: string; tag: string }
   "laminate":        { img: "/assets/images/showroom-08.webp", focal: "center 50%", tag: "Popular" },
   "hardwood":        { img: "/assets/images/showroom-01.webp", focal: "center 50%", tag: "Premium" },
   "carpet":          { img: "/assets/images/showroom-10.webp", focal: "center 40%", tag: "Cozy" },
-  "vinyl-plank":     { img: "/assets/images/showroom-06.webp", focal: "center 50%", tag: "Waterproof" },
+  "vinyl-plank":     { img: "/assets/images/flooring/vinyl-plank/vinyl-plank-03.webp", focal: "center 50%", tag: "Waterproof" },
   "linoleum-sheet":  { img: "/assets/images/showroom-05.webp", focal: "center 50%", tag: "Durable" },
   "tile":            { img: "/assets/images/showroom-07.webp", focal: "center 50%", tag: "Elegant" },
   "commercial":      { img: "/assets/images/showroom-02.webp", focal: "center 50%", tag: "Business" },

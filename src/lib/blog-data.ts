@@ -1214,6 +1214,192 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+
+  // ── Near-me optimized blog posts ──────────────────────────────────────
+  {
+    slug: "laminate-flooring-near-me-kelowna",
+    title: "Looking for Laminate Flooring Near Me in Kelowna? Start Here.",
+    excerpt:
+      "Searching 'laminate flooring near me' from your couch in Kelowna? Here's where to find in-stock AC3–AC5 laminate, what it costs installed, and why the showroom on McCurdy Place is your best first stop.",
+    category: "Buying Guide",
+    readTime: "5 min read",
+    date: "April 2026",
+    img: "/assets/images/showroom-08.webp",
+    focal: "center 50%",
+    metaDescription:
+      "Laminate flooring near me in Kelowna — where to buy in-stock laminate, installed pricing, brand comparison (Mohawk, TORLYS, Opus, Buckwold, FloorTek). By Kelowna Flooring Superstore.",
+    content: [
+      { type: "intro", text: "If you just typed 'laminate flooring near me' into Google from Kelowna or anywhere in the Central Okanagan, this guide is for you. We'll walk you through where to buy laminate locally, what 2026 pricing looks like, and how to tell AC3 from AC5 so you don't overpay." },
+      { type: "h2", text: "Where to find laminate flooring near you in Kelowna" },
+      { type: "p", text: "The Kelowna Flooring Superstore showroom at Unit 16, 830 McCurdy Place stocks 8 laminate brands on display: Grandeur, Pontek, Pontek Toucan, Twelve Oaks, Buckwold, Buckwold Next Gen, Home's Pros, and FloorTek. Samples are available to take home overnight. It's a 10-minute drive from Lower Mission, 15 from Glenmore, 5 from Rutland." },
+      { type: "h2", text: "What laminate costs installed in Kelowna (2026)" },
+      { type: "ul", items: [
+        "AC3 residential-rated laminate: $4–5 per sqft installed",
+        "AC4 mid-range laminate: $5–6 per sqft installed",
+        "AC5 premium / commercial laminate: $6–7 per sqft installed",
+        "Underpad, transitions, and removal are priced as separate line items",
+      ]},
+      { type: "h2", text: "Which laminate fits your home?" },
+      { type: "p", text: "For bedrooms and low-traffic rooms, AC3 is plenty. For main floors, hallways, and homes with pets or kids, step up to AC4 or AC5 — the abrasion resistance is dramatically higher and the product lasts 15–20 years in real Kelowna homes." },
+      { type: "h2", text: "Can laminate go over existing floors?" },
+      { type: "p", text: "In most cases, yes. Laminate is a floating floor and can go over flat tile, vinyl, or old laminate — saving you the demo cost. The subfloor needs to be flat within 3/16\" over 10 feet. We check this during your free in-home estimate." },
+      { type: "tip", text: "Searching 'laminate near me' after hours? The showroom is open Mon/Tue/Thu/Fri 9–5, Wednesday 9–2, Saturday 10–2. Book a Saturday visit and bring measurements — we can put together a ballpark quote while you're here." },
+      { type: "cta", text: "Ready to see laminate samples in person in Kelowna? Drop by the showroom or call (250) 860-7847 to book a free in-home estimate." },
+    ],
+  },
+
+  {
+    slug: "hardwood-flooring-near-me-kelowna",
+    title: "Hardwood Flooring Near Me in Kelowna — What to Know Before You Shop",
+    excerpt:
+      "Hardwood buyers across Kelowna, West Kelowna, and Lake Country all ask the same questions. Here's what to look for, what to pay, and which brands we stock.",
+    category: "Buying Guide",
+    readTime: "6 min read",
+    date: "April 2026",
+    img: "/assets/images/showroom-01.webp",
+    focal: "center 50%",
+    metaDescription:
+      "Hardwood flooring near me in Kelowna — engineered vs solid, wide-plank brands (Grandeur, Opus, Vidar, Pravada), Okanagan climate tips, installed pricing 2026.",
+    content: [
+      { type: "intro", text: "'Hardwood flooring near me' is one of the most searched flooring terms in Kelowna, and for good reason — hardwood is still the gold standard for resale value in Okanagan homes. Here's what to look for when shopping locally." },
+      { type: "h2", text: "Engineered vs solid in a Kelowna home" },
+      { type: "p", text: "Kelowna's climate swings from dry 35°C summers to -15°C winters with aggressive humidity cycles. That makes engineered hardwood the safer choice for 90% of homes — the cross-layer plywood core won't cup or gap the way solid hardwood can. Solid hardwood is still the right call for heritage homes and high-end rebuilds with active humidity control (30–50% RH year round)." },
+      { type: "h2", text: "Hardwood brands in stock at our Kelowna showroom" },
+      { type: "ul", items: [
+        "Grandeur Wood — Canadian-made wide-plank engineered hardwood",
+        "Opus Wood — classical-look engineered hardwood with deep textures",
+        "Vidar Wood — engineered hardwood from the West Coast",
+        "FloorTek Wood — engineered hardwood priced for real Kelowna budgets",
+        "Fuzion Wood — premium engineered hardwood with beautiful stains",
+        "Pravada Wood — boutique engineered hardwood, wide plank",
+      ]},
+      { type: "h2", text: "Installed hardwood pricing in Kelowna (2026)" },
+      { type: "ul", items: [
+        "Engineered hardwood: $8–$14 per sqft installed",
+        "Solid hardwood: $10–$18 per sqft installed",
+        "Wide-plank premium lines (7\"+ widths): add $2–$4 per sqft",
+        "Staircase installation: $80–$150 per step for hardwood treads with nosings",
+      ]},
+      { type: "h2", text: "Which Kelowna neighbourhoods suit hardwood?" },
+      { type: "p", text: "Hardwood performs beautifully in Lower Mission, Upper Mission, Glenmore, Kettle Valley, and Black Mountain homes with good humidity control. For Lake Country and Peachland waterfront properties, we often recommend engineered hardwood or luxury vinyl plank instead because of ambient moisture." },
+      { type: "tip", text: "Wide-plank hardwood (7\" and up) is the 2026 Kelowna trend — it makes rooms feel larger and reads more modern than traditional 3.25\" strip hardwood." },
+      { type: "cta", text: "Visit our Kelowna showroom to see real hardwood samples from 6 brands side-by-side. Or book a free in-home estimate — we bring samples to you." },
+    ],
+  },
+
+  {
+    slug: "vinyl-plank-near-me-kelowna",
+    title: "Luxury Vinyl Plank Near Me in Kelowna — The 2026 Guide",
+    excerpt:
+      "Why LVP is the fastest-growing flooring category in Kelowna — what to look for, which brands to shop, and how much it costs installed.",
+    category: "Buying Guide",
+    readTime: "5 min read",
+    date: "April 2026",
+    img: "/assets/images/flooring/vinyl-plank/vinyl-plank-hero.webp",
+    focal: "center 60%",
+    metaDescription:
+      "Luxury vinyl plank near me in Kelowna — waterproof LVP from TORLYS, Beaulieu, Fuzion, Grandeur, HTBC, Monterey, Magna, Kennedy. Installed pricing + how to choose.",
+    content: [
+      { type: "intro", text: "Luxury vinyl plank (LVP) has quietly become the #1 flooring sold in Kelowna in 2026. It's waterproof, scratch-resistant, realistic-looking, and ships in 3–5 days from stock. Here's where to find it locally and what to look for." },
+      { type: "h2", text: "Why LVP dominates Kelowna in 2026" },
+      { type: "p", text: "Three reasons: it's 100% waterproof (critical for Kelowna basements and kitchens), it handles the Okanagan's dry winters without gapping, and modern embossed-in-register surfaces look nearly indistinguishable from real hardwood at half the price." },
+      { type: "h2", text: "LVP brands in stock at our Kelowna showroom" },
+      { type: "ul", items: [
+        "TORLYS Vinyl — Canadian LVP leader with built-in CorkPlus underlayment",
+        "Beaulieu Vinyl — deep embossing, strong warranties",
+        "Fuzion Vinyl — premium rigid-core LVP",
+        "FloorTek Vinyl — budget-friendly waterproof LVP",
+        "Grandeur Vinyl — made in Canada, wide-plank options",
+        "HTBC Vinyl — commercial-grade wear layer for busy Kelowna homes",
+        "Monterey Vinyl + Magna Vinyl — premium specialty lines",
+        "Kennedy Vinyl — stone-core LVP, best for Kelowna basements",
+      ]},
+      { type: "h2", text: "Installed LVP pricing in Kelowna (2026)" },
+      { type: "ul", items: [
+        "Entry SPC (stone polymer composite): $5–6 per sqft installed",
+        "Mid-range 20-mil wear layer: $6–8 per sqft installed",
+        "Premium 22-mil+ wear layer: $8–9 per sqft installed",
+        "Kelowna basements with concrete moisture testing add ~$1 per sqft",
+      ]},
+      { type: "h2", text: "Best rooms for LVP in a Kelowna home" },
+      { type: "p", text: "Basements (unbeatable choice), kitchens, bathrooms, mudrooms, laundry rooms, and full-home installs. If you have pets, children, or live near the lake, LVP is almost always the right answer." },
+      { type: "tip", text: "Kelowna homeowners searching 'vinyl plank near me' at night: we'll hold samples for morning pickup. Text (250) 860-7847 with your email and preferred pickup time." },
+      { type: "cta", text: "Come see all 9 LVP brands on display in Kelowna. Showroom open Mon/Tue/Thu/Fri 9–5. Or book a free in-home estimate — we bring samples to you." },
+    ],
+  },
+
+  {
+    slug: "carpet-near-me-kelowna",
+    title: "Carpet Near Me in Kelowna — In-Stock Brands, Prices, and Install",
+    excerpt:
+      "Soft carpet for a Kelowna bedroom, stairs, or rental unit — here's where to find it, what it costs, and which fibre to choose.",
+    category: "Buying Guide",
+    readTime: "4 min read",
+    date: "April 2026",
+    img: "/assets/images/showroom-13.webp",
+    focal: "center 50%",
+    metaDescription:
+      "Carpet near me in Kelowna — Beaulieu, DreamWeaver, Godfrey Hirst, Nature's Carpet, Gulistan in stock. Installed pricing + staircase install guide.",
+    content: [
+      { type: "intro", text: "Despite what the internet says, carpet isn't dead — especially in Kelowna bedrooms where bare feet meet cold winter floors. Here's your local carpet shopping guide." },
+      { type: "h2", text: "Carpet brands we carry in Kelowna" },
+      { type: "ul", items: [
+        "Beaulieu Carpet — broadloom and patterned",
+        "DreamWeaver Carpet — stain-resistant polyester lines",
+        "Godfrey Hirst Carpet — premium Australian-style wool and nylon",
+        "Nature's Carpet — eco-friendly wool",
+        "Gulistan (FloorTek) — residential broadloom at budget pricing",
+      ]},
+      { type: "h2", text: "Installed carpet pricing in Kelowna (2026)" },
+      { type: "ul", items: [
+        "Entry polyester broadloom: $4–5 per sqft installed (including underpad)",
+        "Mid-range nylon broadloom: $5–7 per sqft installed",
+        "Premium wool or solution-dyed nylon: $7–10 per sqft installed",
+        "Stair installation: $50–$100 per step — a 14-step staircase is a full day",
+      ]},
+      { type: "h2", text: "Which fibre for a Kelowna home?" },
+      { type: "p", text: "Nylon is the most durable choice for high-traffic areas. Polyester is softer and more stain-resistant to water-based spills but matts faster in traffic lanes. Solution-dyed nylon is the best of both worlds for entries and stairs." },
+      { type: "tip", text: "Searching 'carpet install near me' for a rental property in Kelowna? Ask about our rental-grade bundles — polyester broadloom + basic underpad, installed, turnkey." },
+      { type: "cta", text: "Walk through carpet samples at our Kelowna showroom or call (250) 860-7847 — we'll send a sample bundle to your door in most Kelowna neighbourhoods." },
+    ],
+  },
+
+  {
+    slug: "tile-flooring-near-me-kelowna",
+    title: "Tile Near Me in Kelowna — Porcelain, Ceramic, and Natural Stone",
+    excerpt:
+      "From bathroom renos to full kitchen makeovers, here's where to shop for tile in Kelowna and what to expect for installation in 2026.",
+    category: "Tile & Stone",
+    readTime: "5 min read",
+    date: "April 2026",
+    img: "/assets/images/flooring/tile/tile-01.webp",
+    focal: "center 50%",
+    metaDescription:
+      "Tile flooring near me in Kelowna — Ceratec, Centura, Tierra Sol, Ceramstone C&S. Installed pricing + in-floor heating + large-format specialists.",
+    content: [
+      { type: "intro", text: "Tile is the most craftsmanship-driven category we install — and the most expensive to get wrong. Here's what you need to know before you buy tile in Kelowna." },
+      { type: "h2", text: "Tile brands we stock at our Kelowna showroom" },
+      { type: "ul", items: [
+        "Ceratec — Canadian-made porcelain with stone looks",
+        "Centura — broad catalog, 5-star warranty network",
+        "Tierra Sol — boutique designer tile",
+        "C&S / Ceramstone — wide price range from builder-grade to premium",
+      ]},
+      { type: "h2", text: "Installed tile pricing in Kelowna (2026)" },
+      { type: "ul", items: [
+        "Porcelain tile (material + install): $9–16 per sqft",
+        "Ceramic tile (material + install): $7–12 per sqft",
+        "Natural stone (marble, slate, travertine): $14–25 per sqft",
+        "Large-format tile (24\"+): add $2–3 per sqft for install",
+        "Waterproofing membrane for wet zones: $3–5 per sqft",
+        "Electric in-floor heating: +$8–14 per sqft",
+      ]},
+      { type: "h2", text: "In-floor heating with tile" },
+      { type: "p", text: "With Kelowna winters, heated tile floors in bathrooms and entryways are a luxury that pays for itself in daily comfort. We coordinate the electrician scheduling so the dedicated 240V circuit lands on the right day. The mat is laid + embedded in self-leveling compound the day before tile." },
+      { type: "tip", text: "Tile takes longer than any other flooring — a 120 sqft bathroom takes 3–5 days on-site including grout cure and sealing. Plan accordingly." },
+      { type: "cta", text: "See our full tile wall in person at the Kelowna showroom. Or book a free in-home estimate for your bathroom, kitchen, or entry — we measure, quote, and coordinate everything." },
+    ],
+  },
 ];
 
 export const categoryColors: Record<string, string> = {

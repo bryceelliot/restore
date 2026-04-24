@@ -65,11 +65,12 @@ function NewsletterStrip() {
         headers: { Accept: "application/json", "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: key,
-          subject: "Newsletter Signup — KFSS Website",
+          subject: "[NEWSLETTER] Newsletter Signup — KFSS Website",
           from_name: "KFSS Newsletter",
           replyto: email,
           email,
           source: "Footer newsletter",
+          route_to: "kfss.bryce@gmail.com",
           botcheck: "",
         }),
       });
