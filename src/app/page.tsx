@@ -75,9 +75,9 @@ const flooring = [
   { name: "Hardwood",       href: "/flooring/hardwood",       img: "/assets/images/showroom-01.webp", tag: "Premium",    sale: false },
   { name: "Carpet",         href: "/flooring/carpet",         img: "/assets/images/showroom-10.webp", tag: "Cozy",       sale: true  },
   { name: "Vinyl Plank",    href: "/flooring/vinyl-plank",    img: "/assets/images/showroom-06.webp", tag: "Waterproof", sale: false },
-  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", img: "/assets/images/showroom-05.webp", tag: "Durable",    sale: false },
-  { name: "Tile",           href: "/flooring/tile",           img: "/assets/images/showroom-07.webp", tag: "Elegant",    sale: false },
-  { name: "Commercial",     href: "/flooring/commercial",     img: "/assets/images/showroom-02.webp", tag: "Business",   sale: false },
+  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", img: "/assets/images/linoleum-stock.webp", tag: "Durable",    sale: false },
+  { name: "Tile",           href: "/flooring/tile",           img: "/assets/images/flooring/tile/tile-01.webp", tag: "Elegant",    sale: false },
+  { name: "Commercial",     href: "/flooring/commercial",     img: "/assets/images/projects/commercial-refresh/carpet-tile.webp", tag: "Business",   sale: false },
   { name: "Area Rugs",      href: "/flooring/area-rugs",      img: "/assets/images/showroom-04.webp", tag: "Style",      sale: true  },
 ];
 

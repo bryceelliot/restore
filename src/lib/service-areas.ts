@@ -18,7 +18,7 @@ export const serviceAreas: ServiceArea[] = [
     name: "Kelowna",
     region: "Central Okanagan",
     drivingTime: "We're based in Kelowna — same-day site visits.",
-    heroImage: "/assets/images/showroom-01.webp",
+    heroImage: "/assets/images/service-areas/kelowna.webp",
     tagline: "Kelowna's in-stock flooring showroom on McCurdy Place.",
     intro:
       "We've been Kelowna's hands-on flooring shop for more than 30 years. Our McCurdy Place showroom carries hundreds of in-stock samples — laminate, hardwood, carpet, luxury vinyl plank, tile, area rugs — all tested on real Kelowna homes. Our installers live here, work here, and back every floor with a craftsmanship guarantee.",
@@ -65,7 +65,7 @@ export const serviceAreas: ServiceArea[] = [
     name: "West Kelowna",
     region: "Central Okanagan",
     drivingTime: "15 min across the William R. Bennett Bridge.",
-    heroImage: "/assets/images/showroom-06.webp",
+    heroImage: "/assets/images/service-areas/west-kelowna.webp",
     tagline: "Flooring installation across West Kelowna & Westbank.",
     intro:
       "We cross the bridge to West Kelowna every week — from Shannon Lake to Westbank First Nation communities, Glenrosa to Lakeview Heights. Our Kelowna showroom keeps West Kelowna homeowners out of Vancouver-bound supply runs: everything you need is in stock and ready to install.",
@@ -105,7 +105,7 @@ export const serviceAreas: ServiceArea[] = [
     name: "Lake Country",
     region: "North Okanagan",
     drivingTime: "25 min north on Highway 97.",
-    heroImage: "/assets/images/showroom-08.webp",
+    heroImage: "/assets/images/service-areas/lake-country.webp",
     tagline: "Lake Country flooring — Winfield, Oyama, Carr's Landing.",
     intro:
       "From Wood Lake waterfront homes in Oyama to the orchards of Carr's Landing, Lake Country homeowners choose us for one reason: we show up. We measure, we quote, we install — and we don't disappear between steps. If you're north of Kelowna, we're a short hop up Highway 97.",
@@ -136,7 +136,7 @@ export const serviceAreas: ServiceArea[] = [
     name: "Peachland",
     region: "Central Okanagan",
     drivingTime: "30 min south along Okanagan Lake.",
-    heroImage: "/assets/images/showroom-10.webp",
+    heroImage: "/assets/images/service-areas/peachland.webp",
     tagline: "Flooring installation for Peachland lakefront & hillside homes.",
     intro:
       "Peachland's mix of waterfront condos, hillside rebuilds, and family homes keeps us busy every month. We've flooring for every Peachland build type — from soft plush carpet to wide-plank engineered hardwood — and we handle every step of the job.",
@@ -159,7 +159,7 @@ export const serviceAreas: ServiceArea[] = [
     name: "Summerland",
     region: "South Okanagan",
     drivingTime: "45 min south of Kelowna.",
-    heroImage: "/assets/images/showroom-04.webp",
+    heroImage: "/assets/images/service-areas/summerland.webp",
     tagline: "Summerland flooring installation — orchards to lakefront.",
     intro:
       "Summerland is worth the drive. We make regular trips south to install for Summerland homeowners — from Trout Creek rebuilds to orchards off Prairie Valley. In-stock inventory means your Summerland project doesn't wait on big-city suppliers.",

@@ -89,15 +89,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type } = await params;
   const flooring = getFlooringBySlug(type);
   if (!flooring) return {};
+  const tn = flooring.name;
+  const tnLower = tn.toLowerCase();
   return {
-    title: `${flooring.name} Flooring Kelowna`,
+    title: `${tn} Flooring Near Me — Kelowna | ${tn} Store & Installation`,
     description: flooring.metaDescription,
     alternates: { canonical: `https://www.kfssflooring.com/flooring/${flooring.slug}` },
+    keywords: [
+      `${tnLower} near me`,
+      `${tnLower} flooring near me`,
+      `${tnLower} kelowna`,
+      `${tnLower} flooring kelowna`,
+      `${tnLower} store kelowna`,
+      `${tnLower} installation kelowna`,
+      `${tnLower} installer near me`,
+      `${tnLower} flooring store near me`,
+      `${tnLower} west kelowna`,
+      `${tnLower} lake country`,
+      `${tnLower} okanagan`,
+      `cheap ${tnLower} kelowna`,
+      `best ${tnLower} kelowna`,
+      `${tnLower} prices kelowna`,
+      `${tnLower} samples kelowna`,
+      `${tnLower} showroom near me`,
+    ],
     openGraph: {
-      title: `${flooring.name} Flooring | Kelowna Flooring Superstore`,
+      title: `${tn} Flooring Near Me — Kelowna Flooring Superstore`,
       description: flooring.metaDescription,
       images: typePhotos[flooring.slug]
-        ? [{ url: typePhotos[flooring.slug].src, width: 1200, height: 630, alt: `${flooring.name} flooring` }]
+        ? [{ url: typePhotos[flooring.slug].src, width: 1200, height: 630, alt: `${tn} flooring near me in Kelowna` }]
         : [],
     },
   };
@@ -137,10 +157,57 @@ export default async function FlooringTypePage({ params }: Props) {
     },
   };
 
+  /* Service schema — directly tells search engines "we sell + install this floor
+   * across Kelowna and the Central Okanagan". Paired with a geo-circle areaServed
+   * so proximity-based "near me" queries can match. */
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: `${flooring.name} Flooring Sales & Installation`,
+    name: `${flooring.name} Flooring Near Me — Kelowna`,
+    description: flooring.metaDescription,
+    provider: {
+      "@type": "LocalBusiness",
+      "@id": "https://www.kfssflooring.com/#kelownaflooringsuperstore",
+      name: "Kelowna Flooring Superstore",
+      telephone: "+12508607847",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Unit 16, 830 McCurdy Place",
+        addressLocality: "Kelowna",
+        addressRegion: "BC",
+        postalCode: "V1X 8C8",
+        addressCountry: "CA",
+      },
+      geo: { "@type": "GeoCoordinates", latitude: 49.8885, longitude: -119.4395 },
+    },
+    areaServed: [
+      {
+        "@type": "GeoCircle",
+        geoMidpoint: { "@type": "GeoCoordinates", latitude: 49.8885, longitude: -119.4395 },
+        geoRadius: "60000", // 60km — covers Kelowna to Summerland
+      },
+      { "@type": "City", name: "Kelowna" },
+      { "@type": "City", name: "West Kelowna" },
+      { "@type": "City", name: "Lake Country" },
+      { "@type": "City", name: "Peachland" },
+      { "@type": "City", name: "Summerland" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${flooring.name} flooring near me`,
+      itemListElement: (brandDeepLinks[flooring.slug as keyof typeof brandDeepLinks] ?? []).map((b) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: b.name, category: flooring.name },
+      })),
+    },
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         {photo && (
@@ -172,11 +239,11 @@ export default async function FlooringTypePage({ params }: Props) {
               Samples on Display — Ships in 3–5 Days
             </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
-              {flooring.name}<br />
-              <span className="text-accent">Flooring</span>
+              {flooring.name} Flooring<br />
+              <span className="text-accent">Near Me — Kelowna</span>
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
-              {flooring.tagline}
+              {flooring.tagline} Serving Kelowna, West Kelowna, Lake Country, Peachland &amp; Summerland — same-crew install, in-stock samples, free in-home estimates.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               <Link href="/estimates" className="btn-primary text-sm">

@@ -75,11 +75,11 @@ export default function Navbar() {
           </span>
           <div className="flex items-center gap-3">
             <a
-              href="sms:2508607847"
+              href="tel:2508607847"
               className="hidden sm:flex items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-3 py-1 rounded-full text-xs transition-colors"
-              aria-label="Text us"
+              aria-label="Call us"
             >
-              Text Us
+              Call Us
             </a>
             <a
               href="tel:2508607847"

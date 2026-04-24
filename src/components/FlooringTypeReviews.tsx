@@ -41,8 +41,14 @@ export default async function FlooringTypeReviews({ flooringName, extraKeywords 
     return false;
   });
 
-  if (matchedAll.length === 0) return null;
-  const matched = matchedAll.slice(0, 3);
+  /* Put keyword-matched reviews first, then fill to 3 with other recent reviews.
+   * Every flooring page should show reviews — hardwood doesn't have to skip the
+   * section just because no reviewer typed "hardwood" in their review. */
+  const othersNotMatched = data.reviews.filter((r) => !matchedAll.includes(r));
+  const combined = [...matchedAll, ...othersNotMatched].slice(0, 3);
+  if (combined.length === 0) return null;
+  const matched = combined;
+  const hasKeywordMatch = matchedAll.length > 0;
 
   return (
     <section className="py-20 bg-light">
@@ -50,10 +56,14 @@ export default async function FlooringTypeReviews({ flooringName, extraKeywords 
         <div className="text-center mb-10">
           <span className="section-label mb-4">What Customers Say</span>
           <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
-            Real Google Reviews About Our {flooringName}
+            {hasKeywordMatch
+              ? `Real Google Reviews About Our ${flooringName}`
+              : `What Kelowna Customers Are Saying`}
           </h2>
           <p className="text-gray-500 text-sm mt-3">
-            Verified Google reviews mentioning {flooringName.toLowerCase()} from real Kelowna customers.
+            {hasKeywordMatch
+              ? `Verified Google reviews mentioning ${flooringName.toLowerCase()} from real Kelowna customers.`
+              : `4.9★ verified Google reviews from real Kelowna homeowners.`}
           </p>
         </div>
         <div className={`grid gap-6 ${matched.length === 1 ? "sm:grid-cols-1 max-w-xl mx-auto" : matched.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-3"}`}>

@@ -179,7 +179,8 @@ export const flooringTypes: FlooringType[] = [
     installInfo:
       "Our professional crews handle everything — measurement, old floor removal, and expert installation. Laminate floats over your subfloor for a clean, click-lock installation that's typically completed in a single day.",
     metaDescription:
-      "Shop in-stock laminate flooring in Kelowna. Realistic hardwood & stone looks at a fraction of the cost. Expert installation. Call (250) 860-7847.",
+      
+      "Laminate flooring near me in Kelowna — in-stock AC3/AC4/AC5 laminate with realistic wood & stone looks. Same-day pickup + expert installation across Kelowna, West Kelowna, Lake Country. Free estimates. Call (250) 860-7847.",
     faqs: [
       { q: "How long does laminate flooring last?", a: "Quality laminate typically lasts 15–25 years with proper care. AC3 and AC4 rated laminate is ideal for residential use." },
       { q: "Can laminate flooring be installed over existing flooring?", a: "Yes — laminate can often float over existing hard floors. We'll assess your subfloor during your free estimate." },
@@ -221,7 +222,8 @@ export const flooringTypes: FlooringType[] = [
     installInfo:
       "Our skilled installation crews ensure your hardwood is perfectly acclimated, laid, and finished. We handle subfloor preparation, installation, and any finishing work to leave your floors looking immaculate.",
     metaDescription:
-      "Shop hardwood flooring in Kelowna. Solid & engineered hardwood in dozens of species. In-stock & expert installation. (250) 860-7847.",
+      
+      "Hardwood flooring near me in Kelowna — engineered and solid hardwood in stock. Wide-plank options from Grandeur, Opus, Vidar, Pravada, FloorTek. Expert installation across the Central Okanagan. Free estimates. Call (250) 860-7847.",
     faqs: [
       { q: "Can hardwood floors be refinished?", a: "Yes — solid hardwood can be sanded and refinished multiple times, making it a truly lifetime floor. Engineered hardwood can typically be refinished 1–2 times." },
       { q: "Is hardwood suitable for all rooms?", a: "Hardwood is ideal for living areas, bedrooms, and hallways. Avoid installing in bathrooms or below-grade basements where moisture is a concern." },
@@ -263,7 +265,8 @@ export const flooringTypes: FlooringType[] = [
     installInfo:
       "Our installation crews remove your old flooring, prepare the subfloor, and install quality carpet pad and carpet in a clean, professional process. Most rooms are completed in a single day.",
     metaDescription:
-      "Shop carpet flooring in Kelowna. Mohawk, Phenix, Beaulieu and more in-stock. Expert carpet installation. Call (250) 860-7847.",
+      
+      "Carpet near me in Kelowna — plush, twist, berber, and commercial carpet in stock. Beaulieu, DreamWeaver, Godfrey Hirst, Nature's Carpet. Expert installation in Kelowna, West Kelowna, Lake Country. Free estimates. Call (250) 860-7847.",
     faqs: [
       { q: "Do you remove old carpet before installing new?", a: "Yes — our installation crews remove and dispose of your existing carpet as part of the installation process." },
       { q: "What's the best carpet for a household with pets?", a: "We recommend stain-resistant nylon or polyester fibres. Patterns and darker tones also help camouflage pet hair between vacuuming." },
@@ -303,7 +306,8 @@ export const flooringTypes: FlooringType[] = [
     installInfo:
       "Vinyl plank installs quickly with a floating click-lock system over most existing floors. Our team handles the full installation from prep to final walk-through.",
     metaDescription:
-      "Shop waterproof luxury vinyl plank flooring in Kelowna. In-stock LVP & LVT. Expert installation. (250) 860-7847.",
+      
+      "Luxury vinyl plank near me in Kelowna — 100% waterproof LVP in stock. TORLYS, Beaulieu, Fuzion, Grandeur, HTBC, Monterey, Magna, Kennedy. Same-crew install across Kelowna and the Okanagan. Free estimates. Call (250) 860-7847.",
     faqs: [
       { q: "Is luxury vinyl plank truly waterproof?", a: "Yes — 100% waterproof through the core. It's the best choice for kitchens, bathrooms, laundry rooms, and basements." },
       { q: "Can vinyl plank be installed over existing flooring?", a: "In most cases, yes. LVP can float over existing hard surfaces as long as the subfloor is flat and structurally sound." },
@@ -343,7 +347,8 @@ export const flooringTypes: FlooringType[] = [
     installInfo:
       "Sheet linoleum requires expert installation to ensure flat, seam-free results. Our crews are trained in proper adhesive application and seaming techniques.",
     metaDescription:
-      "Shop linoleum sheet flooring in Kelowna. Eco-friendly, durable, and hypoallergenic. Expert installation. (250) 860-7847.",
+      
+      "Sheet vinyl and linoleum near me in Kelowna — Armstrong and Kennedy sheet vinyl in stock. Expert installation in Kelowna, West Kelowna, Lake Country. Free estimates. Call (250) 860-7847.",
     faqs: [
       { q: "Is linoleum the same as vinyl?", a: "No — linoleum is made from natural materials like linseed oil and cork. Vinyl is petroleum-based. Linoleum is the eco-friendly choice." },
       { q: "How long does linoleum last?", a: "With proper care, linoleum can last 25–40 years — making it one of the longest-lasting flooring options available." },
@@ -388,7 +393,8 @@ export const flooringTypes: FlooringType[] = [
     installInfo:
       "Tile installation requires proper subfloor preparation, precise layout planning, and skilled grouting. Our tile experts deliver flawless results every time.",
     metaDescription:
-      "Shop tile flooring in Kelowna. Ceramic, porcelain, marble, and natural stone in-stock. Expert installation. (250) 860-7847.",
+      
+      "Tile near me in Kelowna — porcelain, ceramic, and natural stone from Ceratec, Centura, Tierra Sol, C&S Ceramstone. Expert tile installation + in-floor heating across the Okanagan. Free estimates. Call (250) 860-7847.",
     faqs: [
       { q: "What's the difference between ceramic and porcelain tile?", a: "Porcelain is denser and less porous than ceramic, making it more water and frost resistant. Porcelain is the better choice for wet areas and outdoor use." },
       { q: "Does tile work with in-floor radiant heating?", a: "Yes — tile is one of the best flooring types for radiant heat. It conducts and holds heat effectively." },
@@ -429,7 +435,8 @@ export const flooringTypes: FlooringType[] = [
     installInfo:
       "We work directly with business owners, contractors, and property managers to deliver commercial flooring projects on time and on budget. We handle everything from specification to final walkthrough.",
     metaDescription:
-      "Commercial flooring in Kelowna. Carpet tile, vinyl, laminate & more for offices, retail & institutions. (250) 860-7847.",
+      
+      "Commercial flooring near me in Kelowna — Aladdin, Beaulieu Commercial, Buckwold Carpet Craft. Broadloom, carpet tile, LVP for offices, stratas, and rental properties across the Okanagan. Call (250) 860-7847.",
     faqs: [
       { q: "Do you work with contractors and property managers?", a: "Yes — we work directly with builders, contractors, strata councils, and property managers on commercial and multi-unit projects." },
       { q: "Can you handle large commercial flooring projects?", a: "Absolutely. We have experience with offices, retail spaces, restaurants, and institutional buildings of all sizes." },
@@ -471,7 +478,8 @@ export const flooringTypes: FlooringType[] = [
     installInfo:
       "Area rugs don't require installation but we recommend a quality rug pad underneath for comfort, grip, and to protect your flooring. We carry rug pads in-store.",
     metaDescription:
-      "Shop area rugs in Kelowna. Traditional, contemporary, and natural fibre rugs to complement any flooring. (250) 860-7847.",
+      
+      "Area rugs near me in Kelowna — Cosmos Carpet and Affiliated Weavers rugs. Custom-bound broadloom + ready-made area rugs. Free showroom visits, Kelowna + Central Okanagan. Call (250) 860-7847.",
     faqs: [
       { q: "What size area rug do I need?", a: "For a living room, all furniture legs should sit on the rug or at least the front legs. For dining rooms, allow 24\" beyond the table on all sides." },
       { q: "Do I need a rug pad?", a: "Yes — a quality rug pad prevents slipping, protects your hard flooring, and adds cushioning underfoot. We carry rug pads in-store." },
@@ -512,7 +520,8 @@ export const flooringTypes: FlooringType[] = [
     installInfo:
       "Cork floats over a flat subfloor or can be glued down depending on the product. Acclimate cork in your home for 48–72 hours before installation. Our crew handles subfloor prep, layout, and finishing.",
     metaDescription:
-      "Cork flooring in Kelowna — soft, quiet, sustainable. Opus Cork Green Flow Series available. Free in-home estimate. Call (250) 860-7847.",
+      
+      "Cork flooring near me in Kelowna — TORLYS and Opus cork in stock. Warm, quiet, sustainable flooring for Kelowna bedrooms, basements, offices. Expert installation. Free estimates. Call (250) 860-7847.",
     faqs: [
       { q: "Is cork flooring durable?", a: "Yes — quality cork holds up well to residential traffic and naturally bounces back from indentations. It's not the best fit for very high-traffic commercial spaces but is excellent for homes." },
       { q: "Is cork waterproof?", a: "Cork is water-resistant when properly sealed but not waterproof. We don't recommend it for bathrooms or laundry rooms — luxury vinyl plank is a safer waterproof choice for those rooms." },
