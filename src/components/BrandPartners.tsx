@@ -100,10 +100,17 @@ export default function BrandPartners() {
   }, [paused, dragging]);
 
   return (
-    <section className="py-14 bg-white border-y border-gray-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-8 text-center">
-        <p className="text-gray-400 text-sm font-bold tracking-[0.2em] uppercase">
-          Trusted Brands We Carry
+    <section className="py-16 bg-white border-y border-gray-100 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 text-center">
+        <p className="text-accent text-xs font-black tracking-[0.25em] uppercase mb-3">
+          Authorized Dealer
+        </p>
+        <h2 className="text-2xl sm:text-3xl font-black text-charcoal">
+          The Brands the Pros Trust
+        </h2>
+        <p className="text-gray-500 text-sm sm:text-base mt-3 max-w-xl mx-auto">
+          Every floor we sell is backed by a North-American manufacturer warranty.
+          Click any logo to see the manufacturer&apos;s full lineup.
         </p>
       </div>
       <div className="relative">
@@ -131,14 +138,14 @@ export default function BrandPartners() {
               aria-label={`Visit ${brand.name}`}
               onClick={onLinkClick}
               draggable={false}
-              className="flex items-center justify-center px-5 py-3 rounded-xl border border-gray-100 bg-gray-50 shrink-0 w-44 h-20 hover:border-accent/40 hover:bg-white hover:shadow-md transition-all"
+              className="group flex items-center justify-center px-5 py-3 rounded-xl border border-gray-100 bg-white shrink-0 w-44 h-20 hover:border-accent/40 hover:shadow-lg transition-all"
             >
               <Image
                 src={brand.src}
                 alt={brand.name}
                 width={brand.w}
                 height={brand.h}
-                className="object-contain max-h-12 max-w-[140px] w-auto h-auto pointer-events-none grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                className="object-contain max-h-12 max-w-[140px] w-auto h-auto pointer-events-none transition-transform group-hover:scale-105"
                 unoptimized
                 draggable={false}
               />
