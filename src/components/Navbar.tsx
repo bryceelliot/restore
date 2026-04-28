@@ -24,6 +24,7 @@ const navLinks = [
   { name: "Tools",      href: "/calculator", toolsDropdown: true },
   { name: "Financing",  href: "/financing" },
   { name: "Why Us",     href: "/why-us" },
+  { name: "Reviews",    href: "/reviews" },
   { name: "About Us",   href: "/about" },
   { name: "Blog",       href: "/blog" },
   { name: "Contact",    href: "/contact" },
@@ -340,6 +341,7 @@ export default function Navbar() {
               {[
                 { name: "Financing",  href: "/financing" },
                 { name: "Why Us",     href: "/why-us" },
+                { name: "Reviews",    href: "/reviews" },
                 { name: "About Us",   href: "/about" },
                 { name: "Blog",       href: "/blog" },
                 { name: "Contact",    href: "/contact" },

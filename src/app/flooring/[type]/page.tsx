@@ -403,6 +403,35 @@ export default async function FlooringTypePage({ params }: Props) {
         </section>
       )}
 
+      {/* ── Service-area cross-links ──────────────────────────── */}
+      <section className="py-14 bg-light border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <h3 className="text-lg sm:text-xl font-black text-charcoal">
+            {flooring.name} installation across the Okanagan
+          </h3>
+          <p className="text-gray-500 text-sm mt-3 max-w-2xl mx-auto">
+            Same crew, same craftsmanship guarantee — wherever you are.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            {[
+              { name: "Kelowna", slug: "kelowna" },
+              { name: "West Kelowna", slug: "west-kelowna" },
+              { name: "Lake Country", slug: "lake-country" },
+              { name: "Peachland", slug: "peachland" },
+              { name: "Summerland", slug: "summerland" },
+            ].map((a) => (
+              <Link
+                key={a.slug}
+                href={`/service-areas/${a.slug}`}
+                className="bg-white border border-gray-200 hover:border-accent/40 hover:shadow-sm text-charcoal text-sm font-bold px-4 py-2 rounded-full transition-all"
+              >
+                {a.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Per-type Google reviews (keyword-filtered) ────────── */}
       <FlooringTypeReviews flooringName={flooring.name} />
 

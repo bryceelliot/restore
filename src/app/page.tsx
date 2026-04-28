@@ -9,6 +9,7 @@ import BrandPartners from "@/components/BrandPartners";
 import InstagramFeed from "@/components/InstagramFeed";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import GoogleReviews from "@/components/GoogleReviews";
+import CostGuideOptIn from "@/components/CostGuideOptIn";
 import {
   Phone, ArrowRight,
   MapPin,
@@ -354,6 +355,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Cost guide opt-in ─────────────────────────────────── */}
+      <CostGuideOptIn />
 
       {/* ── Instagram feed ────────────────────────────────────── */}
       <InstagramFeed />

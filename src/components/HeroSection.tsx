@@ -6,13 +6,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
-const slides = [
-  { src: "/assets/images/hero-walnut.webp",  type: "Engineered Hardwood", tagline: "Timeless warmth for every home.",      focal: "center 60%", href: "/flooring/hardwood"    },
-  { src: "/assets/images/showroom-11.webp",  type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",      focal: "center 50%", href: "/flooring/vinyl-plank" },
-  { src: "/assets/images/showroom-10.webp",  type: "Premium Carpet",      tagline: "Soft. Cozy. Inviting.",                focal: "center 50%", href: "/flooring/carpet"      },
-  { src: "/assets/images/showroom-08.webp",  type: "Laminate Flooring",   tagline: "Durable. Beautiful. Affordable.",      focal: "center 50%", href: "/flooring/laminate"    },
-  { src: "/assets/images/showroom-07.webp",  type: "Porcelain Tile",      tagline: "Timeless. Waterproof. Built for the Okanagan.", focal: "center 50%", href: "/flooring/tile"        },
-  { src: "/assets/images/showroom-01.webp",  type: "Kelowna Showroom",    tagline: "Choose a sample. Arrives in 3–5 days.",focal: "center 50%", href: "/flooring"             },
+type Slide = {
+  src: string;
+  type: string;
+  tagline: string;
+  focal: string;
+  href: string;
+  video?: boolean;
+};
+
+const slides: Slide[] = [
+  { src: "/assets/videos/showroom-walk-1.mp4", type: "Inside Our Showroom",  tagline: "Hundreds of in-stock samples on McCurdy Place.", focal: "center 50%", href: "/flooring", video: true },
+  { src: "/assets/images/hero-walnut.webp",    type: "Engineered Hardwood", tagline: "Timeless warmth for every home.",      focal: "center 60%", href: "/flooring/hardwood"    },
+  { src: "/assets/images/showroom-11.webp",    type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",      focal: "center 50%", href: "/flooring/vinyl-plank" },
+  { src: "/assets/images/showroom-10.webp",    type: "Premium Carpet",      tagline: "Soft. Cozy. Inviting.",                focal: "center 50%", href: "/flooring/carpet"      },
+  { src: "/assets/images/showroom-08.webp",    type: "Laminate Flooring",   tagline: "Durable. Beautiful. Affordable.",      focal: "center 50%", href: "/flooring/laminate"    },
+  { src: "/assets/images/showroom-07.webp",    type: "Porcelain Tile",      tagline: "Timeless. Waterproof. Built for the Okanagan.", focal: "center 50%", href: "/flooring/tile" },
 ];
 
 const INTERVAL = 5000;
@@ -53,15 +62,29 @@ export default function HeroSection() {
           transition={{ duration: 1.2, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <Image
-            src={slides[current].src}
-            alt={slides[current].type}
-            fill
-            priority={current === 0}
-            className="object-cover"
-            style={{ objectPosition: slides[current].focal }}
-            sizes="100vw"
-          />
+          {slides[current].video ? (
+            <video
+              src={slides[current].src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-label={slides[current].type}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: slides[current].focal }}
+            />
+          ) : (
+            <Image
+              src={slides[current].src}
+              alt={slides[current].type}
+              fill
+              priority={current === 0}
+              className="object-cover"
+              style={{ objectPosition: slides[current].focal }}
+              sizes="100vw"
+            />
+          )}
           <div className="absolute inset-0 bg-[#0d1526]/60" />
           <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0d1526] to-transparent" />
         </motion.div>
