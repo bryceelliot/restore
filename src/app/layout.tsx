@@ -65,6 +65,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.kfssflooring.com",
   },
+  verification: {
+    google: "hKxpRfUeR2d1u-4BhGv-zYUd-eL3bzZwq5tuKY_c5lc",
+  },
   openGraph: {
     type: "website",
     locale: "en_CA",
