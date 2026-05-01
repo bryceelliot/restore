@@ -118,7 +118,7 @@ export default function RootLayout({
         <Script
           id="roomvoAssistant"
           src="https://www.roomvo.com/static/scripts/b2b/common/assistant.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           data-locale="en-us"
           data-position="bottom-right"
         />
