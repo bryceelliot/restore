@@ -22,8 +22,8 @@ const navLinks = [
   { name: "Home",       href: "/" },
   { name: "Flooring",   href: "/flooring", dropdown: true },
   { name: "Tools",      href: "/calculator", toolsDropdown: true },
+  { name: "Projects",   href: "/projects" },
   { name: "Financing",  href: "/financing" },
-  { name: "Why Us",     href: "/why-us" },
   { name: "Reviews",    href: "/reviews" },
   { name: "About Us",   href: "/about" },
   { name: "Blog",       href: "/blog" },
@@ -339,8 +339,8 @@ export default function Navbar() {
 
               {/* Other flat links */}
               {[
+                { name: "Projects",   href: "/projects" },
                 { name: "Financing",  href: "/financing" },
-                { name: "Why Us",     href: "/why-us" },
                 { name: "Reviews",    href: "/reviews" },
                 { name: "About Us",   href: "/about" },
                 { name: "Blog",       href: "/blog" },
