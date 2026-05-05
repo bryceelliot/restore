@@ -116,7 +116,7 @@ export default function HomePage() {
                 className="block hover:opacity-90 transition-opacity"
                 aria-label="Read our Google reviews"
               >
-                <div className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
+                <div className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-none">
                   4.9<span className="text-amber-400">★</span>
                 </div>
                 <div className="text-white font-bold text-base mt-2">Google Rating</div>
@@ -125,13 +125,13 @@ export default function HomePage() {
             </AnimateOnScroll>
             {/* Stat 2 — Canadian Owned (no counter) */}
             <AnimateOnScroll delay={0.08} className="text-center lg:px-8">
-              <div className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">🍁</div>
+              <div className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-none">🍁</div>
               <div className="text-white font-bold text-base mt-2">Canadian Owned</div>
               <div className="text-white/45 text-sm mt-1">Proudly local, proudly Canadian</div>
             </AnimateOnScroll>
             {/* Stat 3 */}
             <AnimateOnScroll delay={0.16} className="text-center lg:px-8">
-              <div className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
+              <div className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-none">
                 <AnimatedCounter to={30} suffix="+" />
               </div>
               <div className="text-white font-bold text-base mt-2">Years Experience</div>
@@ -139,7 +139,7 @@ export default function HomePage() {
             </AnimateOnScroll>
             {/* Stat 4 */}
             <AnimateOnScroll delay={0.24} className="text-center lg:px-8">
-              <div className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
+              <div className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-none">
                 <AnimatedCounter to={100} suffix="%" />
               </div>
               <div className="text-white font-bold text-base mt-2">Satisfaction</div>
@@ -224,7 +224,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {flooring.map((f, i) => (
               <AnimateOnScroll key={f.name} delay={i * 0.06}>
-                <Link href={f.href} className="group relative overflow-hidden rounded-2xl h-44 sm:h-52 block card-hover shadow-card-warm">
+                <Link href={f.href} className="group relative overflow-hidden rounded-2xl h-36 sm:h-52 block card-hover shadow-card-warm">
                   <Image
                     src={f.img}
                     alt={`${f.name} flooring at Kelowna Flooring Superstore`}

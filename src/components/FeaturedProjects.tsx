@@ -56,7 +56,7 @@ export default function FeaturedProjects() {
     <div className="grid lg:grid-cols-[1fr_360px] gap-6 lg:gap-8">
       {/* Main photo viewer */}
       <div
-        className="relative aspect-[4/3] sm:aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border border-gray-100 touch-pan-y select-none"
+        className="relative aspect-[16/11] sm:aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl bg-gray-100 border border-gray-100 touch-pan-y select-none"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -113,26 +113,26 @@ export default function FeaturedProjects() {
             <button
               key={p.slug}
               onClick={() => selectProject(i)}
-              className={`text-left rounded-xl p-4 border-2 transition-all ${
+              className={`text-left rounded-lg lg:rounded-xl p-2 lg:p-4 border-2 transition-all ${
                 i === activeProject
                   ? "bg-primary text-white border-primary shadow-lg"
                   : "bg-white text-charcoal border-gray-200 hover:border-primary/50"
               }`}
             >
-              <div className={`text-[11px] font-bold tracking-widest uppercase mb-1 ${
+              <div className={`hidden lg:block text-[11px] font-bold tracking-widest uppercase mb-1 ${
                 i === activeProject ? "text-white/75" : "text-accent"
               }`}>
                 Featured Project
               </div>
-              <div className="font-black text-base lg:text-lg leading-tight">{p.name}</div>
-              <div className={`text-xs mt-0.5 ${i === activeProject ? "text-white/70" : "text-gray-500"}`}>
+              <div className="font-black text-xs lg:text-lg leading-tight">{p.name}</div>
+              <div className={`text-[10px] lg:text-xs mt-0.5 ${i === activeProject ? "text-white/70" : "text-gray-500"}`}>
                 {p.neighborhood}
               </div>
             </button>
           ))}
         </div>
 
-        <div className="bg-light border border-gray-100 rounded-xl p-5">
+        <div className="bg-light border border-gray-100 rounded-xl p-4 lg:p-5">
           <div className="text-[10px] font-bold tracking-widest uppercase text-accent mb-2">
             Flooring Used
           </div>

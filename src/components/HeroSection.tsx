@@ -34,7 +34,7 @@ export default function HeroSection() {
 
   /* Auto-resume after any manual pause so the slideshow never stays stuck. */
   const pauseBriefly = useCallback(() => {
-    pauseBriefly();
+    setPaused(true);
     if (resumeTimer.current) clearTimeout(resumeTimer.current);
     resumeTimer.current = setTimeout(() => setPaused(false), 8000);
   }, []);
@@ -193,14 +193,14 @@ export default function HeroSection() {
       <button
         onClick={() => { setCurrent((c) => (c - 1 + slides.length) % slides.length); pauseBriefly(); }}
         aria-label="Previous slide"
-        className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/22 border border-white/15 flex items-center justify-center text-white transition-all backdrop-blur-sm"
+        className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/22 border border-white/15 flex items-center justify-center text-white transition-all backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1526]"
       >
         <ChevronLeft size={18} />
       </button>
       <button
         onClick={() => { setCurrent((c) => (c + 1) % slides.length); pauseBriefly(); }}
         aria-label="Next slide"
-        className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/22 border border-white/15 flex items-center justify-center text-white transition-all backdrop-blur-sm"
+        className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/22 border border-white/15 flex items-center justify-center text-white transition-all backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1526]"
       >
         <ChevronRight size={18} />
       </button>
