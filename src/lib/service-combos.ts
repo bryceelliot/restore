@@ -123,7 +123,7 @@ const TYPES = [
     flooringTypeSlug: "carpet",
     service: "Stair Flooring Installation",
     serviceShort: "stair flooring install",
-    heroImage: "/assets/images/flooring/stairs-after.jpg",
+    heroImage: "/assets/images/flooring/stairs-after.webp",
     bullets: [
       "Carpeted stairs with proper carpet-wrap technique",
       "Hardwood and luxury vinyl stair treads",
