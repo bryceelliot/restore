@@ -132,27 +132,36 @@ export default function FeaturedProjects() {
           ))}
         </div>
 
-        <div className="bg-light border border-gray-100 rounded-xl p-3 lg:p-5">
-          <div className="text-[10px] font-bold tracking-widest uppercase text-accent mb-1.5 lg:mb-2">
+        {/* Mobile: a single compact link. Desktop: full info card. */}
+        <Link
+          href={`/projects/${project.slug}`}
+          className="lg:hidden inline-flex items-center justify-center gap-1.5 text-accent text-sm font-bold py-2"
+        >
+          View full project <ArrowRight size={14} />
+        </Link>
+
+        <div className="hidden lg:block bg-light border border-gray-100 rounded-xl p-5">
+          <div className="text-[10px] font-bold tracking-widest uppercase text-accent mb-2">
             Flooring Used
           </div>
-          <div className="font-bold text-charcoal text-xs lg:text-sm mb-2 lg:mb-4">{project.flooringTypes.join(" · ")}</div>
-          <p className="text-gray-600 text-xs lg:text-sm leading-relaxed line-clamp-3 lg:line-clamp-none">{project.summary}</p>
+          <div className="font-bold text-charcoal text-sm mb-4">{project.flooringTypes.join(" · ")}</div>
+          <p className="text-gray-600 text-sm leading-relaxed">{project.summary}</p>
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-1 mt-2 lg:mt-4 text-accent text-xs lg:text-sm font-bold hover:translate-x-1 transition-transform"
+            className="inline-flex items-center gap-1 mt-4 text-accent text-sm font-bold hover:translate-x-1 transition-transform"
           >
             View full project <ArrowRight size={13} />
           </Link>
         </div>
 
-        <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar" style={{ scrollbarWidth: "none" }}>
+        {/* Thumbnail strip — desktop only; mobile uses swipe + photo counter */}
+        <div className="hidden lg:flex gap-2 overflow-x-auto pb-1 no-scrollbar" style={{ scrollbarWidth: "none" }}>
           {project.photos.map((p, i) => (
             <button
               key={p.src}
               onClick={() => setActivePhoto(i)}
               aria-label={`View photo ${i + 1}`}
-              className={`relative shrink-0 w-14 h-11 lg:w-20 lg:h-16 rounded-lg overflow-hidden border-2 transition-all ${
+              className={`relative shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${
                 i === activePhoto ? "border-accent ring-2 ring-accent/30" : "border-transparent opacity-60 hover:opacity-100"
               }`}
             >
