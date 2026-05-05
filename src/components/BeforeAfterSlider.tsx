@@ -28,15 +28,31 @@ export default function BeforeAfterSlider({ before, after, beforeAlt = "Before",
   const onMouseUp    = () => { dragging.current = false; };
   const onTouchMove  = (e: React.TouchEvent)  => { move(e.touches[0].clientX); };
 
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    const step = e.shiftKey ? 10 : 2;
+    if (e.key === "ArrowLeft")  { e.preventDefault(); setPosition((p) => Math.max(5,  p - step)); }
+    if (e.key === "ArrowRight") { e.preventDefault(); setPosition((p) => Math.min(95, p + step)); }
+    if (e.key === "Home")       { e.preventDefault(); setPosition(5); }
+    if (e.key === "End")        { e.preventDefault(); setPosition(95); }
+  };
+
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full select-none cursor-ew-resize overflow-hidden rounded-2xl"
+      role="slider"
+      tabIndex={0}
+      aria-label="Before / after image comparison"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(position)}
+      aria-valuetext={`${Math.round(position)}% before, ${Math.round(100 - position)}% after`}
+      className="relative w-full h-full select-none cursor-ew-resize overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
       onMouseDown={onMouseDown}
       onMouseMove={onMouseMove}
       onMouseUp={onMouseUp}
       onMouseLeave={onMouseUp}
       onTouchMove={onTouchMove}
+      onKeyDown={onKeyDown}
     >
       {/* After (full) */}
       <Image src={after} alt={afterAlt} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" draggable={false} />

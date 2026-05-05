@@ -152,7 +152,7 @@ export default function HeroSection() {
             href={slides[current].href}
             className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/30"
           >
-            Shop {slides[current].type} <ArrowRight size={14} />
+            Shop This Floor <ArrowRight size={14} />
           </Link>
           <Link
             href="/estimates"

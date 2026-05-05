@@ -32,7 +32,7 @@ export default function RoomvoLauncher() {
     <button
       onClick={launch}
       aria-label="Visualize flooring in your room"
-      className="fixed bottom-5 right-5 z-40 bg-accent hover:bg-accent/90 text-white font-bold text-sm px-4 py-3 rounded-full shadow-2xl shadow-black/30 inline-flex items-center gap-2 transition-transform hover:scale-105"
+      className="fixed right-5 z-40 bg-accent hover:bg-accent/90 text-white font-bold text-sm px-4 py-3 rounded-full shadow-2xl shadow-black/30 inline-flex items-center gap-2 transition-transform hover:scale-105 bottom-[calc(70px+env(safe-area-inset-bottom))] lg:bottom-5"
       style={{ display: loading ? "none" : undefined }}
     >
       <Layers className="w-4 h-4" />
