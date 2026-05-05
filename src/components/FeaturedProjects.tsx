@@ -53,10 +53,10 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <div className="grid lg:grid-cols-[1fr_360px] gap-6 lg:gap-8">
+    <div className="grid lg:grid-cols-[1fr_360px] gap-4 lg:gap-8">
       {/* Main photo viewer */}
       <div
-        className="relative aspect-[16/11] sm:aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl bg-gray-100 border border-gray-100 touch-pan-y select-none"
+        className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl bg-gray-100 border border-gray-100 touch-pan-y select-none"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -80,16 +80,16 @@ export default function FeaturedProjects() {
             <button
               onClick={prevPhoto}
               aria-label="Previous photo"
-              className="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 w-11 h-11 rounded-full bg-white/95 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
+              className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
             >
-              <ChevronLeft size={22} className="text-charcoal" />
+              <ChevronLeft size={18} className="text-charcoal sm:w-[22px] sm:h-[22px]" />
             </button>
             <button
               onClick={nextPhoto}
               aria-label="Next photo"
-              className="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 w-11 h-11 rounded-full bg-white/95 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
+              className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
             >
-              <ChevronRight size={22} className="text-charcoal" />
+              <ChevronRight size={18} className="text-charcoal sm:w-[22px] sm:h-[22px]" />
             </button>
           </>
         )}
@@ -107,8 +107,8 @@ export default function FeaturedProjects() {
       </div>
 
       {/* Side panel */}
-      <div className="flex flex-col gap-5">
-        <div className="grid grid-cols-3 lg:grid-cols-1 gap-3">
+      <div className="flex flex-col gap-3 lg:gap-5">
+        <div className="grid grid-cols-3 lg:grid-cols-1 gap-2 lg:gap-3">
           {projects.map((p, i) => (
             <button
               key={p.slug}
@@ -132,15 +132,15 @@ export default function FeaturedProjects() {
           ))}
         </div>
 
-        <div className="bg-light border border-gray-100 rounded-xl p-4 lg:p-5">
-          <div className="text-[10px] font-bold tracking-widest uppercase text-accent mb-2">
+        <div className="bg-light border border-gray-100 rounded-xl p-3 lg:p-5">
+          <div className="text-[10px] font-bold tracking-widest uppercase text-accent mb-1.5 lg:mb-2">
             Flooring Used
           </div>
-          <div className="font-bold text-charcoal text-sm mb-4">{project.flooringTypes.join(" · ")}</div>
-          <p className="text-gray-600 text-sm leading-relaxed">{project.summary}</p>
+          <div className="font-bold text-charcoal text-xs lg:text-sm mb-2 lg:mb-4">{project.flooringTypes.join(" · ")}</div>
+          <p className="text-gray-600 text-xs lg:text-sm leading-relaxed line-clamp-3 lg:line-clamp-none">{project.summary}</p>
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-1 mt-4 text-accent text-sm font-bold hover:translate-x-1 transition-transform"
+            className="inline-flex items-center gap-1 mt-2 lg:mt-4 text-accent text-xs lg:text-sm font-bold hover:translate-x-1 transition-transform"
           >
             View full project <ArrowRight size={13} />
           </Link>
@@ -152,7 +152,7 @@ export default function FeaturedProjects() {
               key={p.src}
               onClick={() => setActivePhoto(i)}
               aria-label={`View photo ${i + 1}`}
-              className={`relative shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+              className={`relative shrink-0 w-14 h-11 lg:w-20 lg:h-16 rounded-lg overflow-hidden border-2 transition-all ${
                 i === activePhoto ? "border-accent ring-2 ring-accent/30" : "border-transparent opacity-60 hover:opacity-100"
               }`}
             >

@@ -340,14 +340,14 @@ export default function HomePage() {
       <InstagramFeed />
 
       {/* ── Featured Projects ─────────────────────────────────── */}
-      <section className="py-20 sm:py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <AnimateOnScroll className="text-center mb-10">
+          <AnimateOnScroll className="text-center mb-6 sm:mb-10">
             <span className="section-label mb-4">Featured Projects</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal mt-4 leading-tight">
-              Real Homes,<br className="sm:hidden" /> <span className="gradient-text">Real Floors</span>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-charcoal mt-3 sm:mt-4 leading-tight">
+              Real Homes, <span className="gradient-text">Real Floors</span>
             </h2>
-            <p className="text-gray-500 text-base sm:text-lg mt-4 max-w-xl mx-auto">
+            <p className="text-gray-500 text-sm sm:text-lg mt-2 sm:mt-4 max-w-xl mx-auto">
               A closer look at recent Kelowna installs from our crews.
             </p>
           </AnimateOnScroll>
