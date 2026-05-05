@@ -4,7 +4,10 @@ import { trackPhoneClick, trackEstimateClick } from "@/lib/ga";
 
 export default function MobileBottomBar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#0d1526] border-t border-white/10 flex">
+    <div
+      className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#0d1526] border-t border-white/10 flex"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
       <a
         href="tel:2508607847"
         onClick={() => trackPhoneClick("mobile_bottom_bar")}

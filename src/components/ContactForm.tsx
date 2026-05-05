@@ -24,12 +24,10 @@ const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    setError("");
     const fd = new FormData(e.currentTarget);
     if (fd.get("_honey")) { setSubmitted(true); setLoading(false); return; }
 
@@ -161,12 +159,6 @@ export default function ContactForm() {
           className="w-full px-4 py-3 bg-light border border-gray-200 rounded-xl text-sm text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all resize-none"
         />
       </div>
-
-      {error && (
-        <p className="text-accent text-sm bg-accent/5 border border-accent/20 rounded-xl px-4 py-3">
-          {error}
-        </p>
-      )}
 
       <button
         type="submit"

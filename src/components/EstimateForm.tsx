@@ -57,8 +57,11 @@ export default function EstimateForm() {
     setStep((s) => s + 1);
   }
 
+  const [honey, setHoney] = useState("");
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (honey) { setSubmitted(true); return; }
     setLoading(true);
     setError("");
     if (WEB3FORMS_KEY) {
@@ -114,6 +117,16 @@ export default function EstimateForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <input
+        type="text"
+        name="_honey"
+        value={honey}
+        onChange={(e) => setHoney(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
       {/* Step indicator */}
       <div className="flex items-center gap-2 mb-2">
         {[1, 2, 3].map((n) => (
