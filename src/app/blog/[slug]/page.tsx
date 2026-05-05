@@ -167,7 +167,7 @@ export default async function BlogPostPage({
           >
             {post.category}
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
             {post.title}
           </h1>
           <div className="flex flex-wrap items-center gap-5 text-white/45 text-sm">
@@ -183,7 +183,7 @@ export default async function BlogPostPage({
       </section>
 
       {/* ── Article body ──────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-[1fr_280px] gap-12 items-start">
             {/* Main content */}
@@ -235,7 +235,7 @@ export default async function BlogPostPage({
       </section>
 
       {/* ── Related posts ─────────────────────────────────────── */}
-      <section className="py-20 bg-light border-t border-gray-100">
+      <section className="py-10 sm:py-20 bg-light border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-black text-charcoal mb-8">More Articles</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

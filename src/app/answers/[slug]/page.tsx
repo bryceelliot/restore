@@ -121,7 +121,7 @@ export default async function AnswerPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll>
             <div className="bg-light rounded-2xl p-6 border-l-4 border-accent" data-speakable>
@@ -144,7 +144,7 @@ export default async function AnswerPage({ params }: Props) {
       </section>
 
       {p.faqs.length > 0 && (
-        <section className="py-16 bg-light">
+        <section className="py-10 sm:py-16 bg-light">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="mb-8">
               <span className="section-label">FAQ</span>
@@ -166,7 +166,7 @@ export default async function AnswerPage({ params }: Props) {
       )}
 
       {others.length > 0 && (
-        <section className="py-16 bg-white">
+        <section className="py-10 sm:py-16 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <h2 className="text-xl sm:text-2xl font-black text-charcoal mb-6">More Quick Answers</h2>
             <div className="grid sm:grid-cols-2 gap-5">
@@ -183,7 +183,7 @@ export default async function AnswerPage({ params }: Props) {
         </section>
       )}
 
-      <section className="py-16 bg-primary">
+      <section className="py-10 sm:py-16 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Talk to a real Kelowna flooring expert.</h2>
           <p className="text-white/60 text-lg mt-4">Free in-home estimate, no obligation, no pressure.</p>

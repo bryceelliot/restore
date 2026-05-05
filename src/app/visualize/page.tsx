@@ -38,7 +38,7 @@ export default function VisualizePage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-black text-charcoal">How It Works</h2>
@@ -61,7 +61,7 @@ export default function VisualizePage() {
         </div>
       </section>
 
-      <section className="py-16 bg-light">
+      <section className="py-10 sm:py-16 bg-light">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <AnimateOnScroll>
             <h2 className="text-2xl sm:text-3xl font-black text-charcoal mb-4">Open the Visualizer</h2>
@@ -86,7 +86,7 @@ export default function VisualizePage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-black text-charcoal">After You Visualize</h2>
@@ -114,7 +114,7 @@ export default function VisualizePage() {
         </div>
       </section>
 
-      <section className="py-16 bg-primary">
+      <section className="py-10 sm:py-16 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Need help picking?</h2>
           <p className="text-white/60 text-lg mt-4">Our team can help you narrow down options on a phone call or in our showroom.</p>

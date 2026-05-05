@@ -18,7 +18,7 @@ export default function FindMyFloorPage() {
           <span className="inline-block bg-accent/15 border border-accent/30 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
             5 Quick Questions
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl font-black text-white leading-tight mb-4">
             Find Your<br />
             <span className="text-accent">Perfect Floor</span>
           </h1>

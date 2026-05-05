@@ -123,7 +123,7 @@ export default function Footer() {
     <footer className="bg-[#0d1526] text-white border-t-4 border-accent">
       <NewsletterStrip />
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand column */}
         <div>
           <Link href="/" className="block mb-2">

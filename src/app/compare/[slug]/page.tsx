@@ -101,7 +101,7 @@ export default async function ComparePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll>
             <h2 className="text-2xl sm:text-3xl font-black text-charcoal mb-8 text-center">Side-by-Side</h2>
@@ -129,7 +129,7 @@ export default async function ComparePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-16 bg-light">
+      <section className="py-10 sm:py-16 bg-light">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-black text-charcoal">Which wins for your situation?</h2>
@@ -148,7 +148,7 @@ export default async function ComparePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll>
             <div className="bg-light rounded-2xl p-7 border-l-4 border-accent">
@@ -162,7 +162,7 @@ export default async function ComparePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-16 bg-light">
+      <section className="py-10 sm:py-16 bg-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="mb-8">
             <span className="section-label">FAQ</span>
@@ -183,7 +183,7 @@ export default async function ComparePage({ params }: Props) {
       </section>
 
       {others.length > 0 && (
-        <section className="py-16 bg-white">
+        <section className="py-10 sm:py-16 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <h2 className="text-xl sm:text-2xl font-black text-charcoal mb-6">More Comparisons</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -200,7 +200,7 @@ export default async function ComparePage({ params }: Props) {
         </section>
       )}
 
-      <section className="py-16 bg-primary">
+      <section className="py-10 sm:py-16 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Still not sure?</h2>
           <p className="text-white/60 text-lg mt-4">Bring the question to our showroom or book a free in-home estimate.</p>

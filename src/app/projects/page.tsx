@@ -39,7 +39,7 @@ export default function ProjectsIndex() {
       </section>
 
       {/* Project list — each with its own carousel */}
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-20">
           {projects.map((p, i) => (
             <AnimateOnScroll key={p.slug} delay={i * 0.05}>
@@ -96,7 +96,7 @@ export default function ProjectsIndex() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-primary">
+      <section className="py-10 sm:py-16 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Your project could be next.</h2>
           <p className="text-white/60 text-lg mt-4">Free in-home estimate. We bring samples to you, measure your space, and quote the whole project.</p>

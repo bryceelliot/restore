@@ -113,7 +113,7 @@ export default async function ProjectPage({ params }: Props) {
       </section>
 
       {/* Description + flooring */}
-      <section className="py-16 bg-light">
+      <section className="py-10 sm:py-16 bg-light">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[2fr_1fr] gap-10">
           <AnimateOnScroll direction="right">
             <h2 className="text-2xl sm:text-3xl font-black text-charcoal mb-5">About this install</h2>
@@ -136,7 +136,7 @@ export default async function ProjectPage({ params }: Props) {
       </section>
 
       {p.testimonial && (
-        <section className="py-16 bg-light border-y border-gray-100">
+        <section className="py-10 sm:py-16 bg-light border-y border-gray-100">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <article className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-sm">
@@ -179,7 +179,7 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       {/* Photo gallery */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-black text-charcoal">Photos from {p.name}</h2>
@@ -195,7 +195,7 @@ export default async function ProjectPage({ params }: Props) {
       </section>
 
       {others.length > 0 && (
-        <section className="py-16 bg-light">
+        <section className="py-10 sm:py-16 bg-light">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 className="text-xl sm:text-2xl font-black text-charcoal mb-6">More Recent Projects</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -215,7 +215,7 @@ export default async function ProjectPage({ params }: Props) {
         </section>
       )}
 
-      <section className="py-16 bg-primary">
+      <section className="py-10 sm:py-16 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Want a project like this?</h2>
           <p className="text-white/60 text-lg mt-4">Free in-home estimate. We bring samples to you.</p>

@@ -34,7 +34,7 @@ export default function CostGuideOptIn() {
   };
 
   return (
-    <section className="py-20 bg-[#0d1526] relative overflow-hidden">
+    <section className="py-10 sm:py-20 bg-[#0d1526] relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.04]"
         style={{

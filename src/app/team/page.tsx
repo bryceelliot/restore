@@ -76,7 +76,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <span className="section-label mb-4">Showroom</span>
@@ -103,7 +103,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <span className="section-label mb-4">Installation Crew</span>
@@ -132,7 +132,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -152,7 +152,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-primary">
+      <section className="py-10 sm:py-20 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Come Meet Us</h2>
           <p className="text-white/60 text-lg mt-4">Drop by the showroom on McCurdy Place — or book a free estimate and we&apos;ll come to you.</p>

@@ -231,7 +231,7 @@ export default function FlooringPricesKelowna() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll>
             <h2 className="text-2xl sm:text-3xl font-black text-charcoal mb-6">Installed Prices at a Glance</h2>
@@ -279,7 +279,7 @@ export default function FlooringPricesKelowna() {
         </div>
       </section>
 
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <h2 className="text-2xl sm:text-4xl font-black text-charcoal">What a Full Kelowna Flooring Job Looks Like</h2>
@@ -312,7 +312,7 @@ export default function FlooringPricesKelowna() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
             <h2 className="text-2xl sm:text-4xl font-black text-charcoal">What Drives Your Quote Up or Down</h2>
@@ -328,7 +328,7 @@ export default function FlooringPricesKelowna() {
         </div>
       </section>
 
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
             <span className="section-label mb-4">FAQ</span>
@@ -348,7 +348,7 @@ export default function FlooringPricesKelowna() {
         </div>
       </section>
 
-      <section className="py-16 bg-primary">
+      <section className="py-10 sm:py-16 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Get Your Exact Kelowna Flooring Price</h2>
           <p className="text-white/60 text-lg mt-4">Free in-home estimate with line-item quote. No pressure, no obligation.</p>

@@ -37,7 +37,7 @@ export default function CompareIndex() {
         </div>
       </section>
 
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {comparePages.map((p, i) => (

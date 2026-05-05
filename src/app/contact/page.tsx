@@ -63,7 +63,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Contact grid ──────────────────────────────────────── */}
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12">
 
           {/* Form — first on mobile and desktop */}

@@ -21,7 +21,7 @@ export default function CalculatorPage() {
               <Calculator size={12} /> Free Tool
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
             Flooring Cost<br />
             <span className="text-accent">Calculator</span>
           </h1>
@@ -42,7 +42,7 @@ export default function CalculatorPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-primary py-16">
+      <section className="bg-primary py-10 sm:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
             Ready for an Exact Quote?

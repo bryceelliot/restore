@@ -79,7 +79,7 @@ export default function FlooringPage() {
       </section>
 
       {/* ── Grid ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Our Collection</span>
@@ -133,7 +133,7 @@ export default function FlooringPage() {
       </section>
 
       {/* ── Why in-stock matters ──────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
@@ -191,7 +191,7 @@ export default function FlooringPage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="py-16 bg-primary relative overflow-hidden">
+      <section className="py-10 sm:py-16 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "repeating-linear-gradient(-45deg,#fff 0px,#fff 1px,transparent 1px,transparent 12px)" }} />
         <AnimateOnScroll className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white">

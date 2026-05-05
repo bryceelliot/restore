@@ -28,7 +28,7 @@ export default function ServicesIndex() {
         </div>
       </section>
 
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-2 gap-6">
             {servicePages.map((p, i) => (

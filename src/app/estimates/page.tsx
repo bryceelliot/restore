@@ -62,7 +62,7 @@ export default function EstimatesPage() {
       </section>
 
       {/* ── How it works ──────────────────────────────────────── */}
-      <section className="py-20 bg-primary relative overflow-hidden">
+      <section className="py-10 sm:py-20 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "repeating-linear-gradient(-45deg,#fff 0px,#fff 1px,transparent 1px,transparent 12px)" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
@@ -90,7 +90,7 @@ export default function EstimatesPage() {
       </section>
 
       {/* ── Form + benefits ───────────────────────────────────── */}
-      <section id="estimate-form" className="py-24 bg-light scroll-mt-24">
+      <section id="estimate-form" className="py-12 sm:py-24 bg-light scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-start">
           <AnimateOnScroll direction="right">
             <span className="section-label mb-4">Get Started</span>
@@ -161,7 +161,7 @@ export default function EstimatesPage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="py-16 bg-[#0d1526]">
+      <section className="py-10 sm:py-16 bg-[#0d1526]">
         <AnimateOnScroll className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-black text-white">Any Questions Before You Book?</h2>
           <p className="text-white/55 mt-3">Our team is happy to help — call or send us a message.</p>

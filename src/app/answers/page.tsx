@@ -31,7 +31,7 @@ export default function AnswersIndex() {
         </div>
       </section>
 
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-2 gap-5">
             {answerPages.map((p) => (

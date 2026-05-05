@@ -106,7 +106,7 @@ export default async function ServiceAreaPage({ params }: Props) {
       </section>
 
       {/* Intro + neighborhoods */}
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12">
           <AnimateOnScroll direction="right">
             <span className="section-label mb-4">Local Flooring</span>
@@ -144,7 +144,7 @@ export default async function ServiceAreaPage({ params }: Props) {
       </section>
 
       {/* Flooring types available here */}
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <span className="section-label mb-4">What We Install</span>
@@ -167,7 +167,7 @@ export default async function ServiceAreaPage({ params }: Props) {
 
       {/* Testimonial */}
       {area.testimonial && (
-        <section className="py-20 bg-white">
+        <section className="py-10 sm:py-20 bg-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="bg-light rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-sm">
@@ -188,7 +188,7 @@ export default async function ServiceAreaPage({ params }: Props) {
 
       {/* FAQs */}
       {area.faqs.length > 0 && (
-        <section className="py-20 bg-light">
+        <section className="py-10 sm:py-20 bg-light">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="text-center mb-10">
               <span className="section-label mb-4">FAQ</span>
@@ -214,7 +214,7 @@ export default async function ServiceAreaPage({ params }: Props) {
       )}
 
       {/* Final CTA */}
-      <section className="py-20 bg-primary">
+      <section className="py-10 sm:py-20 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">
             Ready for Your {area.name} Install?

@@ -208,7 +208,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Flooring categories grid ──────────────────────────── */}
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Our Collection</span>
@@ -270,7 +270,7 @@ export default function HomePage() {
 
 
       {/* ── Showroom gallery ──────────────────────────────────── */}
-      <section className="py-24 bg-[#0d1526]">
+      <section className="py-12 sm:py-24 bg-[#0d1526]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-sm font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
@@ -359,7 +359,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Final CTA ─────────────────────────────────────────── */}
-      <section className="py-24 relative overflow-hidden bg-[#0d1526]">
+      <section className="py-12 sm:py-24 relative overflow-hidden bg-[#0d1526]">
         {/* Background image with heavy overlay */}
         <Image
           src="/assets/images/hero-showroom.webp"

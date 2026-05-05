@@ -137,7 +137,7 @@ export default function StyleQuiz() {
 
   if (done) {
     return (
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16 text-center">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16 text-center">
         <span className="inline-block bg-accent/15 border border-accent/30 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
           Your Results
         </span>

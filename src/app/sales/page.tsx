@@ -106,7 +106,7 @@ export default function SalesPage() {
       </section>
 
       {/* ── Sales grid ────────────────────────────────────────── */}
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">On Sale Now</span>
@@ -192,7 +192,7 @@ export default function SalesPage() {
       </section>
 
       {/* ── Why shop with us ──────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-charcoal">
@@ -232,7 +232,7 @@ export default function SalesPage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#0d1526]">
+      <section className="py-10 sm:py-20 bg-[#0d1526]">
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <AnimateOnScroll className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white">

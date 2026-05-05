@@ -85,7 +85,7 @@ export default function GoogleReviewsClient({ reviews, rating, total, allReviews
   const hasMore = reviews.length > initial;
 
   return (
-    <section className="py-24 bg-light">
+    <section className="py-12 sm:py-24 bg-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <AnimateOnScroll className="text-center mb-14">
           <span className="section-label mb-4">Real Reviews</span>

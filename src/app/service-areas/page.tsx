@@ -47,7 +47,7 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceAreas.map((a, i) => (
@@ -83,7 +83,7 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-primary">
+      <section className="py-10 sm:py-20 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Outside these areas?</h2>
           <p className="text-white/60 text-lg mt-4">Give us a call — if we can drive it, we probably can quote it.</p>

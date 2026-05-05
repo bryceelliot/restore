@@ -62,7 +62,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Story ─────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
@@ -141,7 +141,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Values ────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Our Values</span>
@@ -167,7 +167,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Team ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Meet the Team</span>
@@ -237,7 +237,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Meet the Team ─────────────────────────────────────── */}
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <span className="section-label mb-4">Our Team</span>
@@ -293,7 +293,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Location & Hours ──────────────────────────────────── */}
-      <section className="py-24 bg-[#0d1526]">
+      <section className="py-12 sm:py-24 bg-[#0d1526]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimateOnScroll direction="right">
@@ -357,7 +357,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="py-20 bg-primary">
+      <section className="py-10 sm:py-20 bg-primary">
         <AnimateOnScroll className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white">
             Come See the Difference In Person

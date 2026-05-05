@@ -122,7 +122,7 @@ export default async function ReviewsPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {reviews.map((r, i) => (
@@ -152,7 +152,7 @@ export default async function ReviewsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
             Ready to be the next 5-star review?

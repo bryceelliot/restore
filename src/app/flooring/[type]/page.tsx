@@ -257,7 +257,7 @@ export default async function FlooringTypePage({ params }: Props) {
       </section>
 
       {/* ── Overview ──────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <AnimateOnScroll direction="right">
@@ -317,7 +317,7 @@ export default async function FlooringTypePage({ params }: Props) {
 
       {/* ── Brands we carry — moved up for prominence ─────────── */}
       {brandDeepLinks[flooring.slug as keyof typeof brandDeepLinks]?.length > 0 && (
-        <section className="py-16 sm:py-20 bg-white border-y border-gray-100">
+        <section className="py-10 sm:py-16 sm:py-20 bg-white border-y border-gray-100">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="text-center mb-8">
               <span className="section-label mb-4">Trusted Brands</span>
@@ -357,7 +357,7 @@ export default async function FlooringTypePage({ params }: Props) {
       )}
 
       {/* ── Types / Styles ────────────────────────────────────── */}
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">{flooring.name} Options</span>
@@ -381,7 +381,7 @@ export default async function FlooringTypePage({ params }: Props) {
 
       {/* ── In-Store Carousel ─────────────────────────────────── */}
       {gallery.length > 0 && (
-        <section className="py-24 bg-white">
+        <section className="py-12 sm:py-24 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="text-center mb-10">
               <span className="section-label mb-4">In Our Showroom</span>
@@ -436,7 +436,7 @@ export default async function FlooringTypePage({ params }: Props) {
       <FlooringTypeReviews flooringName={flooring.name} />
 
       {/* ── Care & Maintenance ────────────────────────────────── */}
-      <section className="py-24 bg-[#0d1526]">
+      <section className="py-12 sm:py-24 bg-[#0d1526]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
@@ -507,7 +507,7 @@ export default async function FlooringTypePage({ params }: Props) {
               }),
             }}
           />
-          <section className="py-24 bg-white">
+          <section className="py-12 sm:py-24 bg-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
               <AnimateOnScroll className="text-center mb-12">
                 <span className="section-label mb-4">FAQ</span>
@@ -536,7 +536,7 @@ export default async function FlooringTypePage({ params }: Props) {
       )}
 
       {/* ── Other flooring types ──────────────────────────────── */}
-      <section className="py-16 bg-light">
+      <section className="py-10 sm:py-16 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
             <h2 className="text-3xl font-black text-charcoal">Explore Other Flooring Types</h2>

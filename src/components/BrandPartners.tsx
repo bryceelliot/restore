@@ -100,7 +100,7 @@ export default function BrandPartners() {
   }, [paused, dragging]);
 
   return (
-    <section className="py-16 bg-white border-y border-gray-100 overflow-hidden">
+    <section className="py-10 sm:py-16 bg-white border-y border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 text-center">
         <p className="text-accent text-xs font-black tracking-[0.25em] uppercase mb-3">
           Authorized Dealer

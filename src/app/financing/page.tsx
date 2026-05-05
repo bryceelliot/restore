@@ -124,7 +124,7 @@ export default function FinancingPage() {
       </section>
 
       {/* ── Benefits ──────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">Why Finance?</span>
@@ -154,7 +154,7 @@ export default function FinancingPage() {
       </section>
 
       {/* ── How it works ──────────────────────────────────────── */}
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
             <span className="section-label mb-4">How It Works</span>
@@ -178,7 +178,7 @@ export default function FinancingPage() {
       </section>
 
       {/* ── What you can finance ──────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
@@ -239,7 +239,7 @@ export default function FinancingPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────── */}
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <span className="section-label mb-4">Common Questions</span>
@@ -259,7 +259,7 @@ export default function FinancingPage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="py-24 bg-primary relative overflow-hidden">
+      <section className="py-12 sm:py-24 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "repeating-linear-gradient(-45deg,#fff 0px,#fff 1px,transparent 1px,transparent 12px)" }} />
         <AnimateOnScroll className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white leading-tight">

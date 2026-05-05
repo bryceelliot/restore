@@ -122,7 +122,7 @@ export default async function GuidePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll>
             <div className="bg-light rounded-2xl p-6 border-l-4 border-accent">
@@ -145,7 +145,7 @@ export default async function GuidePage({ params }: Props) {
       </section>
 
       {g.faqs.length > 0 && (
-        <section className="py-16 bg-light">
+        <section className="py-10 sm:py-16 bg-light">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="mb-8">
               <span className="section-label">FAQ</span>
@@ -167,7 +167,7 @@ export default async function GuidePage({ params }: Props) {
       )}
 
       {related.length > 0 && (
-        <section className="py-16 bg-white">
+        <section className="py-10 sm:py-16 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <h2 className="text-xl sm:text-2xl font-black text-charcoal mb-6">More Kelowna Flooring Guides</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -185,7 +185,7 @@ export default async function GuidePage({ params }: Props) {
         </section>
       )}
 
-      <section className="py-16 bg-primary">
+      <section className="py-10 sm:py-16 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Book Your Free Kelowna Estimate</h2>
           <p className="text-white/60 text-lg mt-4">We&apos;ll bring samples to you, measure your space, and quote the whole project.</p>

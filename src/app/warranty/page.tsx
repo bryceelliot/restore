@@ -75,7 +75,7 @@ export default function WarrantyPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-3 gap-6">
             {pillars.map((p, i) => (
@@ -93,7 +93,7 @@ export default function WarrantyPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-light">
+      <section className="py-10 sm:py-20 bg-light">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8">
           <AnimateOnScroll direction="right">
             <div className="bg-white rounded-2xl p-7 border border-gray-100 h-full">
@@ -122,7 +122,7 @@ export default function WarrantyPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
             <span className="section-label mb-4">Claim Process</span>
@@ -140,7 +140,7 @@ export default function WarrantyPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-primary">
+      <section className="py-10 sm:py-20 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Questions About Your Floor?</h2>
           <p className="text-white/60 text-lg mt-4">Call us directly — the same team that installed is the one that answers.</p>

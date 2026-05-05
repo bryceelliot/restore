@@ -51,7 +51,7 @@ export default async function FlooringTypeReviews({ flooringName, extraKeywords 
   const hasKeywordMatch = matchedAll.length > 0;
 
   return (
-    <section className="py-20 bg-light">
+    <section className="py-10 sm:py-20 bg-light">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
           <span className="section-label mb-4">What Customers Say</span>

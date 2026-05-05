@@ -52,7 +52,7 @@ export default function BlogPage() {
       </section>
 
       {/* ── Featured post ─────────────────────────────────────── */}
-      <section className="py-16 bg-white border-b border-gray-100">
+      <section className="py-10 sm:py-16 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll>
             <Link href={`/blog/${posts[0].slug}`} className="group grid lg:grid-cols-2 gap-8 items-center bg-light rounded-2xl overflow-hidden card-hover border border-gray-100 shadow-sm">
@@ -89,7 +89,7 @@ export default function BlogPage() {
       </section>
 
       {/* ── Blog grid ─────────────────────────────────────────── */}
-      <section className="py-24 bg-light">
+      <section className="py-12 sm:py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.slice(1).map((post, i) => (
@@ -134,7 +134,7 @@ export default function BlogPage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="py-20 bg-primary relative overflow-hidden">
+      <section className="py-10 sm:py-20 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "repeating-linear-gradient(-45deg,#fff 0px,#fff 1px,transparent 1px,transparent 12px)" }} />
         <AnimateOnScroll className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white">

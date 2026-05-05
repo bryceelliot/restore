@@ -158,7 +158,7 @@ export default function FaqPage() {
       </section>
 
       {/* ── FAQ accordion ─────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           {faqCategories.map((cat, ci) => (
             <AnimateOnScroll key={cat.category} delay={ci * 0.05} className="mb-12">
@@ -195,7 +195,7 @@ export default function FaqPage() {
       </section>
 
       {/* ── Still have questions ──────────────────────────────── */}
-      <section className="py-16 bg-light border-t border-gray-100">
+      <section className="py-10 sm:py-16 bg-light border-t border-gray-100">
         <AnimateOnScroll className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-black text-charcoal">Still Have Questions?</h2>
           <p className="text-gray-500 mt-3 text-lg">
