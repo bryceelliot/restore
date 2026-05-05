@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, ArrowRight, Lightbulb } from "lucide-react";
 import { posts, categoryColors, type BlogSection } from "@/lib/blog-data";
+import { breadcrumbSchema } from "@/lib/breadcrumb";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -133,11 +134,20 @@ export default async function BlogPostPage({
     },
   };
 
+  const breadcrumb = breadcrumbSchema([
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${slug}` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
 
       {/* ── Hero ──────────────────────────────────────────────── */}
