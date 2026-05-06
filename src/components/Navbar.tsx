@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, ChevronDown, MapPin, Calculator, Sparkles, Layers } from "lucide-react";
 
 const flooringTypes = [
@@ -121,33 +120,27 @@ export default function Navbar() {
                     {link.name}
                     <ChevronDown size={16} className={`transition-transform duration-200 ${toolsOpen ? "rotate-180" : ""}`} />
                   </button>
-                  <AnimatePresence>
-                    {toolsOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 8 }}
-                        transition={{ duration: 0.15, ease: "easeOut" }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#0d1526] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden py-2"
-                        role="menu"
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#0d1526] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden py-2 transition-all duration-150 ease-out origin-top ${
+                      toolsOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
+                    }`}
+                    role="menu"
+                  >
+                    {toolLinks.map((t) => (
+                      <Link
+                        key={t.href}
+                        href={t.href}
+                        role="menuitem"
+                        className="flex items-center gap-3 mx-2 px-4 py-3 rounded-xl hover:bg-white/8 transition-colors group"
                       >
-                        {toolLinks.map((t) => (
-                          <Link
-                            key={t.href}
-                            href={t.href}
-                            role="menuitem"
-                            className="flex items-center gap-3 mx-2 px-4 py-3 rounded-xl hover:bg-white/8 transition-colors group"
-                          >
-                            <t.icon size={16} className="text-accent shrink-0" />
-                            <div>
-                              <p className="text-white font-semibold text-sm">{t.name}</p>
-                              <p className="text-white/40 text-xs">{t.desc}</p>
-                            </div>
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                        <t.icon size={16} className="text-accent shrink-0" />
+                        <div>
+                          <p className="text-white font-semibold text-sm">{t.name}</p>
+                          <p className="text-white/40 text-xs">{t.desc}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               ) : link.dropdown ? (
                 <div
@@ -172,41 +165,35 @@ export default function Navbar() {
                     />
                   </button>
 
-                  <AnimatePresence>
-                    {dropOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 8 }}
-                        transition={{ duration: 0.15, ease: "easeOut" }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-[#0d1526] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden py-2"
-                        role="menu"
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-[#0d1526] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden py-2 transition-all duration-150 ease-out origin-top ${
+                      dropOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
+                    }`}
+                    role="menu"
+                  >
+                    <Link
+                      href="/flooring"
+                      className="flex items-center justify-between mx-2 px-5 py-3 mb-1 rounded-xl bg-accent/15 hover:bg-accent/25 transition-colors"
+                      role="menuitem"
+                    >
+                      <span className="text-base font-bold text-accent">All Flooring</span>
+                      <ChevronDown size={14} className="-rotate-90 text-accent/70" />
+                    </Link>
+                    {flooringTypes.map((type) => (
+                      <Link
+                        key={type.href}
+                        href={type.href}
+                        role="menuitem"
+                        className={`block mx-2 px-5 py-3 rounded-xl text-base transition-colors ${
+                          pathname === type.href
+                            ? "text-accent font-semibold bg-primary/20"
+                            : "text-white/80 hover:text-white hover:bg-white/8 font-medium"
+                        }`}
                       >
-                        <Link
-                          href="/flooring"
-                          className="flex items-center justify-between mx-2 px-5 py-3 mb-1 rounded-xl bg-accent/15 hover:bg-accent/25 transition-colors"
-                          role="menuitem"
-                        >
-                          <span className="text-base font-bold text-accent">All Flooring</span>
-                          <ChevronDown size={14} className="-rotate-90 text-accent/70" />
-                        </Link>
-                        {flooringTypes.map((type) => (
-                          <Link
-                            key={type.href}
-                            href={type.href}
-                            role="menuitem"
-                            className={`block mx-2 px-5 py-3 rounded-xl text-base transition-colors ${
-                              pathname === type.href
-                                ? "text-accent font-semibold bg-primary/20"
-                                : "text-white/80 hover:text-white hover:bg-white/8 font-medium"
-                            }`}
-                          >
-                            {type.name}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                        {type.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               ) : (
                 <Link
@@ -244,15 +231,8 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.22 }}
-            className="lg:hidden overflow-hidden border-t border-white/10"
-          >
+      {isOpen && (
+        <div className="lg:hidden overflow-hidden border-t border-white/10 animate-[fadeInDown_0.22s_ease-out]">
             <div className="bg-[#0d1526] px-4 py-5 space-y-2">
 
               {/* Home */}
@@ -277,32 +257,25 @@ export default function Navbar() {
                     className={`transition-transform ${mobileFlooringOpen ? "rotate-180" : ""}`}
                   />
                 </button>
-                <AnimatePresence>
-                  {mobileFlooringOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="overflow-hidden pl-4 mt-1 space-y-1"
+                {mobileFlooringOpen && (
+                  <div className="overflow-hidden pl-4 mt-1 space-y-1">
+                    <Link
+                      href="/flooring"
+                      className="block px-5 py-3.5 text-accent text-base font-bold rounded-xl hover:bg-accent/10 transition-colors min-h-[48px] flex items-center"
                     >
+                      All Flooring Types
+                    </Link>
+                    {flooringTypes.map((type) => (
                       <Link
-                        href="/flooring"
-                        className="block px-5 py-3.5 text-accent text-base font-bold rounded-xl hover:bg-accent/10 transition-colors min-h-[48px] flex items-center"
+                        key={type.href}
+                        href={type.href}
+                        className="block px-5 py-3.5 text-white/75 text-base rounded-xl hover:text-white hover:bg-white/5 transition-colors min-h-[48px] flex items-center"
                       >
-                        All Flooring Types
+                        {type.name}
                       </Link>
-                      {flooringTypes.map((type) => (
-                        <Link
-                          key={type.href}
-                          href={type.href}
-                          className="block px-5 py-3.5 text-white/75 text-base rounded-xl hover:text-white hover:bg-white/5 transition-colors min-h-[48px] flex items-center"
-                        >
-                          {type.name}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Tools expandable */}
@@ -314,27 +287,20 @@ export default function Navbar() {
                   Tools
                   <ChevronDown size={20} className={`transition-transform ${mobileToolsOpen ? "rotate-180" : ""}`} />
                 </button>
-                <AnimatePresence>
-                  {mobileToolsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="overflow-hidden pl-4 mt-1 space-y-1"
-                    >
-                      {toolLinks.map(t => (
-                        <Link
-                          key={t.href}
-                          href={t.href}
-                          className="flex items-center gap-3 px-5 py-3.5 text-white/75 text-base rounded-xl hover:text-white hover:bg-white/5 transition-colors min-h-[48px]"
-                        >
-                          <t.icon size={15} className="text-accent shrink-0" />
-                          {t.name}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {mobileToolsOpen && (
+                  <div className="overflow-hidden pl-4 mt-1 space-y-1">
+                    {toolLinks.map(t => (
+                      <Link
+                        key={t.href}
+                        href={t.href}
+                        className="flex items-center gap-3 px-5 py-3.5 text-white/75 text-base rounded-xl hover:text-white hover:bg-white/5 transition-colors min-h-[48px]"
+                      >
+                        <t.icon size={15} className="text-accent shrink-0" />
+                        {t.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Other flat links */}
@@ -369,9 +335,8 @@ export default function Navbar() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </header>
   );
 }

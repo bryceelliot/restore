@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
@@ -16,11 +15,11 @@ type Slide = {
 };
 
 const slides: Slide[] = [
-  { src: "/assets/images/hero-showroom.webp",    type: "Engineered Hardwood", tagline: "Timeless warmth for every home.",      focal: "center 60%", href: "/flooring/hardwood"    },
-  { src: "/assets/images/vinyl-plank-showroom.webp",    type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",      focal: "center 50%", href: "/flooring/vinyl-plank" },
-  { src: "/assets/images/showroom-10.webp",    type: "Premium Carpet",      tagline: "Soft. Cozy. Inviting.",                focal: "center 50%", href: "/flooring/carpet"      },
-  { src: "/assets/images/showroom-08.webp",    type: "Laminate Flooring",   tagline: "Durable. Beautiful. Affordable.",      focal: "center 50%", href: "/flooring/laminate"    },
-  { src: "/assets/images/flooring/tile/tile-01.webp",    type: "Porcelain Tile",      tagline: "Timeless. Waterproof. Built for the Okanagan.", focal: "center 50%", href: "/flooring/tile" },
+  { src: "/assets/images/hero-showroom.webp",         type: "Engineered Hardwood", tagline: "Timeless warmth for every home.",                focal: "center 60%", href: "/flooring/hardwood"    },
+  { src: "/assets/images/vinyl-plank-showroom.webp",  type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",                focal: "center 50%", href: "/flooring/vinyl-plank" },
+  { src: "/assets/images/showroom-10.webp",           type: "Premium Carpet",      tagline: "Soft. Cozy. Inviting.",                          focal: "center 50%", href: "/flooring/carpet"      },
+  { src: "/assets/images/showroom-08.webp",           type: "Laminate Flooring",   tagline: "Durable. Beautiful. Affordable.",                focal: "center 50%", href: "/flooring/laminate"    },
+  { src: "/assets/images/flooring/tile/tile-01.webp", type: "Porcelain Tile",      tagline: "Timeless. Waterproof. Built for the Okanagan.",  focal: "center 50%", href: "/flooring/tile"        },
 ];
 
 const INTERVAL = 5000;
@@ -32,7 +31,6 @@ export default function HeroSection() {
 
   const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), []);
 
-  /* Auto-resume after any manual pause so the slideshow never stays stuck. */
   const pauseBriefly = useCallback(() => {
     setPaused(true);
     if (resumeTimer.current) clearTimeout(resumeTimer.current);
@@ -51,54 +49,47 @@ export default function HeroSection() {
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-30" />
 
-      {/* Background slideshow */}
-      <AnimatePresence mode="sync">
-        <motion.div
-          key={current}
-          initial={{ opacity: 0, scale: 1.03 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="absolute inset-0"
+      {/* Background slideshow — all slides rendered, opacity-controlled */}
+      {slides.map((slide, i) => (
+        <div
+          key={slide.src}
+          className="absolute inset-0 transition-opacity duration-[1200ms] ease-in-out"
+          style={{ opacity: i === current ? 1 : 0 }}
+          aria-hidden={i !== current}
         >
-          {slides[current].video ? (
+          {slide.video ? (
             <video
-              src={slides[current].src}
+              src={slide.src}
               autoPlay
               muted
               loop
               playsInline
               preload="auto"
-              aria-label={slides[current].type}
+              aria-label={slide.type}
               className="absolute inset-0 w-full h-full object-cover"
-              style={{ objectPosition: slides[current].focal }}
+              style={{ objectPosition: slide.focal }}
             />
           ) : (
             <Image
-              src={slides[current].src}
-              alt={slides[current].type}
+              src={slide.src}
+              alt={slide.type}
               fill
-              priority={current === 0}
+              priority={i === 0}
+              loading={i === 0 ? "eager" : "lazy"}
               className="object-cover"
-              style={{ objectPosition: slides[current].focal }}
+              style={{ objectPosition: slide.focal }}
               sizes="100vw"
             />
           )}
-          <div className="absolute inset-0 bg-[#0d1526]/60" />
-          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0d1526] to-transparent" />
-        </motion.div>
-      </AnimatePresence>
+        </div>
+      ))}
+      <div className="absolute inset-0 bg-[#0d1526]/60 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0d1526] to-transparent pointer-events-none" />
 
       {/* Content — centered, logo is the hero */}
       <div className="relative z-10 w-full flex flex-col items-center text-center px-5 pt-36 lg:pt-28 pb-28">
 
-        {/* ── LOGO — main focal point ── */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-6"
-        >
+        <div className="mb-6 animate-[fadeInUp_0.7s_cubic-bezier(0.16,1,0.3,1)_both]">
           <div className="bg-white rounded-2xl px-8 py-5 shadow-2xl shadow-black/50 inline-block">
             <Image
               src="/logo.webp"
@@ -109,42 +100,23 @@ export default function HeroSection() {
               priority
             />
           </div>
-        </motion.div>
+        </div>
 
-        {/* Slide type badge — clicks through to that flooring category */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`tag-${current}`}
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.3 }}
-            className="mb-3"
+        {/* Slide type badge — cycles on slide change */}
+        <div key={`tag-${current}`} className="mb-3 animate-[fadeIn_0.3s_ease-out_both]">
+          <Link
+            href={slides[current].href}
+            className="inline-flex items-center gap-1.5 bg-black/30 hover:bg-black/50 border border-white/15 hover:border-accent/50 text-white/70 hover:text-white text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full transition-colors"
           >
-            <Link
-              href={slides[current].href}
-              className="inline-flex items-center gap-1.5 bg-black/30 hover:bg-black/50 border border-white/15 hover:border-accent/50 text-white/70 hover:text-white text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full transition-colors"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-              {slides[current].type}
-              <ArrowRight size={12} className="opacity-60" />
-            </Link>
-          </motion.div>
-        </AnimatePresence>
+            <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+            {slides[current].type}
+            <ArrowRight size={12} className="opacity-60" />
+          </Link>
+        </div>
 
-        {/* Tagline — small, secondary */}
-        <AnimatePresence mode="wait">
-          <motion.p
-            key={`line-${current}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="text-white/55 text-sm sm:text-base mb-8 max-w-xs sm:max-w-sm leading-relaxed"
-          >
-            {slides[current].tagline}
-          </motion.p>
-        </AnimatePresence>
+        <p key={`line-${current}`} className="text-white/55 text-sm sm:text-base mb-8 max-w-xs sm:max-w-sm leading-relaxed animate-[fadeIn_0.4s_ease-out_both]">
+          {slides[current].tagline}
+        </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-2.5 mb-7 w-full max-w-xs sm:max-w-none sm:w-auto">
@@ -168,7 +140,7 @@ export default function HeroSection() {
           </a>
         </div>
 
-        {/* Social proof — compact, clickable to Google reviews (newest) */}
+        {/* Social proof */}
         <a
           href="https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews#mpd=~6968423193531731233/customers/reviews"
           target="_blank"
@@ -220,13 +192,10 @@ export default function HeroSection() {
                 className="relative rounded-full overflow-hidden block transition-all duration-300"
                 style={{ width: i === current ? 24 : 7, height: 7, background: i === current ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.22)" }}
               >
-                {i === current && (
-                  <motion.div
-                    className="absolute inset-y-0 left-0 bg-accent rounded-full"
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: INTERVAL / 1000, ease: "linear" }}
+                {i === current && !paused && (
+                  <span
                     key={`progress-${current}`}
+                    className="absolute inset-y-0 left-0 bg-accent rounded-full animate-[slideProgress_5s_linear_forwards]"
                   />
                 )}
               </span>

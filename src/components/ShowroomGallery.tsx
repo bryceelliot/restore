@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import bp from "@/lib/bp";
 
@@ -50,14 +49,11 @@ export default function ShowroomGallery() {
     <>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {photos.map((photo, i) => (
-          <motion.button
+          <button
             key={photo.src}
             onClick={() => setLightboxIndex(i)}
-            className="relative overflow-hidden rounded-xl aspect-square bg-gray-100 group cursor-zoom-in"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.4, delay: (i % 4) * 0.07 }}
+            className="relative overflow-hidden rounded-xl aspect-square bg-gray-100 group cursor-zoom-in animate-[fadeInUp_0.4s_ease-out_both]"
+            style={{ animationDelay: `${(i % 4) * 70}ms` }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -72,20 +68,16 @@ export default function ShowroomGallery() {
                 View
               </span>
             </div>
-          </motion.button>
+          </button>
         ))}
       </div>
 
       {/* Lightbox */}
-      <AnimatePresence>
-        {lightboxIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
-            onClick={() => setLightboxIndex(null)}
-          >
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 animate-[fadeIn_0.2s_ease-out_both]"
+          onClick={() => setLightboxIndex(null)}
+        >
             <button
               onClick={() => setLightboxIndex(null)}
               className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors z-10 p-2"
@@ -109,29 +101,24 @@ export default function ShowroomGallery() {
               <ChevronRight size={28} />
             </button>
 
-            <motion.div
-              key={lightboxIndex}
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.92 }}
-              transition={{ duration: 0.2 }}
-              className="relative w-full max-w-4xl aspect-[4/3] flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={photos[lightboxIndex].src}
-                alt={photos[lightboxIndex].alt}
-                className="max-w-full max-h-full object-contain"
-              />
-            </motion.div>
+          <div
+            key={lightboxIndex}
+            className="relative w-full max-w-4xl aspect-[4/3] flex items-center justify-center animate-[fadeInUp_0.2s_ease-out_both]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={photos[lightboxIndex].src}
+              alt={photos[lightboxIndex].alt}
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
 
-            <div className="absolute bottom-4 text-white/40 text-sm">
-              {lightboxIndex + 1} / {photos.length}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <div className="absolute bottom-4 text-white/40 text-sm">
+            {lightboxIndex + 1} / {photos.length}
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ExternalLink, Star } from "lucide-react";
 
 /* ─── Real Google reviews ──────────────────────────────────────────────────
@@ -105,15 +104,9 @@ function GoogleIcon({ size = 14 }: { size?: number }) {
 
 export default function ProjectsCarousel() {
   const [current, setCurrent] = useState(0);
-  const [dir, setDir] = useState(1);
 
-  const go = useCallback((next: number) => {
-    setDir(next > current ? 1 : -1);
-    setCurrent(next);
-  }, [current]);
-
-  const prev = () => go((current - 1 + reviews.length) % reviews.length);
-  const next = () => go((current + 1) % reviews.length);
+  const prev = () => setCurrent((c) => (c - 1 + reviews.length) % reviews.length);
+  const next = () => setCurrent((c) => (c + 1) % reviews.length);
 
   const r = reviews[current];
 
@@ -157,20 +150,14 @@ export default function ProjectsCarousel() {
         </div>
 
         {/* Main card */}
-        <AnimatePresence mode="wait" custom={dir}>
-          <motion.a
-            key={r.id}
-            href={GOOGLE_REVIEWS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Read ${r.name}'s Google review`}
-            custom={dir}
-            initial={{ opacity: 0, x: dir * 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -dir * 40 }}
-            transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-            className="group grid lg:grid-cols-[1fr_1.1fr] gap-0 rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 transition-colors cursor-pointer"
-          >
+        <a
+          key={r.id}
+          href={GOOGLE_REVIEWS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Read ${r.name}'s Google review`}
+          className="group grid lg:grid-cols-[1fr_1.1fr] gap-0 rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 transition-colors cursor-pointer animate-[fadeIn_0.32s_cubic-bezier(0.16,1,0.3,1)_both]"
+        >
             {/* Photo */}
             <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[420px] overflow-hidden">
               <Image
@@ -224,8 +211,7 @@ export default function ProjectsCarousel() {
                 </span>
               </div>
             </div>
-          </motion.a>
-        </AnimatePresence>
+        </a>
 
         {/* Arrows — mobile (under card) */}
         <div className="flex sm:hidden items-center justify-center gap-4 mt-6">
@@ -253,7 +239,7 @@ export default function ProjectsCarousel() {
           {reviews.map((rv, i) => (
             <button
               key={rv.id}
-              onClick={() => go(i)}
+              onClick={() => setCurrent(i)}
               aria-label={`Go to review ${i + 1}: ${rv.name}`}
               className="rounded-full transition-all duration-300 focus:outline-none"
               style={{
