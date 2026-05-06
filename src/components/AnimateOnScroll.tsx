@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -12,6 +11,14 @@ interface Props {
   once?: boolean;
 }
 
+const transformMap = {
+  up: "translateY(40px)",
+  down: "translateY(-40px)",
+  left: "translateX(40px)",
+  right: "translateX(-40px)",
+  none: "none",
+};
+
 export default function AnimateOnScroll({
   children,
   className,
@@ -20,26 +27,39 @@ export default function AnimateOnScroll({
   duration = 0.6,
   once = true,
 }: Props) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: "-80px" });
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
-  const initialMap = {
-    up: { opacity: 0, y: 40 },
-    down: { opacity: 0, y: -40 },
-    left: { opacity: 0, x: 40 },
-    right: { opacity: 0, x: -40 },
-    none: { opacity: 0 },
-  };
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          if (once) io.disconnect();
+        } else if (!once) {
+          setVisible(false);
+        }
+      },
+      { rootMargin: "-80px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [once]);
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={initialMap[direction]}
-      animate={isInView ? { opacity: 1, x: 0, y: 0 } : initialMap[direction]}
-      transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "none" : transformMap[direction],
+        transition: `opacity ${duration}s cubic-bezier(0.25,0.46,0.45,0.94) ${delay}s, transform ${duration}s cubic-bezier(0.25,0.46,0.45,0.94) ${delay}s`,
+        willChange: visible ? undefined : "opacity, transform",
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

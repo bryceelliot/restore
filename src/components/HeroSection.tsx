@@ -48,7 +48,7 @@ export default function HeroSection() {
   useEffect(() => () => { if (resumeTimer.current) clearTimeout(resumeTimer.current); }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-30" />
 
       {/* Background slideshow */}

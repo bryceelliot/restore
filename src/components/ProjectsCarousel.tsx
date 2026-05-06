@@ -118,7 +118,7 @@ export default function ProjectsCarousel() {
   const r = reviews[current];
 
   return (
-    <section className="py-10 sm:py-20 sm:py-24 bg-[#0d1526] overflow-hidden">
+    <section className="py-12 sm:py-24 bg-[#0d1526] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
