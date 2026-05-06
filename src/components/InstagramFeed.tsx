@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
@@ -51,18 +51,31 @@ const fallbackPosts = [
 ];
 
 export default function InstagramFeed() {
-  /* Load Behold script only when a widget ID is set */
+  const sectionRef = useRef<HTMLElement>(null);
+
+  /* Load Behold script only when section scrolls into view */
   useEffect(() => {
     if (!BEHOLD_WIDGET_ID) return;
     if (document.querySelector('script[src*="behold.so"]')) return;
-    const s = document.createElement("script");
-    s.src = "https://w.behold.so/widget.js";
-    s.type = "module";
-    document.head.appendChild(s);
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        io.disconnect();
+        const s = document.createElement("script");
+        s.src = "https://w.behold.so/widget.js";
+        s.type = "module";
+        document.head.appendChild(s);
+      },
+      { rootMargin: "300px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   return (
-    <section className="py-12 sm:py-24 bg-white border-t border-gray-100">
+    <section ref={sectionRef} className="py-12 sm:py-24 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Header */}

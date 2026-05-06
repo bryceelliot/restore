@@ -114,6 +114,7 @@ export default function RootLayout({
       <head>
         <LocalBusinessSchema />
         <link rel="preload" as="image" href="/assets/images/hero-showroom.webp" fetchPriority="high" />
+        <link rel="preload" as="image" href="/logo.webp" fetchPriority="high" />
       </head>
       <body className="antialiased bg-white">
         <Navbar />
