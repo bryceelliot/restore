@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import HeroSection from "@/components/HeroSection";
-import ProjectsCarousel from "@/components/ProjectsCarousel";
-import FeaturedProjects from "@/components/FeaturedProjects";
-import BrandPartners from "@/components/BrandPartners";
-import InstagramFeed from "@/components/InstagramFeed";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import GoogleReviews from "@/components/GoogleReviews";
 import LiteYouTube from "@/components/LiteYouTube";
+
+/* Below-fold components: dynamic-imported so their JS doesn't ship in
+   the initial home-page bundle. They hydrate when the route is idle. */
+const BrandPartners      = dynamic(() => import("@/components/BrandPartners"));
+const ProjectsCarousel   = dynamic(() => import("@/components/ProjectsCarousel"));
+const FeaturedProjects   = dynamic(() => import("@/components/FeaturedProjects"));
+const InstagramFeed      = dynamic(() => import("@/components/InstagramFeed"));
+const GoogleReviews      = dynamic(() => import("@/components/GoogleReviews"));
 import {
   Phone, ArrowRight,
   MapPin,
