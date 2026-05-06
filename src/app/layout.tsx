@@ -115,6 +115,10 @@ export default function RootLayout({
         <LocalBusinessSchema />
         <link rel="preload" as="image" href="/assets/images/hero-showroom.webp" fetchPriority="high" />
         <link rel="preload" as="image" href="/logo.webp" fetchPriority="high" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
+        <link rel="dns-prefetch" href="https://w.behold.so" />
       </head>
       <body className="antialiased bg-white">
         <Navbar />

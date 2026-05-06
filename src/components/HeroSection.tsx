@@ -26,10 +26,17 @@ const INTERVAL = 5000;
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const [seenMax, setSeenMax] = useState(0);
   const [paused, setPaused] = useState(false);
   const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), []);
+
+  /* Track the highest index visited so we keep prior slides mounted
+     for smooth crossfade, but never preload slides ahead of time. */
+  useEffect(() => {
+    setSeenMax((m) => (current > m ? current : m));
+  }, [current]);
 
   const pauseBriefly = useCallback(() => {
     setPaused(true);
@@ -49,40 +56,45 @@ export default function HeroSection() {
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-30" />
 
-      {/* Background slideshow — all slides rendered, opacity-controlled */}
-      {slides.map((slide, i) => (
-        <div
-          key={slide.src}
-          className="absolute inset-0 transition-opacity duration-[1200ms] ease-in-out"
-          style={{ opacity: i === current ? 1 : 0 }}
-          aria-hidden={i !== current}
-        >
-          {slide.video ? (
-            <video
-              src={slide.src}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              aria-label={slide.type}
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ objectPosition: slide.focal }}
-            />
-          ) : (
-            <Image
-              src={slide.src}
-              alt={slide.type}
-              fill
-              priority={i === 0}
-              loading={i === 0 ? "eager" : "lazy"}
-              className="object-cover"
-              style={{ objectPosition: slide.focal }}
-              sizes="100vw"
-            />
-          )}
-        </div>
-      ))}
+      {/* Background slideshow — only mount slides that have been activated.
+          Slide 0 renders immediately (LCP); 1..n mount the first time current
+          reaches them, then stay mounted for subsequent crossfades. */}
+      {slides.map((slide, i) => {
+        if (i !== 0 && i > seenMax) return null;
+        return (
+          <div
+            key={slide.src}
+            className="absolute inset-0 transition-opacity duration-[1200ms] ease-in-out"
+            style={{ opacity: i === current ? 1 : 0 }}
+            aria-hidden={i !== current}
+          >
+            {slide.video ? (
+              <video
+                src={slide.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-label={slide.type}
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ objectPosition: slide.focal }}
+              />
+            ) : (
+              <Image
+                src={slide.src}
+                alt={slide.type}
+                fill
+                priority={i === 0}
+                loading={i === 0 ? "eager" : "lazy"}
+                className="object-cover"
+                style={{ objectPosition: slide.focal }}
+                sizes="100vw"
+              />
+            )}
+          </div>
+        );
+      })}
       <div className="absolute inset-0 bg-[#0d1526]/60 pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0d1526] to-transparent pointer-events-none" />
 

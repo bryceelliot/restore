@@ -47,7 +47,7 @@ export default function ProjectCarousel({ name, photos }: Props) {
             src={p.src}
             alt={p.alt}
             fill
-            priority={i === 0}
+            loading="lazy"
             sizes="(max-width: 1024px) 100vw, 900px"
             className={`object-cover transition-opacity duration-500 ${
               i === active ? "opacity-100" : "opacity-0"

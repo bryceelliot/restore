@@ -9,6 +9,7 @@ import BrandPartners from "@/components/BrandPartners";
 import InstagramFeed from "@/components/InstagramFeed";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import GoogleReviews from "@/components/GoogleReviews";
+import LiteYouTube from "@/components/LiteYouTube";
 import {
   Phone, ArrowRight,
   MapPin,
@@ -287,13 +288,9 @@ export default function HomePage() {
           <AnimateOnScroll>
             <div className="max-w-4xl mx-auto">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
-                <iframe
-                  src="https://www.youtube.com/embed/WoQ_5q8xsEs?rel=0"
+                <LiteYouTube
+                  videoId="WoQ_5q8xsEs"
                   title="Kelowna Flooring Superstore — Showroom Walkthrough"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full"
                 />
               </div>
             </div>

@@ -69,7 +69,7 @@ export default function FlooringCarousel({ photos, altBase }: Props) {
               fill
               sizes="(max-width: 640px) 88vw, (max-width: 1024px) 70vw, 55vw"
               className="object-cover"
-              priority={i === 0}
+              loading="lazy"
             />
           </div>
         ))}
